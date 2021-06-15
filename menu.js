@@ -145,42 +145,42 @@ const iceCream = [
         flavour:"CREME",
         span:"",
         description:"",
-        image:"./assets/Menu/ChocolateECoco.jpg",
+        image:"./assets/Menu/Sorvetes/Creme1Tratado.webp",
         price: 4
     },
     {
         flavour:"NINHO TRUFADO",
         span:"",
         description:"",
-        image:"./assets/Menu/ChocolateECoco.jpg",
+        image:"./assets/Menu/Sorvetes/NinhoTrufado1Tratado.webp",
         price: 4
     },
     {
         flavour:"IOGURTE COM FRUTAS VERMELHAS",
         span:"",
         description:"",
-        image:"./assets/Menu/ChocolateECoco.jpg",
+        image:"./assets/Menu/Sorvetes/IogurteFrutasVermelhas1Tratado.webp",
         price: 4
     },
     {
         flavour:"CAFÉ MOCHA",
         span:"(Café com chocolate)",
         description:"",
-        image:"./assets/Menu/ChocolateECoco.jpg",
+        image:"./assets/Menu/Sorvetes/CafeMocha1Tratado.webp",
         price: 4
     },
     {
         flavour:"BEM CASADO",
         span:"(Pão de ló com doce de leite)",
         description:"",
-        image:"./assets/Menu/ChocolateECoco.jpg",
+        image:"./assets/Menu/Sorvetes/BemCasado1Tratado.webp",
         price: 4
     },
     {
         flavour:"SENSAÇÃO ",
         span:"(Morango com pedaços de chocolate)",
         description:"",
-        image:"./assets/Menu/ChocolateECoco.jpg",
+        image:"./assets/Menu/Sorvetes/Sensacao1Tratado.webp",
         price: 4
     }
 ]
