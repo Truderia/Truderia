@@ -222,7 +222,7 @@ a.lightbox-close {
 @media  (max-width:650px){
     .tax {
         position: fixed;
-        top: 93%;
+        top: 92.5%;
         left: 81%;
         background-color: black;
         padding: 6px 12px;
