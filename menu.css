@@ -9,6 +9,18 @@
 }
 
 /* --------- HEADER ----------- */
+.tax {
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 55px;
+    left: -20px;
+    background-color: black;
+    padding: 6px 12px;
+    border-radius: 5px;
+}
+.tax p{
+    font-size: 16px;
+}
 
 header{
     display: flex;
@@ -208,6 +220,18 @@ a.lightbox-close {
 /*----- RESPONSIVE ------ */
 
 @media  (max-width:650px){
+    .tax {
+        position: fixed;
+        top: 93%;
+        left: 81%;
+        background-color: black;
+        padding: 6px 12px;
+        border-radius: 5px;
+    }
+    .tax p{
+        font-size: 12px;
+        text-align: center;
+    }
     hr{
         display: none;
     }
