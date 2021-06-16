@@ -14,7 +14,7 @@
     transform: rotate(-45deg);
     top: 55px;
     left: -20px;
-    background-color: black;
+    background-color: rgba(0,0,0,0.5);
     padding: 6px 12px;
     border-radius: 5px;
 }
@@ -221,16 +221,18 @@ a.lightbox-close {
 
 @media  (max-width:650px){
     .tax {
-        position: fixed;
-        top: 92.5%;
-        left: 81%;
-        background-color: black;
+        transform: none;
+        left: 2px;
+        top: 2px;
+        background-color: rgba(0,0,0,0.5);
         padding: 6px 12px;
         border-radius: 5px;
+        
     }
     .tax p{
         font-size: 12px;
         text-align: center;
+        opacity: 1;
     }
     hr{
         display: none;
