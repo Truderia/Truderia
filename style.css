@@ -67,6 +67,7 @@ body {
 
 }
 
+
 .photos {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -126,12 +127,12 @@ footer .credits a{
     * {
         font-size: 16px;
     }
-    .container {
-        margin: 20px auto 0;
-    }
     .links{
         height: 100px;
         justify-content: space-evenly;
+    }
+    .links a span{
+        font-size: 12px;
     }
     .photos {
         grid-template-columns: 1fr 1fr 1fr;
