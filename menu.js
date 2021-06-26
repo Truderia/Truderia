@@ -96,7 +96,7 @@ const additional = [
         price: 2
     },  
     {
-        flavour:"OVOMALTINE",
+        flavour:"OVOMALTINE CROCANTE",
         span:"",
         description:"",
         image:"./assets/Menu/Adicionais/ovomaltine.jpg", 
