@@ -108,10 +108,10 @@ function printOrder() {
     let html = `
         <h1 style="margin-bottom: 2px;">TRUDERIA</h1>
         <span>CNPJ: 41.925.485/0001-01</span>
-        <p><strong>NOME:</strong> ${name.value}</p>
-        <p><strong>TELEFONE:</strong> ${phone.value}</p>
-        <p><strong>ENDEREÇO:</strong> ${address.value}</p>
-        <p><strong>OBS.:</strong> ${note.value}</p>
+        <p style="margin: 4px 0;"><strong>NOME:</strong> ${name.value}</p>
+        <p style="margin: 4px 0;line-heigth: 1rem;"><strong>TELEFONE:</strong> ${phone.value}</p>
+        <p style="margin: 4px 0;"><strong>ENDEREÇO:</strong> ${address.value}</p>
+        <p style="margin: 4px 0;"><strong>OBS.:</strong> ${note.value}</p>
         ${order.innerHTML}
     `
     if (payment) {
