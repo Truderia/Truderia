@@ -142,7 +142,7 @@ main .menuItem .image.icecream img{
 .menuItem .item .description{
     width: 350px;
     height: 90px;
-    background-image: url('./assets/Menu/caixaTexto.png');
+    background-image: url('../assets/Menu/caixaTexto.png');
     background-position: center;
     background-size:contain;
     background-repeat: no-repeat;
@@ -258,7 +258,7 @@ a.lightbox-close {
     .menuItem .item .description{
         width: 170px;
         height: 90px;
-        background-image: url('./assets/Menu/caixaTextoMobile.png');
+        background-image: url('../assets/Menu/caixaTextoMobile.png');
         background-position: center;
         background-size:contain;
         background-repeat: no-repeat;
