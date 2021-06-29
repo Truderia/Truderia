@@ -127,11 +127,16 @@ input{
 th:first-child, th:last-child, td:first-child, tr td:last-child{
     text-align: center;
 }
-.inputItem#order #orderTable table td.delete{
+.inputItem#order #orderTable table td.delete div{
     color: white;
     background-color: red;
     border-radius: 100%;
     cursor: pointer;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .total:first-child{
     text-align: left;

@@ -32,8 +32,8 @@ function calculateTotal() {
     for (const price of values) {
         total += Number(price.innerHTML)
     }
-    hiddenTotal.innerHTML = total
-    visibleTotal.innerHTML = total
+    hiddenTotal.innerHTML = `R$ ${total.toFixed(2)}`
+    visibleTotal.innerHTML = `${total.toFixed(2)}`
 }
 calculateTotal()
 
@@ -57,11 +57,11 @@ function addItem(item) {
     let itemChosed = categoryChosed.itens.filter(product => item.innerHTML == product.flavour || item.innerHTML == product.value)[0]
     tbody.innerHTML += `
     <tr>
-        <td class="quantity">1</td>
-        <td colspan="1">${categoryChosed.name}</td>
+        <td class="quantity" style="text-align:center;">1</td>
+        <td colspan="1" style="padding: 0 6px;">${categoryChosed.name}</td>
         <td colspan="3">${itemChosed.flavour || itemChosed.value}</td>
-        <td class="value">${itemChosed.price}</td>
-        <td onclick="removeItem(this)" class="delete">X</td>
+        <td class="value" style="text-align:center;">${itemChosed.price.toFixed(2)}</td>
+        <td onclick="removeItem(this)" class="delete"><div>X</div></td>
     </tr>
     `
     calculateTotal()
@@ -102,18 +102,25 @@ function printOrder() {
     let address = document.querySelector('#address input')
     let note = document.querySelector('#note textarea')
     let order = document.querySelector('#orderTable')
-    let payment = document.querySelector('#paymentChosed span').innerHTML
-    let change = document.querySelector('#change').value
+    let payment = document.querySelector('#paymentChosed span')
+    let change = document.querySelector('#change')
     
     let html = `
+        <h1 style="margin-bottom: 2px;">TRUDERIA</h1>
+        <span>CNPJ: 41.925.485/0001-01</span>
         <p><strong>NOME:</strong> ${name.value}</p>
         <p><strong>TELEFONE:</strong> ${phone.value}</p>
         <p><strong>ENDEREÇO:</strong> ${address.value}</p>
         <p><strong>OBS.:</strong> ${note.value}</p>
         ${order.innerHTML}
-        <p><strong>Forma de pagamento:</strong> ${payment}</p>
-        <p>Troco para: ${change}</p>
     `
+    if (payment) {
+        html += `<p><strong>Forma de pagamento:</strong> ${payment.innerHTML}</p>`
+    }
+
+    if (change) {
+        html = `<p>Troco para: ${change.value}</p>`
+    }
 
     let printWindow = window.open('about:blank');
 
