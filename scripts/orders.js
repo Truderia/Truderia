@@ -115,11 +115,11 @@ function printOrder() {
         ${order.innerHTML}
     `
     if (payment) {
-        html += `<p><strong>Forma de pagamento:</strong> ${payment.innerHTML}</p>`
+        html += `<p style="margin: 8px 0 4px 0;"><strong>Forma de pagamento:</strong> ${payment.innerHTML}</p>`
     }
 
     if (change) {
-        html = `<p>Troco para: ${change.value}</p>`
+        html += `<p><strong>Troco para:</strong> R$${change.value.toFixed(2)}</p>`
     }
 
     let printWindow = window.open('about:blank');
@@ -132,6 +132,7 @@ function printOrder() {
     }
     printWindow.window.print();
     printWindow.window.close();
+
 }
 
 function endOrder() {
@@ -143,6 +144,43 @@ function endOrder() {
     document.querySelector('textarea').value = ''
     document.querySelector('tbody').innerHTML = ''
     document.querySelector('#paymentChosed').innerHTML = ''
+    document.querySelector('.choices').innerHTML = ''
 
     calculateTotal()
+}
+
+function sendToWhatsApp() {
+    let name = document.querySelector('#name input')
+    let phone = document.querySelector('#phone input')
+    let address = document.querySelector('#address input')
+    let note = document.querySelector('#note textarea')
+    let order = document.querySelector('#orderTable')
+    let orderItens = document.querySelectorAll('tbody tr')
+    let payment = document.querySelector('#paymentChosed span')
+    let change = document.querySelector('#change')
+
+    let texto = `
+    PEDIDO:
+    *Nome:* ${name.value} 
+    *Telefone:* ${phone.value} 
+    *Endereço:* ${address.value} 
+    *Obs.::* ${note.value} 
+    `
+    for (const item of orderItens) {
+        texto += `
+            ${item.children[0].innerHTML} - *${item.children[1].innerHTML.replace('IS', 'L').replace('SORVETES', 'SORVETE')}* de ${item.children[2].innerHTML}
+        `
+    }
+
+    texto += `
+    *Forma de Pagamento:* ${payment.innerHTML}
+    `
+    if (change) {
+        texto += `*Troco para:* R$${change.value.toFixed(2)}`
+    }
+
+    texto = window.encodeURIComponent(texto);
+    
+  
+    window.open("https://api.whatsapp.com/send?phone=5519996129909&text=" + texto, "_blank");
 }
