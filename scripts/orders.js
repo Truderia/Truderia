@@ -255,7 +255,7 @@ async function addDeliveryTax() {
     <tr>
         <td class="quantity" style="text-align:center;">1</td>
         <td colspan="1" style="padding: 0 6px;">ENTREGAS</td>
-        <td colspan="3">${district.price} REAIS</td>
+        <td colspan="3">TAXA DE ENTREGA</td>
         <td class="value" style="text-align:center;">${district.price.toFixed(2)}</td>
         <td onclick="removeItem(this)" class="delete"><div>X</div></td>
     </tr>
