@@ -51,15 +51,15 @@ const districts = [
     },
     {
         name: 'Jardim Boa Esperanca',
-        price: 5
+        price: 6
     },
     {
         name: 'Jardim Candida',
-        price: 5
+        price: 6
     },
     {
         name: 'Jardim Maria Lúcia',
-        price: 5
+        price: 6
     },
     {
         name: 'Jardim Nossa Senhora Aparecida',
@@ -83,15 +83,15 @@ const districts = [
     },
     {
         name: 'Matadouro',
-        price: 5
+        price: 6
     },
     {
         name: 'Novo Jardim Candida',
-        price: 5
+        price: 6
     },
     {
         name: 'Parque Santa Candida',
-        price: 5
+        price: 6
     },
     {
         name: 'Vila Bressan',
@@ -211,7 +211,7 @@ const districts = [
     },
     {
         name: 'Jardim Esmeralda',
-        price: 6
+        price: 7
     },
     {
         name: 'Jardim Florenca',
@@ -311,7 +311,7 @@ const districts = [
     },
     {
         name: 'Jardim Residencial Pedras Preciosas',
-        price: 6
+        price: 7
     },
     {
         name: 'Jardim Rosana',
@@ -511,7 +511,7 @@ const districts = [
     },
     {
         name: 'Chacaras de Recreio Colina Verde',
-        price: 7
+        price: 6
     },
     {
         name: 'Chacaras de Recreio Parque das Grevilhas',
@@ -567,11 +567,11 @@ const districts = [
     },
     {
         name: 'Jardim Campos Verdes',
-        price: 7
+        price: 6
     },
     {
         name: 'Jardim Chacara Araruna',
-        price: 7
+        price: 6
     },
     {
         name: 'Jardim Costa Verde',
@@ -664,5 +664,14 @@ const districts = [
     {
         name: 'Sitios de Recreio Independencia',
         price: 7
-    }
+    },
+    {
+        name: 'Pacaembu',
+        price: 7
+    },
+    {
+        name: 'Samantha',
+        price: 7
+    },
+
 ]
