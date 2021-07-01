@@ -94,7 +94,7 @@ function addPayment(choice) {
     `
     if (choice.innerHTML == "DINHEIRO") {
         html += `
-        <small>Troco para </small><input id="change" type="number">
+        <small>Troco para </small><input id="change" type="text">
         `
     }
     paymentChosed.innerHTML = html
@@ -131,7 +131,7 @@ async function printOrder() {
     }
 
     if (change) {
-        html += `<p style="margin: 4px 0;"><strong>Troco para:</strong> R$${Number(change.value).toFixed(2)} = R$${Number(change.value)-Number(hiddenTotal)} </p>`
+        html += `<p style="margin: 4px 0;"><strong>Troco para:</strong> R$ ${Number(change.value).toFixed(2)} = R$ ${(Number(change.value)-Number(hiddenTotal)).toFixed(2)} </p>`
     }
 
     let printWindow = window.open('about:blank');
