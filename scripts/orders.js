@@ -63,7 +63,7 @@ function addItem(item) {
     <tr ${categoryChosed.name == 'TRUDEL' ? 'style="height:30px;vertical-align: bottom;"': ''}>
         <td class="quantity" style="text-align:center;">1</td>
         <td colspan="1" style="padding: 0 6px;">${categoryChosed.name}</td>
-        <td colspan="3">${itemChosed.flavour || itemChosed.value}</td>
+        <td colspan="3">${itemChosed.flavour || itemChosed.item}</td>
         <td class="value" style="text-align:center;">${itemChosed.price.toFixed(2)}</td>
         <td onclick="removeItem(this)" class="delete"><div>X</div></td>
     </tr>

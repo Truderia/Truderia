@@ -4,32 +4,32 @@ const entregas = {
     itens: [
         {   
             value: '4 REAIS',
-            flavour:'TAXA DE ENTREGA',
+            item:'TAXA DE ENTREGA',
             price: 4
         },
         {
             value: '5 REAIS',
-            flavour:'TAXA DE ENTREGA',
+            item:'TAXA DE ENTREGA',
             price: 5
         },
         {
             value: '6 REAIS',
-            flavour:'TAXA DE ENTREGA',
+            item:'TAXA DE ENTREGA',
             price: 6
         },
         {
             value: '7 REAIS',
-            flavour:'TAXA DE ENTREGA',
+            item:'TAXA DE ENTREGA',
             price: 7
         },
         {
             value: '8 REAIS',
-            flavour:'TAXA DE ENTREGA',
+            item:'TAXA DE ENTREGA',
             price: 8
         },
         {
             value: 'GRÁTIS',
-            flavour:'CORTESIA',
+            item:'CORTESIA',
             price: 0
         }
 ]
