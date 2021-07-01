@@ -94,6 +94,25 @@ input{
 .inputItem#phone input{
     flex: 0.5;
 }
+.inputItem#district input{
+    position: relative;
+}
+.inputItem#district ul{
+    position: fixed;
+    background-color: white;
+    width: 250px;
+    border-radius: 0 4px 4px 4px;
+    max-height: 70px;
+    overflow-y:auto;
+}
+.inputItem#district ul li{
+    border-bottom: 1px solid rgba(0, 0, 0, .25);
+    font-size: 0.5rem;
+}
+.inputItem#district ul li:hover{
+    background-color: silver;
+    cursor: pointer;
+}
 .inputItem#order{
     flex-direction: column;
 }

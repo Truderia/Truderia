@@ -33,6 +33,14 @@
                     <label for="address">ENDEREÇO:</label>
                     <input name="address" type="text">
                 </div><!--address-->
+                <div class="inputItem" id="district">
+                    <label for="district">BAIRRO:</label>
+                    <div class="autocomplete">
+                        <input id="selectDistrict" name="district" type="text" oninput="searchDistricts()">
+                        <ul>
+                        </ul>
+                    </div>
+                </div><!--district-->
                 <div class="inputItem" id="note">
                     <label for="note">OBSERVAÇÃO:</label>
                     <textarea name="note" id="" cols="30" rows="2">
@@ -92,6 +100,7 @@
     
     <script src="./scripts/index.js"></script>
     <script src="./scripts/data.js"></script>
+    <script src="./scripts/dataDistrict.js"></script>
     <script src="./scripts/orders.js"></script>
 </body>
 </html>
