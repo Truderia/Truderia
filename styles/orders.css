@@ -94,11 +94,11 @@ input{
 .inputItem#phone input{
     flex: 0.5;
 }
-.inputItem#district input{
+.inputItem#selectDistrict input{
     position: relative;
 }
 .inputItem#district ul{
-    position: fixed;
+    position: absolute;
     background-color: white;
     width: 250px;
     border-radius: 0 4px 4px 4px;

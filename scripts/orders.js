@@ -1,29 +1,3 @@
-// const entregas = {
-//     name: "ENTREGAS",
-//     category:"delivery",
-//     itens: [
-//         {
-//             value: '4 REAIS',
-//             price: 4
-//         },
-//         {
-//             value: '5 REAIS',
-//             price: 5
-//         },
-//         {
-//             value: '6 REAIS',
-//             price: 6
-//         },
-//         {
-//             value: '7 REAIS',
-//             price: 7
-//         },
-//         {
-//             value: 'GRÁTIS',
-//             price: 0
-//         }
-// ]
-// }
 menu.push(entregas)
 
 const payments = ['DINHEIRO', 'DÉBITO', 'CRÉDITO', 'PIX']
@@ -63,7 +37,7 @@ function addItem(item) {
     <tr ${categoryChosed.name == 'TRUDEL' ? 'style="height:30px;vertical-align: bottom;"': ''}>
         <td class="quantity" style="text-align:center;">1</td>
         <td colspan="1" style="padding: 0 6px;">${categoryChosed.name}</td>
-        <td colspan="3">${itemChosed.flavour || itemChosed.item}</td>
+        <td colspan="3" ${itemChosed.flavour? 'style="font-weight:bold;"' : ''}>${itemChosed.flavour || itemChosed.item}</td>
         <td class="value" style="text-align:center;">${itemChosed.price.toFixed(2)}</td>
         <td onclick="removeItem(this)" class="delete"><div>X</div></td>
     </tr>
@@ -117,7 +91,7 @@ async function printOrder() {
     let html = `
         <h1 style="margin-bottom: 2px;">TRUDERIA</h1>
         <span>CNPJ: 41.925.485/0001-01</span>
-        <p style="margin: 4px 0;"><strong>NOME:</strong> ${name.value}</p>
+        <p style="margin: 4px 0;font-size:24px"><strong>NOME:</strong> ${name.value}</p>
         <p style="margin: 4px 0;line-heigth: 1rem;"><strong>TELEFONE:</strong> ${phone.value}</p>
         <p style="margin: 4px 0;"><strong>ENDEREÇO:</strong> ${address.value}</p>
         <p style="margin: 4px 0;"><strong>BAIRRO:</strong> ${district.value}</p>
