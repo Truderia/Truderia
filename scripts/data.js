@@ -84,7 +84,7 @@ const additional = [
         flavour: "GRANULADO",
         span: "",
         description: "",
-        image: "./assets/Menu/Adicionais/granulado.jpg",
+        image: "./assets/Menu/Adicionais/granulado2.webp",
         price: 1
     },
     {
