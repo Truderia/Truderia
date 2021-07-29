@@ -1,4 +1,16 @@
 menu.push(entregas)
+const promotion = {
+    name: "COMBINACAO",
+    category:"promotion",
+    itens: [
+        {   
+            value: 'COMBINACAO',
+            flavour:'PACOQUITA + NINHO TRUFADO + AMENDOIM',
+            price: 15
+        },
+    ]
+}
+menu.push(promotion)
 
 const payments = ['DINHEIRO', 'DÉBITO', 'CRÉDITO', 'PIX']
 

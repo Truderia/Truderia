@@ -197,7 +197,7 @@ const districts = [
     },
     {
         name: 'Jardim Celina',
-        price: 6
+        price: 7
     },
     {
         name: 'Jardim Copacabana',
@@ -344,7 +344,7 @@ const districts = [
         price: 6
     },
     {
-        name: 'Jardim Santo André',
+        name: 'Jardim Santo Andre',
         price: 6
     },
     {
@@ -412,11 +412,11 @@ const districts = [
         price: 6
     },
     {
-        name: 'Jardim das Nacões',
+        name: 'Jardim das Nacoes',
         price: 6
     },
     {
-        name: 'Jardim das Nacões II',
+        name: 'Jardim das Nacoes II',
         price: 6
     },
     {
@@ -456,7 +456,7 @@ const districts = [
         price: 6
     },
     {
-        name: 'Parque das Árvores',
+        name: 'Parque das Arvores',
         price: 6
     },
     {
@@ -464,7 +464,7 @@ const districts = [
         price: 6
     },
     {
-        name: 'Residencial Jardim América',
+        name: 'Residencial Jardim America',
         price: 6
     },
     {
@@ -488,7 +488,7 @@ const districts = [
         price: 6
     },
     {
-        name: 'Vila Santo Antônio',
+        name: 'Vila Santo Antonio',
         price: 6
     },
     {
@@ -544,7 +544,7 @@ const districts = [
         price: 7
     },
     {
-        name: 'Distrito Industrial II Guilherme Buck Júnior',
+        name: 'Distrito Industrial II Guilherme Buck Junior',
         price: 7
     },
     {
@@ -592,23 +592,23 @@ const districts = [
         price: 7
     },
     {
-        name: 'Jardim José Ometto I',
+        name: 'Jardim Jose Ometto I',
         price: 7
     },
     {
-        name: 'Jardim José Ometto II',
+        name: 'Jardim Jose Ometto II',
         price: 7
     },
     {
-        name: 'Jardim José Ometto III',
+        name: 'Jardim Jose Ometto III',
         price: 7
     },
     {
-        name: 'Jardim José Ometto IV',
+        name: 'Jardim Jose Ometto IV',
         price: 7
     },
     {
-        name: 'Jardim José Ometto V',
+        name: 'Jardim Jose Ometto V',
         price: 7
     },
     {
