@@ -57,13 +57,6 @@ const trudel = [
         price: 15
     },
     {
-        flavour: "PAÇOQUITA",
-        span: "*ULTIMA SEMANA*",
-        description: 'Recheado com um creme de paçoca "pra lá de bão!"',
-        image: "./assets/Menu/PacoquitaMenu.webp",
-        price: 10
-    },
-    {
         flavour: "LAKAOREO",
         span: "*NOVO SABOR*",
         description: 'O delicioso Laka com crocantes de Oreo que derretem na boca. Indescritível…',
