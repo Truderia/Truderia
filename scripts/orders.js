@@ -1,18 +1,14 @@
 menu.push(entregas)
 const promotion = {
-    name: "PROMOCAO",
+    name: "COMBINACAO",
     category:"promotion",
     itens: [
         {   
-            value: 'PROMOCAO',
-            flavour:'DOCE DE LEITE',
-            price: 0
+            value: 'COMBINACAO',
+            flavour:'CHOC BRANCO + SONHO DE VALSA + MORANGO',
+            price: 15
         },
-        {   
-            value: 'PROMOCAO',
-            flavour:'BRIGADEIRO',
-            price: 0
-        },
+        
     ]
 }
 menu.push(promotion)
