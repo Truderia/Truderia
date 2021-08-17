@@ -101,13 +101,13 @@ const additional = [
         image: "./assets/Menu/Adicionais/ovomaltine.jpg",
         price: 2
     },
-    // {
-    //     flavour: "NEGRESCO MOIDO",
-    //     span: "",
-    //     description: "",
-    //     image: "./assets/Menu/Adicionais/negresco.jpg",
-    //     price: 2
-    // },
+    {
+        flavour: "NEGRESCO MOIDO",
+        span: "",
+        description: "",
+        image: "./assets/Menu/Adicionais/Negresco.webp",
+        price: 2
+    },
     {
         flavour: "AMENDOIM",
         span: "",
