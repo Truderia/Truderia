@@ -56,13 +56,13 @@ const trudel = [
         image: "./assets/Menu/OvomaltineBg5.webp",
         price: 15
     },
-    {
-        flavour: "LAKAOREO",
-        span: "*NOVO SABOR*",
-        description: 'O delicioso Laka com crocantes de Oreo que derretem na boca. Indescritível…',
-        image: "./assets/Menu/LakaOreo2.webp",
-        price: 15
-    },
+    // {
+    //     flavour: "LAKAOREO",
+    //     span: "*NOVO SABOR*",
+    //     description: 'O delicioso Laka com crocantes de Oreo que derretem na boca. Indescritível…',
+    //     image: "./assets/Menu/LakaOreo2.webp",
+    //     price: 15
+    // },
     {
         flavour: "KIT MINI TRUDEL",
         span: "6 mini Trudels nos sabores :",

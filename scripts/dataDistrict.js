@@ -105,7 +105,7 @@ const districts = [
     },
     {
         name: 'Vila Candinha',
-        price: 5
+        price: 6
     },
     {
         name: 'Vila Europa',
