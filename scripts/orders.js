@@ -5,8 +5,8 @@ const promotion = {
     itens: [
         {   
             value: 'COMBINACAO',
-            flavour:'OVOMALTINE + AMENDOIM + SORV. SENSAÇÃO',
-            price: 16
+            flavour:'CHOCOLATE BRANCO + NEGRESCO MOIDO',
+            price: 13
         },
         
     ]

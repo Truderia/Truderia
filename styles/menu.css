@@ -172,10 +172,10 @@ main .menuItem .image.icecream img{
 }
 
 /* Novo Sabor LAKAOREO */
-/* .category:nth-child(1) .menuItem:nth-child(10) span{
+.category:nth-child(1) .menuItem:nth-child(10) span{
     animation: glow 1s linear infinite;
     color: rgb(144, 201, 255);
-} */
+}
 
 /* ----- LIGHTBOX ------ */
 .lightbox-target {
