@@ -15,15 +15,16 @@ menu.forEach(category => {
             <div class="image ${category.category}">
                     <img src="${item.image}" alt="${item.flavour}" onclick="lightbox.open(event)">
                     </div>
-                    <div class="item flex-column">
+                    <div class="item flex-column type${category.category}">
                         <div class="itemName">
                         ${item.span? `<p>${item.flavour}<br><span>${item.span}</span></p>` : `<p>${item.flavour} </p>`}
                         </div>
                         ${item.description? `<div class="description flex-column"><p>${item.description}</p></div>`:''}
-                        
+                        <div class="price flex-column"><p>R$ <span>${item.price},00</span></p></div>
                     </div>
-                    <div class="price flex-column">R$${item.price}</div>
+                    
                 </div> <!-- menuItem -->
+                <hr>
             `
     })
     html += `
@@ -53,5 +54,5 @@ const lightbox = {
 
 // Destaque de novidade com Lightbox e SetTimeout
 
-lightbox.open(false)
-setTimeout(lightbox.close, 5000);
+// lightbox.open(false)
+// setTimeout(lightbox.close, 5000);

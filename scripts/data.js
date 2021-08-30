@@ -4,70 +4,70 @@ const trudel = [
         flavour: "TRADICIONAL",
         span: "",
         description: "Deliciosa massa do leste europeu com açúcar e canela.",
-        image: "./assets/Menu/TradicionalBg7.webp",
+        image: "./assets/Menu/Trudels/Tradicional.webp",
         price: 10
     },
     {
         flavour: "BRIGADEIRO",
         span: "",
         description: "Recheado com brigadeiro de lamber os dedos!",
-        image: "./assets/Menu/BrigadeiroBg5.webp",
+        image: "./assets/Menu/Trudels/Brigadeiro.webp",
         price: 12
     },
     {
         flavour: "DOCE DE LEITE",
         span: "",
         description: "Recheado com um doce de leite divino!",
-        image: "./assets/Menu/DoceDeLeiteBg4.webp",
+        image: "./assets/Menu/Trudels/DoceDeLeite.webp",
         price: 12
     },
     {
         flavour: "CHOCOLATE MEIO AMARGO",
         span: "",
         description: "Recheado com o melhor meio amargo!",
-        image: "./assets/Menu/MeioAmargoBg4.webp",
+        image: "./assets/Menu/Trudels/ChocolateMeioAmargo.webp",
         price: 12
     },
     {
         flavour: "CHOCOLATE BRANCO",
         span: "",
         description: "Recheado com chocolate branco de dar água na boca!",
-        image: "./assets/Menu/ChocolateBrancoBg7.webp",
+        image: "./assets/Menu/Trudels/ChocolateBranco.webp",
         price: 13
     },
     {
         flavour: "NUTELLA",
         span: "",
         description: "Recheado com o creme de avelã queridinho do Brasil.",
-        image: "./assets/Menu/NutellaBg4.webp",
+        image: "./assets/Menu/Trudels/Nutella.webp",
         price: 14
     },
     {
         flavour: "KIT KAT CREMOSO",
         span: "",
         description: "Recheado com um creme de KIT KAT que dispensa comentários.",
-        image: "./assets/Menu/KitkatBg7.webp",
+        image: "./assets/Menu/Trudels/Kitkat.webp",
         price: 14
     },
     {
         flavour: "OVOMALTINE",
         span: "",
         description: "Recheado com um creme de OVOMALTINE crocante e irresistivel!",
-        image: "./assets/Menu/OvomaltineBg5.webp",
+        image: "./assets/Menu/Trudels/Ovomaltine.webp",
         price: 15
     },
     {
         flavour: "LAKAOREO",
         span: "*NOVO SABOR*",
         description: 'O delicioso Laka com crocantes de Oreo que derretem na boca. Indescritível…',
-        image: "./assets/Menu/LakaOreo2.webp",
+        image: "./assets/Menu/Trudels/Lakaoreo.webp",
         price: 15
     },
     {
         flavour: "KIT MINI TRUDEL",
         span: "6 mini Trudels nos sabores :",
         description: 'Doce de Leite, Nutella, Brigadeiro,  Chocolate Branco,  Ovomaltine  e Kit Kat',
-        image: "./assets/Menu/KitMiniTrudel1.webp",
+        image: "./assets/Menu/Trudels/KitMiniTrudel.webp",
         price: 45
     }
 ]
@@ -151,61 +151,61 @@ const iceCream = [
         flavour: "CREME",
         span: "",
         description: "",
-        image: "./assets/Menu/Sorvetes/Creme1Tratado.webp",
+        image: "./assets/Menu/Sorvetes/Creme.webp",
         price: 4
     },
     {
         flavour: "NINHO TRUFADO",
         span: "",
         description: "",
-        image: "./assets/Menu/Sorvetes/NinhoTrufado1Tratado.webp",
+        image: "./assets/Menu/Sorvetes/NinhoTrufado.webp",
         price: 4
     },
     {
         flavour: "IOGURTE COM FRUTAS VERMELHAS",
         span: "",
         description: "",
-        image: "./assets/Menu/Sorvetes/IogurteFrutasVermelhas1Tratado.webp",
+        image: "./assets/Menu/Sorvetes/IogurteFrutasVermelhas.webp",
         price: 4
     },
     {
         flavour: "CAFÉ MOCHA",
         span: "(Café com chocolate)",
         description: "",
-        image: "./assets/Menu/Sorvetes/CafeMocha1Tratado.webp",
+        image: "./assets/Menu/Sorvetes/CafeMocha.webp",
         price: 4
     },
     {
         flavour: "BEM CASADO",
         span: "(Pão de ló com doce de leite)",
         description: "",
-        image: "./assets/Menu/Sorvetes/BemCasado1Tratado.webp",
+        image: "./assets/Menu/Sorvetes/BemCasado.webp",
         price: 4
     },
     {
         flavour: "SENSAÇÃO ",
         span: "(Morango com pedaços de chocolate)",
         description: "",
-        image: "./assets/Menu/Sorvetes/Sensacao1Tratado.webp",
+        image: "./assets/Menu/Sorvetes/Sensacao.webp",
         price: 4
     }
 ]
 
 const menu = [
     {
-        name: "TRUDEL",
+        name: "TRUDELS",
         category: "trudel",
         itens: trudel
-    },
-    {
-        name: "ADICIONAIS",
-        category: "adittional",
-        itens: additional
     },
     {
         name: "SORVETES",
         category: "icecream",
         itens: iceCream
+    },
+    {
+        name: "ADICIONAIS",
+        category: "adittional",
+        itens: additional
     }
 ]
 
