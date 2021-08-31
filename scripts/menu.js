@@ -3,7 +3,7 @@ const menuHtml = document.querySelector('#menu')
 menu.forEach(category => {
     let html = ''
     html +=`
-        <div class="category flex-column">
+        <div class='category flex-column' onclick="show_hide(this)">
             <div class="categoryName">
                 <i class="fas fa-caret-down"></i>
                 <h3>${category.name}</h3>
@@ -38,7 +38,6 @@ const lightbox = {
     image: document.querySelector('.lightbox-target img'),
     closeButton: document.querySelector('.lightbox-close'),
     open(e){
-        console.log('aqui')
         lightbox.target.style.opacity = 1
         lightbox.target.style.top = 0
         lightbox.closeButton.style.top = 0
@@ -52,7 +51,24 @@ const lightbox = {
     }
 }
 
-// Destaque de novidade com Lightbox e SetTimeout
+// Destaque de novidade/combinação com Lightbox e SetTimeout
 
 // lightbox.open(false)
 // setTimeout(lightbox.close, 5000);
+
+//Função Show Hide
+
+// function show_hide(category) {
+//     const arrow = category.querySelector('i')
+//     arrow.classList.toggle('rotate')
+//     const lines = category.querySelectorAll('hr')
+//     const items = category.querySelectorAll('.menuItem')
+
+//     items.forEach(item => {
+//         item.classList.toggle('hide')
+//     })
+    
+//     lines.forEach(line => {
+//         line.classList.toggle('hide')
+//     })
+// }
