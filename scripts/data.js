@@ -150,42 +150,42 @@ const iceCream = [
     {
         flavour: "CREME",
         span: "",
-        description: "",
+        description: "O clássico sorvete de creme que combina com tudo.",
         image: "./assets/Menu/Sorvetes/Creme.webp",
         price: 4
     },
     {
         flavour: "NINHO TRUFADO",
         span: "",
-        description: "",
+        description: "O nosso sabor mais pedido, a dupla perfeita, leite Ninho e chocolate.",
         image: "./assets/Menu/Sorvetes/NinhoTrufado.webp",
         price: 4
     },
     {
         flavour: "IOGURTE COM FRUTAS VERMELHAS",
         span: "",
-        description: "",
+        description: "A leveza do iogurte com um mix das frutas amora, framboesa, cereja e morango.",
         image: "./assets/Menu/Sorvetes/IogurteFrutasVermelhas.webp",
         price: 4
     },
     {
         flavour: "CAFÉ MOCHA",
-        span: "(Café com chocolate)",
-        description: "",
+        span: "",
+        description: "O sorvete ideal para quem adora café com um toque especial de chocolate.",
         image: "./assets/Menu/Sorvetes/CafeMocha.webp",
         price: 4
     },
     {
         flavour: "BEM CASADO",
-        span: "(Pão de ló com doce de leite)",
-        description: "",
+        span: "",
+        description: "A união que deu certo, sorvete com pedaços de biscoito e doce de leite",
         image: "./assets/Menu/Sorvetes/BemCasado.webp",
         price: 4
     },
     {
         flavour: "SENSAÇÃO ",
-        span: "(Morango com pedaços de chocolate)",
-        description: "",
+        span: "",
+        description: "A deliciosa combinação do sorvete de morango com pedaços de chocolate.",
         image: "./assets/Menu/Sorvetes/Sensacao.webp",
         price: 4
     }
