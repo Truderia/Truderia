@@ -135,7 +135,7 @@ main .menuItem .image.icecream img{
 }
 .menuItem .item.flex-column{
     justify-content: space-around;
-    max-width: 100%;
+    max-width: 50%;
 }
 .menuItem .item.flex-column.typeadittional{
     display: grid;
@@ -247,6 +247,9 @@ a.lightbox-close {
 @media  (max-width:400px){
     .menuItem .item.flex-column {
         max-width: 150px;
+    }
+    .menuItem .item.kitmini{
+        height: 125px;
     }
 }
 @media  (max-width:650px){

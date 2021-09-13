@@ -61,7 +61,7 @@ const districts = [
     },
     {
         name: 'Jardim Candida',
-        price: 6
+        price: 5
     },
     {
         name: 'Jardim Maria Lúcia',
@@ -149,7 +149,7 @@ const districts = [
     },
     {
         name: 'Conjunto Habitacional Narciso Gomes',
-        price: 6
+        price: 7
     },
     {
         name: 'Conjunto Residencial Arnaldo Mazon',

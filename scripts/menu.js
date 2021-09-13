@@ -15,7 +15,7 @@ menu.forEach(category => {
             <div class="image ${category.category}">
                     <img src="${item.image}" alt="${item.flavour}" onclick="lightbox.open(event)">
                     </div>
-                    <div class="item flex-column type${category.category}">
+                    <div class="item flex-column type${category.category} ${item.flavour == "KIT MINI TRUDEL" ? "kitmini" : ""}">
                         <div class="itemName">
                         ${item.span? `<p>${item.flavour}<br><span>${item.span}</span></p>` : `<p>${item.flavour} </p>`}
                         </div>

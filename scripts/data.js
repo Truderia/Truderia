@@ -3,70 +3,70 @@ const trudel = [
     {
         flavour: "TRADICIONAL",
         span: "",
-        description: "Deliciosa massa do leste europeu com açúcar e canela.",
+        description: "Nossa deliciosa massa assada, polvilhada no açúcar e canela, receita exclusiva com origem no Leste Europeu. Um sabor único!",
         image: "./assets/Menu/Trudels/Tradicional.webp",
         price: 10
     },
     {
         flavour: "BRIGADEIRO",
         span: "",
-        description: "Recheado com brigadeiro de lamber os dedos!",
+        description: "Brigadeiro de produção artesanal, feito com leite condensado Moça e Cacau 50%. Aquele sabor de infância!",
         image: "./assets/Menu/Trudels/Brigadeiro.webp",
         price: 12
     },
     {
         flavour: "DOCE DE LEITE",
         span: "",
-        description: "Recheado com um doce de leite divino!",
+        description: "O verdadeiro doce de leite, puro e muito cremoso. Uma loucura para os amantes de doce!",
         image: "./assets/Menu/Trudels/DoceDeLeite.webp",
         price: 12
     },
     {
         flavour: "CHOCOLATE MEIO AMARGO",
         span: "",
-        description: "Recheado com o melhor meio amargo!",
+        description: "Sabor intenso do autêntico chocolate, rico em cacau. Perfeito para aqueles que preferem algo menos doce.",
         image: "./assets/Menu/Trudels/ChocolateMeioAmargo.webp",
         price: 12
     },
     {
         flavour: "CHOCOLATE BRANCO",
         span: "",
-        description: "Recheado com chocolate branco de dar água na boca!",
+        description: "Chocolate com sabor equilibrado, cremoso ao extremo e altamente viciante.",
         image: "./assets/Menu/Trudels/ChocolateBranco.webp",
         price: 13
     },
     {
         flavour: "NUTELLA",
         span: "",
-        description: "Recheado com o creme de avelã queridinho do Brasil.",
+        description: "O verdadeiro creme de avelã, o mais pedido e queridinho dos nossos clientes.",
         image: "./assets/Menu/Trudels/Nutella.webp",
         price: 14
     },
     {
         flavour: "KIT KAT CREMOSO",
         span: "",
-        description: "Recheado com um creme de KIT KAT que dispensa comentários.",
+        description: "Um recheio que mistura a cremosidade do chocolate e o crocante do biscoito wafer.",
         image: "./assets/Menu/Trudels/Kitkat.webp",
         price: 14
     },
     {
         flavour: "OVOMALTINE",
         span: "",
-        description: "Recheado com um creme de OVOMALTINE crocante e irresistivel!",
+        description: "Surpreendente combinação de Ovomaltine, Avelã e Cacau. Pura crocância, simplesmente irresistível!",
         image: "./assets/Menu/Trudels/Ovomaltine.webp",
         price: 15
     },
     {
         flavour: "LAKAOREO",
         span: "*NOVO SABOR*",
-        description: 'O delicioso Laka com crocantes de Oreo que derretem na boca. Indescritível…',
+        description: 'A junção do chocolate branco mais famoso do Brasil e o biscoito que toda família adora. Muita gostosura em apenas um recheio.',
         image: "./assets/Menu/Trudels/Lakaoreo.webp",
         price: 15
     },
     {
         flavour: "KIT MINI TRUDEL",
-        span: "6 mini Trudels nos sabores :",
-        description: 'Doce de Leite, Nutella, Brigadeiro,  Chocolate Branco,  Ovomaltine  e Kit Kat',
+        span: "",
+        description: 'Ideal para dividir ou presentear, nossos deliciosos Trudels em versão mini. São 6 unidades nos sabores: Doce de Leite, Nutella, Brigadeiro com granulado, Chocolate Branco com coco, Ovomaltine e Kit Kat.',
         image: "./assets/Menu/Trudels/KitMiniTrudel.webp",
         price: 45
     }
