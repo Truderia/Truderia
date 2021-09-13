@@ -178,7 +178,7 @@ const iceCream = [
     {
         flavour: "BEM CASADO",
         span: "",
-        description: "A união que deu certo, sorvete com pedaços de biscoito e doce de leite",
+        description: "A união que deu certo, sorvete com pedaços de biscoito e doce de leite.",
         image: "./assets/Menu/Sorvetes/BemCasado.webp",
         price: 4
     },
