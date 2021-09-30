@@ -161,12 +161,20 @@ main .menuItem .image.icecream img{
     font-size: 18px;
     text-shadow: none;
 }
+.menuItem .price.flex-column{
+    align-items: start;
+}
 .menuItem .price{
     font-size: 32px;
     text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
 }
 .menuItem .price span{
     font-size: 24px;
+}
+
+.menuItem .price p.mini,
+.menuItem .price p.mini span{
+    font-size: 14px;
 }
 
 .category .hide{
@@ -246,7 +254,7 @@ a.lightbox-close {
 }
 @media  (max-width:400px){
     .menuItem .item.flex-column {
-        max-width: 150px;
+        max-width: 180px;
     }
     .menuItem .item.kitmini{
         height: 125px;
@@ -303,6 +311,11 @@ a.lightbox-close {
 
     .menuItem .price span{
         font-size: 14px;
+    }
+
+    .menuItem .price p.mini,
+    .menuItem .price p.mini span{
+        font-size: 10px;
     }
     
 }

@@ -20,7 +20,10 @@ menu.forEach(category => {
                         ${item.span? `<p>${item.flavour}<br><span>${item.span}</span></p>` : `<p>${item.flavour} </p>`}
                         </div>
                         ${item.description? `<div class="description flex-column"><p>${item.description}</p></div>`:''}
-                        <div class="price flex-column"><p>R$ <span>${item.price},00</span></p></div>
+                        <div class="price flex-column">
+                            <p>R$ <span>${item.price},00</span></p>
+                           <!-- ${item.miniPrice ? `<p class="mini"> Mini <span>${item.miniPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</span></p>` : ''} -->
+                        </div>
                     </div>
                     
                 </div> <!-- menuItem -->

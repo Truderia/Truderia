@@ -1,3 +1,28 @@
+// const miniTrudel = 
+//     {
+//         name: "MINI-TRUDELS",
+//         category: "miniTrudel",
+//         itens:trudel.filter(item =>item.miniPrice).map(filtered=> {
+//             return {
+//                 flavour:filtered.flavour,
+//                 price:filtered.miniPrice
+//             }
+//         })
+//     }
+// const miniAdd = 
+//     {
+//         name: "MINI-ADICIONAL",
+//         category: "miniAdditional",
+//         itens:additional.filter(item => item.miniPrice).map(filtered=> {
+//             return {
+//                 flavour:filtered.flavour,
+//                 price:filtered.miniPrice
+//             }
+//         })
+//     }
+// menu.push(miniTrudel)
+// menu.push(miniAdd)
+
 menu.push(entregas)
 const promotion = {
     name: "COMBINACAO",
@@ -5,7 +30,7 @@ const promotion = {
     itens: [
         {   
             value: 'COMBINACAO',
-            flavour:'MEIO AMARGO + COCO RALADO + IOGURTE FRUTAS VERMELHAS',
+            flavour:'LAKAOREO + CREME',
             price: 15
         },
         

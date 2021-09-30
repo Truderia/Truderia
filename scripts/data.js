@@ -5,63 +5,72 @@ const trudel = [
         span: "",
         description: "Nossa deliciosa massa assada, polvilhada no açúcar e canela, receita exclusiva com origem no Leste Europeu. Um sabor único!",
         image: "./assets/Menu/Trudels/Tradicional.webp",
-        price: 10
+        price: 10,
+        miniPrice: 7
     },
     {
         flavour: "BRIGADEIRO",
         span: "",
         description: "Brigadeiro de produção artesanal, feito com leite condensado Moça e Cacau 50%. Aquele sabor de infância!",
         image: "./assets/Menu/Trudels/Brigadeiro.webp",
-        price: 12
+        price: 12,
+        miniPrice: 8.5
     },
     {
         flavour: "DOCE DE LEITE",
         span: "",
         description: "O verdadeiro doce de leite, puro e muito cremoso. Uma loucura para os amantes de doce!",
         image: "./assets/Menu/Trudels/DoceDeLeite.webp",
-        price: 12
+        price: 12,
+        miniPrice: 8.5
     },
     {
         flavour: "CHOCOLATE MEIO AMARGO",
         span: "",
         description: "Sabor intenso do autêntico chocolate, rico em cacau. Perfeito para aqueles que preferem algo menos doce.",
         image: "./assets/Menu/Trudels/ChocolateMeioAmargo.webp",
-        price: 12
+        price: 12,
+        miniPrice: 8.5
     },
     {
         flavour: "CHOCOLATE BRANCO",
         span: "",
         description: "Chocolate com sabor equilibrado, cremoso ao extremo e altamente viciante.",
         image: "./assets/Menu/Trudels/ChocolateBranco.webp",
-        price: 13
+        price: 13,
+        miniPrice: 9
     },
     {
         flavour: "NUTELLA",
         span: "",
         description: "O verdadeiro creme de avelã, o mais pedido e queridinho dos nossos clientes.",
         image: "./assets/Menu/Trudels/Nutella.webp",
-        price: 14
+        price: 14,
+        miniPrice: 10
     },
     {
         flavour: "KIT KAT CREMOSO",
         span: "",
         description: "Um recheio que mistura a cremosidade do chocolate e o crocante do biscoito wafer.",
         image: "./assets/Menu/Trudels/Kitkat.webp",
-        price: 14
+        price: 14,
+        miniPrice: 10
     },
     {
         flavour: "OVOMALTINE",
         span: "",
         description: "Surpreendente combinação de Ovomaltine, Avelã e Cacau. Pura crocância, simplesmente irresistível!",
         image: "./assets/Menu/Trudels/Ovomaltine.webp",
-        price: 15
+        price: 15,
+        miniPrice: 11
     },
     {
         flavour: "LAKAOREO",
         span: "",
         description: 'A junção do chocolate branco mais famoso do Brasil e o biscoito que toda família adora. Muita gostosura em apenas um recheio.',
         image: "./assets/Menu/Trudels/Lakaoreo.webp",
-        price: 15
+        price: 15,
+        miniPrice: 11
     },
     {
         flavour: "KIT MINI TRUDEL",
@@ -78,56 +87,65 @@ const additional = [
         span: "",
         description: "",
         image: "./assets/Menu/Adicionais/morango.jpg",
-        price: 4
+        price: 4,
+        miniPrice: 2
+        
     },
     {
         flavour: "GRANULADO",
         span: "",
         description: "",
         image: "./assets/Menu/Adicionais/granulado2.webp",
-        price: 1
+        price: 1,
+        miniPrice: 0.5
     },
     {
         flavour: "COCO RALADO",
         span: "",
         description: "",
         image: "./assets/Menu/Adicionais/cocoRalado.jpg",
-        price: 2
+        price: 2,
+        miniPrice: 1
     },
     {
         flavour: "OVOMALTINE CROCANTE",
         span: "",
         description: "",
         image: "./assets/Menu/Adicionais/ovomaltine.jpg",
-        price: 2
+        price: 2,
+        miniPrice: 1
     },
     {
         flavour: "NEGRESCO MOIDO",
         span: "",
         description: "",
         image: "./assets/Menu/Adicionais/Negresco.webp",
-        price: 2
+        price: 2,
+        miniPrice: 1
     },
     {
         flavour: "AMENDOIM",
         span: "",
         description: "",
         image: "./assets/Menu/Adicionais/amendoim.jpg",
-        price: 2
+        price: 2,
+        miniPrice: 1
     },
     {
         flavour: "NOZES",
         span: "",
         description: "",
         image: "./assets/Menu/Adicionais/nozes.jpg",
-        price: 3
+        price: 3,
+        miniPrice: 1.5
     },
     {
         flavour: "KIT KAT PICADO",
         span: "",
         description: "",
         image: "./assets/Menu/Adicionais/kitKat2.jpg",
-        price: 3
+        price: 3,
+        miniPrice: 1.5
     },
     {
         flavour: "SONHO DE VALSA PICADO",
@@ -145,7 +163,6 @@ const additional = [
     },
 
 ]
-
 const iceCream = [
     {
         flavour: "CREME",
