@@ -22,7 +22,7 @@ menu.forEach(category => {
                         ${item.description? `<div class="description flex-column"><p>${item.description}</p></div>`:''}
                         <div class="price flex-column">
                             <p>R$ <span>${item.price},00</span></p>
-                           <!-- ${item.miniPrice ? `<p class="mini"> Mini <span>${item.miniPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</span></p>` : ''} -->
+                            ${item.miniPrice ? `<p class="mini"> Mini <span>${item.miniPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</span></p>` : ''} 
                         </div>
                     </div>
                     
@@ -44,7 +44,7 @@ const lightbox = {
         lightbox.target.style.opacity = 1
         lightbox.target.style.top = 0
         lightbox.closeButton.style.top = 0
-        let source = e? e.target.src : './assets/Menu/LakaOreoGif.gif'
+        let source = e? e.target.src : './assets/Menu/mini2.jpg'
         lightbox.image.src = source
     },
     close(){
@@ -56,8 +56,8 @@ const lightbox = {
 
 // Destaque de novidade/combinação com Lightbox e SetTimeout
 
-// lightbox.open(false)
-// setTimeout(lightbox.close, 5000);
+lightbox.open(false)
+setTimeout(lightbox.close, 5000);
 
 //Função Show Hide
 

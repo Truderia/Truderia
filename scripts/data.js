@@ -159,7 +159,8 @@ const additional = [
         span: "",
         description: "",
         image: "./assets/Menu/Adicionais/dobroRecheio.jpg",
-        price: 4
+        price: 4,
+        miniPrice: 3
     },
 
 ]

@@ -1,27 +1,27 @@
-// const miniTrudel = 
-//     {
-//         name: "MINI-TRUDELS",
-//         category: "miniTrudel",
-//         itens:trudel.filter(item =>item.miniPrice).map(filtered=> {
-//             return {
-//                 flavour:filtered.flavour,
-//                 price:filtered.miniPrice
-//             }
-//         })
-//     }
-// const miniAdd = 
-//     {
-//         name: "MINI-ADICIONAL",
-//         category: "miniAdditional",
-//         itens:additional.filter(item => item.miniPrice).map(filtered=> {
-//             return {
-//                 flavour:filtered.flavour,
-//                 price:filtered.miniPrice
-//             }
-//         })
-//     }
-// menu.push(miniTrudel)
-// menu.push(miniAdd)
+const miniTrudel = 
+    {
+        name: "MINI-TRUDELS",
+        category: "miniTrudel",
+        itens:trudel.filter(item =>item.miniPrice).map(filtered=> {
+            return {
+                flavour:filtered.flavour,
+                price:filtered.miniPrice
+            }
+        })
+    }
+const miniAdd = 
+    {
+        name: "MINI-ADICIONAL",
+        category: "miniAdditional",
+        itens:additional.filter(item => item.miniPrice).map(filtered=> {
+            return {
+                flavour:filtered.flavour,
+                price:filtered.miniPrice
+            }
+        })
+    }
+menu.push(miniTrudel)
+menu.push(miniAdd)
 
 menu.push(entregas)
 const promotion = {
