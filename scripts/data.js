@@ -99,6 +99,14 @@ const additional = [
         price: 1,
         miniPrice: 0.5
     },
+    // {
+    //     flavour: "CONFETE",
+    //     span: "",
+    //     description: "",
+    //     image: "./assets/Menu/Adicionais/confete.jpg",
+    //     price: 2,
+    //     miniPrice: 1
+    // },
     {
         flavour: "COCO RALADO",
         span: "",
@@ -209,6 +217,47 @@ const iceCream = [
     }
 ]
 
+
+const drinks = [
+    {
+        flavour: "ÁGUA",
+        span: "500ml",
+        description: "Água natural.",
+        image: "./assets/Menu/Bebidas/Agua.jpg",
+        price: 2
+    },
+    {
+        flavour: "ÁGUA COM GÁS",
+        span: "510ml",
+        description: "Água gaseificada",
+        image: "./assets/Menu/Bebidas/AguaComGas.jpg",
+        price: 3
+    },
+    {
+        flavour: "SODA ITALIANA - CRANBERRY",
+        span: "500ml",
+        description: "Frescor e um toque doce suave definem essa bebida! Feita com água com gás e xarope de frutas importado e gelo.",
+        image: "./assets/Menu/Bebidas/Cranberry.webp",
+        price: 10
+    },
+    {
+        flavour: "SODA ITALIANA - MAÇÃ VERDE",
+        span: "500ml",
+        description: "Sabor excepcional, o preferido daqueles que tem o paladar mais doce.  Feita com água com gás e xarope de frutas importado e gelo.",
+        image: "./assets/Menu/Bebidas/MacaVerde.webp",
+        price: 10
+    },
+    {
+        flavour: "SODA ITALIANA - LIMÃO SICILIANO",
+        span: "500ml",
+        description: "Refrescante e cítrico, uma verdadeira limonada premium. Feita com água com gás e xarope de frutas importado e gelo.",
+        image: "./assets/Menu/Bebidas/LimaoSiciliano.webp",
+        price: 10
+    },
+    
+]
+
+
 const menu = [
     {
         name: "TRUDELS",
@@ -224,7 +273,12 @@ const menu = [
         name: "ADICIONAIS",
         category: "adittional",
         itens: additional
-    }
+    },
+    // {
+    //     name: "BEBIDAS",
+    //     category: "drinks",
+    //     itens: drinks
+    // }
 ]
 
  

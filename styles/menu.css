@@ -58,6 +58,7 @@ header .menu{
     align-items: center;
     margin-bottom: 0.5rem;
     align-self: flex-start;
+    cursor: pointer;
     
 }
 .categoryName h3{
@@ -122,6 +123,16 @@ main .menuItem .image.icecream{
     height:200px;
 }
 main .menuItem .image.icecream img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+main .menuItem .image.drinks{
+    width: 250px;
+    height:250px;
+}
+main .menuItem .image.drinks img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -290,6 +301,10 @@ a.lightbox-close {
     main .menuItem .image.icecream{
         width: 150px;
         height:100px;
+    }
+    main .menuItem .image.drinks{
+        width: 125px;
+        height:125px;
     }
     .menuItem .item .itemName p{
         font-size: 18px;
