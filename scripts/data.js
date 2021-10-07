@@ -99,14 +99,14 @@ const additional = [
         price: 1,
         miniPrice: 0.5
     },
-    // {
-    //     flavour: "CONFETE",
-    //     span: "",
-    //     description: "",
-    //     image: "./assets/Menu/Adicionais/confete.jpg",
-    //     price: 2,
-    //     miniPrice: 1
-    // },
+    {
+        flavour: "CONFETE",
+        span: "",
+        description: "",
+        image: "./assets/Menu/Adicionais/confete.jpg",
+        price: 2,
+        miniPrice: 1
+    },
     {
         flavour: "COCO RALADO",
         span: "",
