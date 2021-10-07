@@ -30,12 +30,12 @@ const promotion = {
     itens: [
         {   
             value: 'COMBINACAO',
-            flavour:'CHOC BRANDO + AMENDOIM + IOGURTE',
+            flavour:'CHOC BRANCO + AMENDOIM + IOGURTE',
             price: 15
         },
         {   
             value: 'COMBINACAO MINI',
-            flavour:'CHOC BRANDO MINI + AMENDOIM MINI + IOGURTE',
+            flavour:'CHOC BRANCO MINI + AMENDOIM MINI + IOGURTE',
             price: 11
         },
         
