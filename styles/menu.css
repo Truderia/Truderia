@@ -48,7 +48,7 @@ header .menu{
 /* ------ CATEGORY ---------- */
 .category{
     margin-bottom: 1.5rem;
-    display: visible;
+    
 }
 .category.heightZero{
     height: 20px;
@@ -71,6 +71,7 @@ header .menu{
 .categoryName i{
     font-size: 54px;
     text-align: center;
+    transition: 400ms ease-in-out
 }
 .categoryName h3,
 .categoryName i{
@@ -81,7 +82,7 @@ header .menu{
 .menuItem {
     display: flex;
     align-items: center;
-    
+    height: 100%;
     margin-bottom: 0.5rem;
     width: 100%;
 }
@@ -191,10 +192,13 @@ main .menuItem .image.drinks img{
 .category .hide{
     display: none;
     height: 0;
+    
+    transition: 400ms ease-in-out;
 }
 .category .rotate{
     display: inline-block;
     transform: rotate(-90deg);
+    transition: 400ms ease-in-out
 }
 
 /* Edição limitada Pacoquita */
