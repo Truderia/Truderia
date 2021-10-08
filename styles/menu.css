@@ -29,6 +29,7 @@ hr{
     border-top: 1px solid var(--text);
     opacity: 30%;
     margin-bottom: 1rem;
+    transition: 400ms ease-in-out;
 }
 
 header .logo{
