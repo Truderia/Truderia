@@ -85,6 +85,7 @@ header .menu{
     height: 100%;
     margin-bottom: 0.5rem;
     width: 100%;
+    transition: 400ms ease-in-out;
 }
 main .menuItem .image{ 
     display: flex;
@@ -190,9 +191,10 @@ main .menuItem .image.drinks img{
 }
 
 .category .hide{
-    display: none;
+    visibility:hidden;
+    opacity: 0;
     height: 0;
-    
+    margin: 0;
     transition: 400ms ease-in-out;
 }
 .category .rotate{
