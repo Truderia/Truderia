@@ -238,21 +238,21 @@ const drinks = [
         span: "500ml",
         description: "Frescor e um toque doce suave definem essa bebida! Feita com água com gás e xarope de frutas importado e gelo.",
         image: "./assets/Menu/Bebidas/Cranberry.webp",
-        price: 10
+        price: 12
     },
     {
         flavour: "SODA ITALIANA MAÇÃ VERDE",
         span: "500ml",
         description: "Sabor excepcional, o preferido daqueles que tem o paladar mais doce.  Feita com água com gás e xarope de frutas importado e gelo.",
         image: "./assets/Menu/Bebidas/MacaVerde.webp",
-        price: 10
+        price: 12
     },
     {
         flavour: "SODA ITALIANA LIMÃO SICILIANO",
         span: "500ml",
         description: "Refrescante e cítrico, uma verdadeira limonada premium. Feita com água com gás e xarope de frutas importado e gelo.",
         image: "./assets/Menu/Bebidas/LimaoSiciliano.webp",
-        price: 10
+        price: 12
     },
     
 ]
