@@ -25,18 +25,53 @@ menu.push(miniAdd)
 
 menu.push(entregas)
 const promotion = {
-    name: "COMBINACAO",
+    name: "MINI PROMOCAO",
     category:"promotion",
     itens: [
-        {   
-            value: 'COMBINACAO',
-            flavour:'CHOC BRANCO + AMENDOIM + IOGURTE',
-            price: 15
+        {
+            value:"MINI PROMOCAO",
+            flavour: "TRADICIONAL",
+            price: 0,
         },
-        {   
-            value: 'COMBINACAO MINI',
-            flavour:'CHOC BRANCO MINI + AMENDOIM MINI + IOGURTE',
-            price: 11
+        {
+            value:"MINI PROMOCAO",
+            flavour: "BRIGADEIRO",
+            price: 0,
+        },
+        {
+            value:"MINI PROMOCAO",
+            flavour: "DOCE DE LEITE",
+            price: 0,
+        },
+        {
+            value:"MINI PROMOCAO",
+            flavour: "CHOCOLATE MEIO AMARGO",
+            price: 0,
+        },
+        {
+            value:"MINI PROMOCAO",
+            flavour: "CHOCOLATE BRANCO",
+            price: 0,
+        },
+        {
+            value:"MINI PROMOCAO",
+            flavour: "NUTELLA",
+            price: 0,
+        },
+        {
+            value:"MINI PROMOCAO",
+            flavour: "KIT KAT CREMOSO",
+            price: 0,
+        },
+        {
+            value:"MINI PROMOCAO",
+            flavour: "OVOMALTINE",
+            price: 0
+        },
+        {
+            value:"MINI PROMOCAO",
+            flavour: "LAKAOREO",
+            price: 0,
         },
         
     ]
