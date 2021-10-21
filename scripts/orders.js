@@ -30,13 +30,13 @@ const promotion = {
     itens: [
             {
                 value:"COMBINACAO",
-                flavour: "KITKAT + COCO RALADO + BEM CASADO",
-                price: 16,
+                flavour: "BRIGADEIRO + SONHO DE VALSA + NINHO TRUFADO",
+                price: 15,
             },
             {
                 value:"MINI-COMBINACAO",
-                flavour: "MINI-KITKAT + MINI-COCO RALADO + BEM CASADO",
-                price: 12,
+                flavour: "MINI-BRIGADEIRO + SONHO DE VALSA + NINHO TRUFADO",
+                price: 11.50,
             },
         // {
         //     value:"MINI PROMOCAO",
