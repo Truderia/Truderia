@@ -1,39 +1,3 @@
-const entregas = {
-    name: "ENTREGAS",
-    category:"delivery",
-    itens: [
-        {   
-            value: '4 REAIS',
-            item:'TAXA DE ENTREGA',
-            price: 4
-        },
-        {
-            value: '5 REAIS',
-            item:'TAXA DE ENTREGA',
-            price: 5
-        },
-        {
-            value: '6 REAIS',
-            item:'TAXA DE ENTREGA',
-            price: 6
-        },
-        {
-            value: '7 REAIS',
-            item:'TAXA DE ENTREGA',
-            price: 7
-        },
-        {
-            value: '8 REAIS',
-            item:'TAXA DE ENTREGA',
-            price: 8
-        },
-        {
-            value: 'GRÁTIS',
-            item:'CORTESIA',
-            price: 0
-        }
-]
-}
 const districts = [
     {
         name: 'Centro',

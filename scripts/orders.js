@@ -1,113 +1,10 @@
-const miniTrudel = 
-    {
-        name: "MINI-TRUDELS",
-        category: "miniTrudel",
-        itens:trudel.filter(item =>item.miniPrice).map(filtered=> {
-            return {
-                flavour:filtered.flavour,
-                price:filtered.miniPrice
-            }
-        })
-    }
-const miniAdd = 
-    {
-        name: "MINI-ADICIONAL",
-        category: "miniAdditional",
-        itens:additional.filter(item => item.miniPrice).map(filtered=> {
-            return {
-                flavour:filtered.flavour,
-                price:filtered.miniPrice
-            }
-        })
-    }
-menu.push(miniTrudel)
-menu.push(miniAdd)
-
-menu.push(entregas)
-const promotion = {
-    name: "COMBINACAO",
-    category:"promotion",
-    itens: [
-            {
-                value:"COMBINACAO",
-                flavour: "BRIGADEIRO + SONHO DE VALSA + NINHO TRUFADO",
-                price: 15,
-            },
-            {
-                value:"MINI-COMBINACAO",
-                flavour: "MINI-BRIGADEIRO + SONHO DE VALSA + NINHO TRUFADO",
-                price: 11.50,
-            },
-        // {
-        //     value:"MINI PROMOCAO",
-        //     flavour: "TRADICIONAL",
-        //     price: 0,
-        // },
-        // {
-        //     value:"MINI PROMOCAO",
-        //     flavour: "BRIGADEIRO",
-        //     price: 0,
-        // },
-        // {
-        //     value:"MINI PROMOCAO",
-        //     flavour: "DOCE DE LEITE",
-        //     price: 0,
-        // },
-        // {
-        //     value:"MINI PROMOCAO",
-        //     flavour: "CHOCOLATE MEIO AMARGO",
-        //     price: 0,
-        // },
-        // {
-        //     value:"MINI PROMOCAO",
-        //     flavour: "CHOCOLATE BRANCO",
-        //     price: 0,
-        // },
-        // {
-        //     value:"MINI PROMOCAO",
-        //     flavour: "NUTELLA",
-        //     price: 0,
-        // },
-        // {
-        //     value:"MINI PROMOCAO",
-        //     flavour: "KIT KAT CREMOSO",
-        //     price: 0,
-        // },
-        // {
-        //     value:"MINI PROMOCAO",
-        //     flavour: "OVOMALTINE",
-        //     price: 0
-        // },
-        // {
-        //     value:"MINI PROMOCAO",
-        //     flavour: "LAKAOREO",
-        //     price: 0,
-        // },
-        
-    ]
-}
-menu.push(promotion)
-
-const payments = ['DINHEIRO', 'DÉBITO', 'CRÉDITO', 'PIX']
-
-function calculateTotal() {
-    let hiddenTotal = document.querySelector('#totalValue strong')
-    let visibleTotal = document.querySelector('.orderTotal p')
-    let total = 0
-    let values = document.querySelectorAll('tr .value')
-    for (const price of values) {
-        total += Number(price.innerHTML)
-    }
-    hiddenTotal.innerHTML = `R$ ${total.toFixed(2)}`
-    visibleTotal.innerHTML = `R$ ${total.toFixed(2)}`
-}
-calculateTotal()
+// Operational
 
 function openOptions(category) {
     let html = `<input type='hidden' value='${category.id}'>`
     let chosed = menu.filter(menuCategory => menuCategory.category == category.id)
     
-    chosed[0].itens.forEach(element => {
+    chosed[0].items.forEach(element => {
         html += ` 
         <button class onclick="addItem(this)">${element.flavour || element.value}</button>
         `
@@ -120,7 +17,7 @@ function addItem(item) {
     let tbody = document.querySelector('tbody')
     let category = document.querySelector('.choices input').value
     let categoryChosed = menu.filter(menuCategory => menuCategory.category == category)[0]
-    let itemChosed = categoryChosed.itens.filter(product => item.innerHTML == product.flavour || item.innerHTML == product.value)[0]
+    let itemChosed = categoryChosed.items.filter(product => item.innerHTML == product.flavour || item.innerHTML == product.value)[0]
     tbody.innerHTML += `
     <tr ${categoryChosed.name == 'TRUDEL' ? 'style="height:30px;vertical-align: bottom;"': ''}>
         <td class="quantity" style="text-align:center;">1</td>
@@ -161,6 +58,20 @@ function addPayment(choice) {
     }
     paymentChosed.innerHTML = html
 }
+
+function calculateTotal() {
+    let hiddenTotal = document.querySelector('#totalValue strong')
+    let visibleTotal = document.querySelector('.orderTotal p')
+    let total = 0
+    let values = document.querySelectorAll('tr .value')
+    for (const price of values) {
+        total += Number(price.innerHTML)
+    }
+    hiddenTotal.innerHTML = `R$ ${total.toFixed(2)}`
+    visibleTotal.innerHTML = `R$ ${total.toFixed(2)}`
+}
+
+// Actions Orders
 
 async function printOrder() {
     let name = document.querySelector('#name input')
@@ -223,6 +134,68 @@ function endOrder() {
     calculateTotal()
 }
 
+// Districts and Tax
+
+function searchDistricts() {
+    let filteredDistricts = []
+    let select = document.querySelector('input#selectDistrict')
+    let options = document.querySelector('#district ul')
+
+    if (select.value) {
+        filteredDistricts = districts.filter(district => removeAcento(district.name.toUpperCase()).includes(select.value.toUpperCase()));
+        let list =''
+        for (const district of filteredDistricts) {
+            list += `
+            <li onclick="selectDistrict(this)">${district.name}</li>
+            `
+        }
+        options.innerHTML = list
+    } else {
+        closeOptions()
+    }
+   
+    
+}
+
+function selectDistrict(selected) {
+    let select = document.querySelector('input#selectDistrict')
+    select.value = selected.innerHTML
+    closeDistrictOptions()
+}
+
+function closeDistrictOptions() {
+    let options = document.querySelector('#district ul')
+    options.innerHTML = ''
+}
+
+async function addDeliveryTax() {
+    let tbody = document.querySelector('tbody')
+    let district = document.querySelector('input#selectDistrict').value
+    let orderItens = document.querySelectorAll('tbody tr')
+    let taxExists = false
+    for (const item of orderItens) {
+        if (item.children[1].innerHTML == 'ENTREGAS') {
+            taxExists = true
+    }}
+
+    if (!taxExists) {
+        district = districts.find(districtData => districtData.name == district)
+        tbody.innerHTML += `
+    <tr>
+        <td class="quantity" style="text-align:center;">1</td>
+        <td colspan="1" style="padding: 0 6px;">ENTREGAS</td>
+        <td colspan="3">TAXA DE ENTREGA</td>
+        <td class="value" style="text-align:center;">${district.price.toFixed(2)}</td>
+        <td onclick="removeItem(this)" class="delete"><div>X</div></td>
+    </tr>
+    `
+    }
+    
+    calculateTotal()
+}
+
+// Utilities
+
 function sendToWhatsApp() {
     let name = document.querySelector('#name input')
     let phone = document.querySelector('#phone input')
@@ -270,59 +243,6 @@ function removeAcento (text)
     return text;                 
 }
 
-function searchDistricts() {
-    let filteredDistricts = []
-    let select = document.querySelector('input#selectDistrict')
-    let options = document.querySelector('#district ul')
+//  Run
 
-    if (select.value) {
-        filteredDistricts = districts.filter(district => removeAcento(district.name.toUpperCase()).includes(select.value.toUpperCase()));
-        let list =''
-        for (const district of filteredDistricts) {
-            list += `
-            <li onclick="selectDistrict(this)">${district.name}</li>
-            `
-        }
-        options.innerHTML = list
-    } else {
-        closeOptions()
-    }
-   
-    
-}
-
-function selectDistrict(selected) {
-    let select = document.querySelector('input#selectDistrict')
-    select.value = selected.innerHTML
-    closeOptions()
-}
-function closeOptions() {
-    let options = document.querySelector('#district ul')
-    options.innerHTML = ''
-}
-
-async function addDeliveryTax() {
-    let tbody = document.querySelector('tbody')
-    let district = document.querySelector('input#selectDistrict').value
-    let orderItens = document.querySelectorAll('tbody tr')
-    let taxExists = false
-    for (const item of orderItens) {
-        if (item.children[1].innerHTML == 'ENTREGAS') {
-            taxExists = true
-    }}
-
-    if (!taxExists) {
-        district = districts.find(districtData => districtData.name == district)
-        tbody.innerHTML += `
-    <tr>
-        <td class="quantity" style="text-align:center;">1</td>
-        <td colspan="1" style="padding: 0 6px;">ENTREGAS</td>
-        <td colspan="3">TAXA DE ENTREGA</td>
-        <td class="value" style="text-align:center;">${district.price.toFixed(2)}</td>
-        <td onclick="removeItem(this)" class="delete"><div>X</div></td>
-    </tr>
-    `
-    }
-    
-    calculateTotal()
-}
+calculateTotal()

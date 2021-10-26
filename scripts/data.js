@@ -1,4 +1,4 @@
-// Cardapio
+// MenuView - Cardapio
 const trudel = [
     {
         flavour: "TRADICIONAL",
@@ -172,6 +172,7 @@ const additional = [
     },
 
 ]
+
 const iceCream = [
     {
         flavour: "CREME",
@@ -209,14 +210,13 @@ const iceCream = [
         price: 4
     },
     {
-        flavour: "SENSAÇÃO ",
+        flavour: "SENSAÇÃO",
         span: "",
         description: "A deliciosa combinação do sorvete de morango com pedaços de chocolate.",
         image: "./assets/Menu/Sorvetes/Sensacao.webp",
         price: 4
     }
 ]
-
 
 const drinks = [
     {
@@ -257,28 +257,167 @@ const drinks = [
     
 ]
 
-
-const menu = [
+const menuView = [
     {
         name: "TRUDELS",
         category: "trudel",
-        itens: trudel
+        items: trudel
     },
     {
         name: "SORVETES",
         category: "icecream",
-        itens: iceCream
+        items: iceCream
     },
     {
         name: "ADICIONAIS",
-        category: "adittional",
-        itens: additional
+        category: "additional",
+        items: additional
     },
     {
         name: "BEBIDAS",
         category: "drinks",
-        itens: drinks
+        items: drinks
     }
 ]
+
+// Full-Menu data 
+
+const miniTrudel = 
+    {
+        name: "MINI-TRUDELS",
+        category: "miniTrudel",
+        items:trudel.filter(item =>item.miniPrice).map(filtered=> {
+            return {
+                flavour:filtered.flavour,
+                price:filtered.miniPrice,
+                description:filtered.description,
+                image:filtered.image
+            }
+        })
+    }
+
+const miniAdd = 
+    {
+        name: "MINI-ADICIONAL",
+        category: "miniAdditional",
+        items:additional.filter(item => item.miniPrice).map(filtered=> {
+            return {
+                flavour:filtered.flavour,
+                price:filtered.miniPrice,
+                description:filtered.description,
+                image:filtered.image
+            }
+        })
+    }
+
+const promotion = {
+    name: "COMBINACAO",
+    category:"promotion",
+    items: [
+            {
+                value:"COMBINACAO",
+                flavour: "BRIGADEIRO + SONHO DE VALSA + NINHO TRUFADO",
+                price: 15,
+            },
+            {
+                value:"MINI-COMBINACAO",
+                flavour: "MINI-BRIGADEIRO + SONHO DE VALSA + NINHO TRUFADO",
+                price: 11.50,
+            },
+        // {
+        //     value:"MINI PROMOCAO",
+        //     flavour: "TRADICIONAL",
+        //     price: 0,
+        // },
+        // {
+        //     value:"MINI PROMOCAO",
+        //     flavour: "BRIGADEIRO",
+        //     price: 0,
+        // },
+        // {
+        //     value:"MINI PROMOCAO",
+        //     flavour: "DOCE DE LEITE",
+        //     price: 0,
+        // },
+        // {
+        //     value:"MINI PROMOCAO",
+        //     flavour: "CHOCOLATE MEIO AMARGO",
+        //     price: 0,
+        // },
+        // {
+        //     value:"MINI PROMOCAO",
+        //     flavour: "CHOCOLATE BRANCO",
+        //     price: 0,
+        // },
+        // {
+        //     value:"MINI PROMOCAO",
+        //     flavour: "NUTELLA",
+        //     price: 0,
+        // },
+        // {
+        //     value:"MINI PROMOCAO",
+        //     flavour: "KIT KAT CREMOSO",
+        //     price: 0,
+        // },
+        // {
+        //     value:"MINI PROMOCAO",
+        //     flavour: "OVOMALTINE",
+        //     price: 0
+        // },
+        // {
+        //     value:"MINI PROMOCAO",
+        //     flavour: "LAKAOREO",
+        //     price: 0,
+        // },
+        
+    ]
+}
+
+const entregas = {
+    name: "ENTREGAS",
+    category:"delivery",
+    items: [
+        {   
+            value: '4 REAIS',
+            item:'TAXA DE ENTREGA',
+            price: 4
+        },
+        {
+            value: '5 REAIS',
+            item:'TAXA DE ENTREGA',
+            price: 5
+        },
+        {
+            value: '6 REAIS',
+            item:'TAXA DE ENTREGA',
+            price: 6
+        },
+        {
+            value: '7 REAIS',
+            item:'TAXA DE ENTREGA',
+            price: 7
+        },
+        {
+            value: '8 REAIS',
+            item:'TAXA DE ENTREGA',
+            price: 8
+        },
+        {
+            value: 'GRÁTIS',
+            item:'CORTESIA',
+            price: 0
+        }
+]
+}
+
+const menu = [
+    ...menuView, 
+    miniTrudel,
+    miniAdd,
+    promotion,
+    entregas
+]
+
+const payments = ['DINHEIRO', 'DÉBITO', 'CRÉDITO', 'PIX']
 
  

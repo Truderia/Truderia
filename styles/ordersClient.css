@@ -196,7 +196,7 @@ th:first-child, th:last-child, td:first-child, tr td:last-child{
     justify-content: space-between;
     flex: 1;
 }
-.selections .itens, .selections .conclusion{
+.selections .items, .selections .conclusion{
     width: 100%;
 }
 .selections button{
@@ -205,7 +205,7 @@ th:first-child, th:last-child, td:first-child, tr td:last-child{
     border-radius: 10px;
     cursor: pointer;
 }
-.selections .itens button {
+.selections .items button {
     background-color: var(--principal);
     color: var(--text);
     padding: 0.25rem 0;

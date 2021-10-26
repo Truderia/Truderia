@@ -2,7 +2,7 @@ menu.push(entregas)
 const promotion = {
     name: "COMBINACAO",
     category:"promotion",
-    itens: [
+    items: [
         {   
             value: 'COMBINACAO',
             flavour:'KITKAT + SONHO DE VALSA + CREME',
@@ -32,7 +32,7 @@ function openOptions(category) {
     let html = `<input type='hidden' value='${category.id}'>`
     let chosed = menu.filter(menuCategory => menuCategory.category == category.id)
     
-    chosed[0].itens.forEach(element => {
+    chosed[0].items.forEach(element => {
         html += ` 
         <button class onclick="addItem(this)">${element.flavour || element.value}</button>
         `
@@ -45,7 +45,7 @@ function addItem(item) {
     let tbody = document.querySelector('tbody')
     let category = document.querySelector('.choices input').value
     let categoryChosed = menu.filter(menuCategory => menuCategory.category == category)[0]
-    let itemChosed = categoryChosed.itens.filter(product => item.innerHTML == product.flavour || item.innerHTML == product.value)[0]
+    let itemChosed = categoryChosed.items.filter(product => item.innerHTML == product.flavour || item.innerHTML == product.value)[0]
     tbody.innerHTML += `
     <tr ${categoryChosed.name == 'TRUDEL' ? 'style="height:30px;vertical-align: bottom;"': ''}>
         <td class="quantity" style="text-align:center;">1</td>
