@@ -207,6 +207,7 @@ main .menuItem .image.drinks img{
     font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
+    background-color: white;
 }
 
 .category .hide{
