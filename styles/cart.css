@@ -46,7 +46,7 @@
     transition: 1000ms;
     position: absolute;
     top: 0;
-    min-height: 100vh;
+    min-height: 100%;
     min-height: calc(var(--vh, 1vh) * 100);
     width: 100%;
     background-color: rgb(255, 255, 255);
@@ -125,7 +125,7 @@
 .selectItem .addToOrder .options .input{
     padding: 4px;
     display: grid;
-    grid-template-columns: 60px 45px 1fr 80px;
+    grid-template-columns: 70px 45px 1fr 80px;
     gap: 8px;
     align-items: center;
     justify-content: space-evenly;
@@ -138,6 +138,7 @@
 }
 .selectItem .addToOrder .options .input .quantity{
     justify-self: flex-start;
+    margin-left: 5px;
 }
 .selectItem .addToOrder .options .input .quantity i,
 .selectItem .addToOrder .options .input .quantity span{
@@ -181,7 +182,7 @@
     color: white;
 }
 .selectItem .quantity span{
-    margin: 0 6px;
+    margin: 0 8px;
 }
 .selectItem  .quantity i {
     cursor: pointer;

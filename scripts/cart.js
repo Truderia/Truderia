@@ -499,6 +499,7 @@ function showCartHtml(cart){
                         value="${client? client.data.telephone : ''}" 
                         placeholder="(XX)XXXXX-XXXX" 
                         onblur="localStorage.setItem('client', JSON.stringify(Client.init().updateTelephone(this.value)))"
+                        onkeypress="Mask.apply(this, 'telephoneBRL')"
                     >
                 </div>
                 
@@ -546,6 +547,7 @@ function showCartHtml(cart){
                                 value="${client? client.data.address.zipCode : ''}" 
                                 placeholder="XXXXX-XXX" 
                                 onblur="getAddress(this.value)"
+                                onkeypress="Mask.apply(this, 'zipCodeBRL')"
                             >
                         </div>
                         <div class="input">
@@ -622,6 +624,7 @@ function showCartHtml(cart){
                         value="" 
                         placeholder="R$" 
                         onchange="setChangeValue(this.value)"
+                        onkeypress="Mask.apply(this, 'formatBRL')"
                     >
                 </div>
             </div>
@@ -908,7 +911,32 @@ const Client = {
         return this
     },
 }
-    
+
+const Mask ={
+    apply(input, func) { //aplicador com setTimeout .... input neste caso é definido no HTML com o THIS  .. func a mask que deseja aplicar
+        setTimeout(function () {
+            input.value = Mask[func](input.value)
+        },1)
+    },
+    formatBRL(value) {
+    value = value.replace(/\D/g, "")  // Substituir todos os caracteres que não sejam numeros
+
+    return new Intl.NumberFormat('pt-BR', {
+        style:'currency',
+        currency:'BRL'
+    }).format(value/100) // Formatando para reais
+    },
+    zipCodeBRL(value) {
+        const formattedValue = value.replace(/\D/g, "").replace(/^(\d{5})(\d{3})/, "$1-$2");
+        
+        return formattedValue;
+    },
+    telephoneBRL(value) {
+        const formattedValue = value.replace(/\D/g, "").replace(/^(\d{2})(\d)/g, "($1) $2").replace(/(\d)(\d{4})$/, "$1-$2");
+        
+        return formattedValue;
+    },
+}
 
 
 const getAddress = async(zipCode) => {
@@ -992,6 +1020,7 @@ function getTotal() {
         deliveryTaxValueElement.innerHTML = ''
     }
 }
+
 
 
 loadFixedCart()
