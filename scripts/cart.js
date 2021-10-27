@@ -14,6 +14,7 @@ const Cart = {
         return this
     },
     addOne(product){
+        
         let cartHasProduct = this.findItem(product)
 
         if (!cartHasProduct) {
@@ -24,17 +25,18 @@ const Cart = {
             },
             this.items.push(cartHasProduct)
         }
-
+        
         let additionalsPrice = 0
         if(cartHasProduct.product.additional) cartHasProduct.product.additional.forEach(additional => {
             additionalsPrice += additional.price * additional.quantity
         }) 
 
+        const totalProductPrice = cartHasProduct.product.price + additionalsPrice
         cartHasProduct.quantity++
-        cartHasProduct.totalPrice = cartHasProduct.quantity * cartHasProduct.product.price + additionalsPrice
-
+        cartHasProduct.totalPrice = cartHasProduct.quantity * totalProductPrice
+        
         this.total.quantity++
-        this.total.totalPrice += cartHasProduct.totalPrice
+        this.total.totalPrice += totalProductPrice
 
         return this
     },
@@ -62,7 +64,8 @@ const Cart = {
         return this
     },
     findItem(product){
-        return  this.items.find(item =>item.product.flavour == product.flavour && product.category == item.product.category && item.product.additional == product.additional)
+        return  this.items.find(item => item.product.flavour == product.flavour && product.category == item.product.category && JSON.stringify(item.product.additional) == JSON.stringify(product.additional))
+        
     }
 
 }
@@ -76,6 +79,13 @@ function openView(content, contentClass) {
     view.classList.add('active')
     view.classList.add(contentClass)
     view.innerHTML = content
+    if(contentClass == "showCart") {
+        localStorage.removeItem('paymentMethod')
+        localStorage.removeItem('changeNeeded')
+        localStorage.removeItem('receiveMethod')
+        localStorage.removeItem('deliveryTax')
+        getTotal()
+    }
     hideFixedCart()
 }
 function closeView() {
@@ -306,6 +316,12 @@ function minusOneAdd(target) {
         target.parentNode.querySelector('span').innerHTML-- 
 
         itemChosed.additional.find(add => add.flavour == addTarget.flavour).quantity--
+
+        if(itemChosed.additional.find(add => add.flavour == addTarget.flavour).quantity == 0) {
+            const index = itemChosed.additional.indexOf(itemChosed.additional.find(add => add.flavour == addTarget.flavour))
+            itemChosed.additional.splice(index, 1)
+        }
+
         localStorage.setItem('itemChosed', JSON.stringify(itemChosed))
 
         document.querySelector('.total .value span:nth-child(2)').innerHTML = totalPrice().toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
@@ -436,7 +452,7 @@ function showCartHtml(cart){
         if(item.product.additional.length > 0){
             item.product.additional.forEach(additional => {
                 html += `
-                <div class="add">+${additional.flavour.toLowerCase().replace(/(?:^|\s)\S/g, function(a) {
+                <div class="add">+${additional.quantity}x ${additional.flavour.toLowerCase().replace(/(?:^|\s)\S/g, function(a) {
                     return a.toUpperCase();
                   })}</div>
                 `
@@ -632,7 +648,7 @@ function showCartHtml(cart){
 
                 <div class="item total">
                     <div>Total</div>
-                    <div id="totalValue">${ cart.total.totalPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</div>
+                    <div id="totalValue">${cart.total.totalPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</div>
                 </div><!--total-->
 
             </div> <!--TOTAL ITEMS-->
@@ -666,6 +682,7 @@ function deleteFromCart(target){
     cart = Cart.init(cart).deleteItem(productToDelete.product)
     localStorage.setItem('cart', JSON.stringify(cart))
     elementToDelete.remove()
+    getTotal()
     if (cart.total.quantity < 1) {
         localStorage.removeItem('cart')
         closeView()
@@ -675,18 +692,22 @@ function deleteFromCart(target){
 function selectTakeAway() {
     const takeAwayElement = document.querySelector('.takeAwaySelected')
     const deliveryElement = document.querySelector('.deliverySelected')
+ 
     takeAwayElement.classList.remove('hide')
     deliveryElement.classList.add('hide')
     localStorage.setItem('receiveMethod', JSON.stringify('takeAway'))
+    localStorage.removeItem('deliveryTax')
+    getTotal()
 }
 function selectDelivery() {
     const takeAwayElement = document.querySelector('.takeAwaySelected')
     const deliveryElement = document.querySelector('.deliverySelected')
     const deliveryTax = Number(JSON.parse(localStorage.getItem('deliveryTax')))
+    const district = document.querySelector('.deliveryMethod input[name="district"]').value
     takeAwayElement.classList.add('hide')
     deliveryElement.classList.remove('hide')
     localStorage.setItem('receiveMethod', JSON.stringify('delivery'))
-    if(deliveryTax)getDeliveryTax()
+    if(district)getDeliveryTax()
 }
 
 const Client = {
@@ -898,7 +919,7 @@ const getAddress = async(zipCode) => {
     const url = `https://viacep.com.br/ws/${zipCodeNumbers}/json/`
     const API = await fetch(url)
     const dados = await API.json()
-    if(dados.erro) return alert("CEP não encontrado para calcular a taxa de entrega. \n Sem problemas pode seguir com o pedido e resolveremos essa questão através do Whatsapp. =)")
+    if(dados.erro) return alert("CEP não encontrado para calcular a taxa de entrega. \nSem problemas!\nPode seguir com o pedido e resolveremos essa questão através do Whatsapp. =)")
 
     document.querySelector('input[name="street"]').value = dados.logradouro
     document.querySelector('input[name="district"]').value = dados.bairro
@@ -953,10 +974,23 @@ function setChangeValue(value){
 
 function getTotal() {
     const totalValueElement = document.querySelector('#totalValue')
+    const subTotalValueElement = document.querySelector('#subTotalValue')
+    const deliveryTaxValueElement = document.querySelector('#deliveryTaxValue')
+    const receiveMethod = JSON.parse(localStorage.getItem('receiveMethod'))
     const cart = JSON.parse(localStorage.getItem('cart')) 
     const deliveryTax = Number(JSON.parse(localStorage.getItem('deliveryTax')))
 
-    if(deliveryTax) totalValueElement.innerHTML = (cart.total.totalPrice + deliveryTax).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+    subTotalValueElement.innerHTML = cart.total.totalPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+    // deliveryTaxValueElement.innerHTML = deliveryTax || ''
+
+    if(deliveryTax) {
+        totalValueElement.innerHTML = (cart.total.totalPrice + deliveryTax).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+        
+        if (receiveMethod) deliveryTaxValueElement.innerHTML = deliveryTax.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+    } else {
+        totalValueElement.innerHTML = cart.total.totalPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+        deliveryTaxValueElement.innerHTML = ''
+    }
 }
 
 
