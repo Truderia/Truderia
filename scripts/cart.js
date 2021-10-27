@@ -660,7 +660,7 @@ function showCartHtml(cart){
     `
 
     html += `
-        <div id="cartSendWhats">
+        <div id="cartSendWhats" onclick="sendToWhatsApp()">
                 <h2>Enviar pedido para Whatsapp</h2>
             </div>
 
@@ -1021,6 +1021,90 @@ function getTotal() {
     }
 }
 
+function sendToWhatsApp() {
+    const client = JSON.parse(localStorage.getItem('client'))
+    const cart = JSON.parse(localStorage.getItem('cart'))
+    const receiveMethod = JSON.parse(localStorage.getItem('receiveMethod'))
+    const deliveryTax = JSON.parse(localStorage.getItem('deliveryTax'))
+    const paymentMethod = JSON.parse(localStorage.getItem('paymentMethod'))
+    const changeNeeded = JSON.parse(localStorage.getItem('changeNeeded'))
+    let note = document.querySelector('#note textarea')
+
+
+    if (!client.data.name || !client.data.telephone ) {
+        alert('Favor preencher os campos obrigatórios marcados com *')
+        window.scrollTo(0,document.querySelector(".buyerData").scrollHeight)
+        return
+    }
+
+    if(!receiveMethod){
+        alert('Favor escolher uma forma de recebimento do pedido')
+        window.scrollTo(0,document.querySelector(".deliveryMethod").scrollHeight)
+        return
+    }
+    console.log(!client.data.street)
+    console.log(!client.data.district)
+    console.log(!client.data.number)
+
+    if(receiveMethod == 'delivery' && (!client.data.address.street || !client.data.address.district || !client.data.address.number)) {
+        alert('Favor preencher todos os campos obrigatórios de endereço marcados com * para opção de entrega')
+        window.scrollTo(0,document.querySelector(".deliveryMethod").scrollHeight)
+        return
+    }
+
+    if(!paymentMethod){
+        alert('Favor escolher uma forma de pagamento')
+        window.scrollTo(0,document.querySelector(".payment").scrollHeight)
+        return
+    }
+
+    let texto = `
+    *PEDIDO:*
+    *Nome:* ${client.data.name} 
+    *Telefone:* ${client.data.telephone}`
+    if(receiveMethod == 'delivery') {
+        texto += `
+    *Endereço:* 
+    ${client.data.address.street}, ${client.data.address.number}.
+    ${client.data.address.district} - ${client.data.address.zipCode} 
+    ${client.data.address.complement}`
+    } else {
+        texto += `
+        
+    *RETIRADA*
+    `
+    }
+    
+    
+    for (const item of cart.items) {
+        texto += `
+        ${item.quantity}x *${menu.find(category=> category.category == item.product.category).name.slice(0, -1).replace(/-/g,' ')} - ${item.product.flavour}*`
+        if(item.product.additional){
+            item.product.additional.forEach(additional => {
+                texto += `
+                +${additional.quantity}x ${additional.flavour}`
+            });
+        }
+        
+    }
+    texto += `\n
+    *Subtotal:* ${cart.total.totalPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}
+    *Taxa de entrega:* ${deliveryTax? deliveryTax.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) : ''}
+    *Total:* ${deliveryTax? (cart.total.totalPrice+deliveryTax).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) : cart.total.totalPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`
+
+
+    texto += `
+    *Forma de Pagamento:* ${paymentMethod}
+    `
+    if (paymentMethod == 'money' && changeNeeded) {
+        texto += `*Troco para:* ${changeNeeded} `
+    }
+
+    texto = window.encodeURIComponent(texto);
+    
+  
+    window.open("https://api.whatsapp.com/send?phone=5519996129909&text=" + texto, "_blank");
+}
 
 
 loadFixedCart()
