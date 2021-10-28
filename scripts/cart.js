@@ -1092,7 +1092,7 @@ function sendToWhatsApp() {
             });
         }
         if(item.product.note)texto +=`
-        Observação: ${item.product.note}`
+            Observação: ${item.product.note}`
         
     }
     texto += `\n

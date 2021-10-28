@@ -316,12 +316,12 @@ const promotion = {
     items: [
             {
                 value:"COMBINACAO",
-                flavour: "BRIGADEIRO + SONHO DE VALSA + NINHO TRUFADO",
-                price: 15,
+                flavour: "NUTELLA + AMENDOIM + MORANGO",
+                price: 16,
             },
             {
                 value:"MINI-COMBINACAO",
-                flavour: "MINI-BRIGADEIRO + SONHO DE VALSA + NINHO TRUFADO",
+                flavour: "MINI-NUTELLA + MINI-AMENDOIM + MINI-MORANGO",
                 price: 11.50,
             },
         // {
