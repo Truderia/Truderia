@@ -473,7 +473,7 @@ function showCartHtml(cart){
                         value="${client? client.data.telephone : ''}" 
                         placeholder="(XX)XXXXX-XXXX" 
                         onblur="localStorage.setItem('client', JSON.stringify(Client.init().updateTelephone(this.value)))"
-                        onkeypress="Mask.apply(this, 'telephoneBRL')"
+                        oninput="Mask.apply(this, 'telephoneBRL')"
                     >
                 </div>
                 
@@ -521,7 +521,7 @@ function showCartHtml(cart){
                                 value="${client? client.data.address.zipCode : ''}" 
                                 placeholder="XXXXX-XXX" 
                                 onblur="getAddress(this.value)"
-                                onkeypress="Mask.apply(this, 'zipCodeBRL')"
+                                oninput="Mask.apply(this, 'zipCodeBRL')"
                             >
                         </div>
                         <div class="input">
@@ -598,7 +598,7 @@ function showCartHtml(cart){
                         value="" 
                         placeholder="R$" 
                         onchange="setChangeValue(this.value)"
-                        onkeypress="Mask.apply(this, 'formatBRL')"
+                        oninput="Mask.apply(this, 'formatBRL')"
                     >
                 </div>
                 <div class="pixSelected hide">
@@ -992,10 +992,30 @@ function getDeliveryTax() {
 function selectPayment(paymentMethod) {
     const changeInput = document.querySelector('.showCart .payment .input')
     const pix = document.querySelector('.pixSelected')
+    let paymentSelected = ''
 
     paymentMethod == 'money'? changeInput.classList.remove('hide') : changeInput.classList.add('hide')
     paymentMethod == 'pix'? pix.classList.remove('hide') : pix.classList.add('hide')
-    localStorage.setItem('paymentMethod', JSON.stringify(paymentMethod))
+
+    switch (paymentMethod) {
+        case 'money':
+            paymentSelected = 'Dinheiro'
+            break;
+        case 'pix':
+            paymentSelected = 'PIX'
+            break;
+        case 'creditCard':
+            paymentSelected = 'Cartão de crédito'
+            break;
+        case 'debitCard':
+            paymentSelected = 'Cartão de débito'
+            break;
+    
+        default:
+            break;
+    }
+
+    localStorage.setItem('paymentMethod', JSON.stringify(paymentSelected))
 }
 function setChangeValue(value){
     localStorage.setItem('changeNeeded', JSON.stringify(value))
