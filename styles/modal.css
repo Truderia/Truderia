@@ -9,7 +9,7 @@
     align-items: center;
     opacity: 0;
     visibility: hidden ;
-    
+    z-index: 2;
   }
   .modalOverlay.active{
     opacity: 1;
@@ -38,21 +38,32 @@
     box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.8);
     border: 1px solid black;
   }
+  .closeModal.hide{
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    transform: scale(0);
+  }
+
   #modalContent{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     height: 100%;
-    
   }
   
 
-  /* Normal or Mini */
+  /* Normal or Mini   ---   Alerts */
+  #modalContent.alerts h3{
+    text-align: center;
+  }
+  #modalContent.alerts,
   #modalContent.normalOrMini{
     padding: 2rem;
   }
 
+  #modalContent.alerts .buttons,
   #modalContent.normalOrMini .buttons{
     width: 100%;
     display: flex;
@@ -60,6 +71,7 @@
     margin-top: 16px;
   }
 
+  #modalContent.alerts button,
   #modalContent.normalOrMini button{
     padding: 8px 16px;
     color:var(--principal);

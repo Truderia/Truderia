@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./styles/menu.css">
     <link rel="stylesheet" href="./styles/modal.css">
     <link rel="stylesheet" href="./styles/cart.css">
+    <link rel="stylesheet" href="./styles/map.css">
     <title>Truderia</title>
     <!-- Facebook Pixel Code -->
 <script>
@@ -32,10 +33,12 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=2635246206784602&ev=PageView&noscript=1"
     /></noscript>
+    
     <!-- End Facebook Pixel Code -->
+    
 </head>
 <body>
-
+    <div id="map"></div>
 <!-- CONTAINER --> 
 
     <div class="container">
@@ -98,6 +101,7 @@
 
     <div class="fixedCart" onclick="openView(showCartHtml(JSON.parse(localStorage.getItem('cart'))), 'showCart' )">
     </div>
+    
 
 <!-- SCRIPTS -->
 
@@ -107,5 +111,11 @@
     <script src="./scripts/modal.js"></script>
     <script src="./scripts/menuCopy.js"></script>
     <script src="./scripts/cart.js"></script>
+    <script src="./scripts/geolocation.js"></script>
+    
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrwJ_BU1Xir1zpM6wscD5se-kzq3DIQRw&callback=initMap&libraries=&v=weekly"
+      async defer
+    ></script>
 </body>
 </html>

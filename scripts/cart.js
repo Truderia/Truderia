@@ -179,6 +179,13 @@ function selectItemHtml(itemChosed,categoryChosed) {
         </div><!--addToOrder-->
         `
     }       
+    html +=`
+    <div class="addToOrder">
+    <div class="title">OBSERVAÇÕES</div>
+    <textarea></textarea>
+    </div><!--addToOrder-->
+    `
+
     html += ` 
         <div class="total">
             <div class="quantity">
@@ -236,6 +243,8 @@ function choose(item) {
     }
 }
 
+
+
 function selectSize(size){
     let itemChosed = JSON.parse(localStorage.getItem('itemChosed'))
     let categoryChosed = JSON.parse(localStorage.getItem('categoryChosed'))
@@ -257,44 +266,7 @@ function selectSize(size){
     window.scrollTo(0, 0)
 }
 
-
-// localStorage.setItem('cart', JSON.stringify(Cart.init(cart).addOne(itemChosed)))
-// localStorage.setItem('cart', JSON.stringify(cart))
-// JSON.parse(localStorage.getItem('cart')) 
-
-  //Cart example 
-let cartExample = {
-    items : [ 
-        {
-            product: {
-                category: 'trudel',
-                flavour: 'tradicional',
-                price: 10,
-                img: './assets/example.jpg',
-                additional: [
-                    {
-                        category: 'additional',
-                        flavour: 'morango',
-                        quantity: 1,
-                        price: 4
-                    },
-                    {
-                        category: 'icecream',
-                        flavour: 'creme',
-                        quantity: 1,
-                        price: 4
-                    }
-                ],
-            },
-            quantity: 1,
-            totalPrice:18
-        }
-    ],
-    total: {
-        quantity: 0,
-        totalPrice: 0
-    }
-}
+// Product complements
 
 function minusOneAdd(target) {
     const totalQuantity = document.querySelector('.total .quantity span').innerHTML
@@ -403,6 +375,8 @@ function addToCart() {
     const itemChosed = JSON.parse(localStorage.getItem('itemChosed'))
     const totalQuantity = document.querySelector('.total .quantity span').innerHTML
     const cart = JSON.parse(localStorage.getItem('cart'))
+    const note = document.querySelector('.addToOrder textarea').value
+    if(note) itemChosed.note = note
 
     for (let i = 0; i < totalQuantity; i++) {
         localStorage.setItem('cart', JSON.stringify(Cart.init(cart).addOne(itemChosed))) 
@@ -482,7 +456,7 @@ function showCartHtml(cart){
             </div>
             <div class="buyerData">
                 <div class="input">
-                    <div class="field">Nome</div>
+                    <div class="field">Nome<span style="color:red; font-weight:bold"> *</span></div>
                     <input 
                         type="text" 
                         name="name" 
@@ -492,7 +466,7 @@ function showCartHtml(cart){
                     >
                 </div>
                 <div class="input">
-                    <div class="field">Telefone</div>
+                    <div class="field">Telefone <span style="color:red; font-weight:bold"> *</span></div>
                     <input 
                         type="text" 
                         name="phone" 
@@ -551,7 +525,7 @@ function showCartHtml(cart){
                             >
                         </div>
                         <div class="input">
-                            <div class="field">Numero </div>
+                            <div class="field">Numero <span style="color:red; font-weight:bold"> *</span></div>
                             <input 
                                 type="text" 
                                 name="houseNumber" 
@@ -563,7 +537,7 @@ function showCartHtml(cart){
                     </div>
 
                     <div class="input">
-                        <div class="field">Rua</div>
+                        <div class="field">Rua <span style="color:red; font-weight:bold"> *</span></div>
                         <input 
                             type="text" 
                             name="street" 
@@ -573,7 +547,7 @@ function showCartHtml(cart){
                         >
                     </div>
                     <div class="input">
-                        <div class="field">Bairro</div>
+                        <div class="field">Bairro <span style="color:red; font-weight:bold"> *</span></div>
                         <input 
                             type="text" 
                             name="district" 
@@ -607,7 +581,7 @@ function showCartHtml(cart){
             </div>
             <div class="payment">
                 <div class="select">
-                    <div class="field">Meio de Pagamento </div>
+                    <div class="field">Meio de Pagamento <span style="color:red; font-weight:bold"> *</span></div>
                     <select name="select" onchange="selectPayment(this.value)">
                         <option value="default" selected disabled>-- Escolha -- </option>
                         <option value="money">Dinheiro</option>
@@ -626,6 +600,13 @@ function showCartHtml(cart){
                         onchange="setChangeValue(this.value)"
                         onkeypress="Mask.apply(this, 'formatBRL')"
                     >
+                </div>
+                <div class="pixSelected hide">
+                    <h4>Chave PIX</h4>
+                    <p>41925485000101</p>
+                    <span>CNPJ 41.925.485/0001-01 - Mariana Fanaro\n</span>
+                    <br>
+                    <span style="font-weight:bold">Após realizar o pedido lembre-se de enviar o comprovante da transação em nosso Whatsapp.</span>
                 </div>
             </div>
         </div>
@@ -693,22 +674,30 @@ function deleteFromCart(target){
 }
 
 function selectTakeAway() {
+    const takeAwayCard = document.querySelector('.takeAway')
+    const deliveryCard = document.querySelector('.delivery')
     const takeAwayElement = document.querySelector('.takeAwaySelected')
     const deliveryElement = document.querySelector('.deliverySelected')
  
     takeAwayElement.classList.remove('hide')
     deliveryElement.classList.add('hide')
+    takeAwayCard.classList.add('box-shadow-none')
+    deliveryCard.classList.remove('box-shadow-none')
     localStorage.setItem('receiveMethod', JSON.stringify('takeAway'))
     localStorage.removeItem('deliveryTax')
     getTotal()
 }
 function selectDelivery() {
+    const takeAwayCard = document.querySelector('.takeAway')
+    const deliveryCard = document.querySelector('.delivery')
     const takeAwayElement = document.querySelector('.takeAwaySelected')
     const deliveryElement = document.querySelector('.deliverySelected')
     const deliveryTax = Number(JSON.parse(localStorage.getItem('deliveryTax')))
     const district = document.querySelector('.deliveryMethod input[name="district"]').value
     takeAwayElement.classList.add('hide')
     deliveryElement.classList.remove('hide')
+    takeAwayCard.classList.remove('box-shadow-none')
+    deliveryCard.classList.add('box-shadow-none')
     localStorage.setItem('receiveMethod', JSON.stringify('delivery'))
     if(district)getDeliveryTax()
 }
@@ -938,16 +927,27 @@ const Mask ={
     },
 }
 
+const alerts = {
+    wrongCep: `CEP inválido.`,
+    cepNotFound: `CEP não encontrado para calcular a taxa de entrega. \nSem problemas!\nPode seguir com o pedido e resolveremos essa questão através do Whatsapp. =)`,
+    blankFields:`Favor preencher todos os campos obrigatórios, são aqueles que contém  <span style="color:red; font-weight:bold">*</span> .`,
+    addresBlank:`Favor preencher todos os campos obrigatórios de endereço marcados com <span style="color:red; font-weight:bold">*</span> para opção de entrega.`,
+    noReceiveMethod:`Favor escolher uma forma de recebimento do pedido.`,
+    noPaymentMethod:`Favor escolher uma forma de pagamento.`,
+    deliveryTaxNotFound:`Não encontramos a taxa de entrega para este bairro. \n Sem problemas !! Pode seguir com o pedido e resolveremos essa questão através do Whatsapp. =)`,
+}
 
 const getAddress = async(zipCode) => {
     const zipCodeNumbers = zipCode.replace(/\D/g, '')
     const validacep = /^[0-9]{8}$/.test(zipCodeNumbers)
-    if(!validacep) return alert("CEP Incorreto")
-
+    if(!validacep) {
+        alertOpen(alerts.wrongCep, 'alerts', ".deliveryMethod")
+        return
+    }
     const url = `https://viacep.com.br/ws/${zipCodeNumbers}/json/`
     const API = await fetch(url)
     const dados = await API.json()
-    if(dados.erro) return alert("CEP não encontrado para calcular a taxa de entrega. \nSem problemas!\nPode seguir com o pedido e resolveremos essa questão através do Whatsapp. =)")
+    if(dados.erro) return alertOpen(alerts.cepNotFound, "alerts", ".deliveryMethod")
 
     document.querySelector('input[name="street"]').value = dados.logradouro
     document.querySelector('input[name="district"]').value = dados.bairro
@@ -984,15 +984,17 @@ function getDeliveryTax() {
     } catch (error) {
         console.log(error)
         localStorage.removeItem('deliveryTax')
-        alert("Não encontramos a taxa de entrega para este bairro. \n Sem problemas !! Pode seguir com o pedido e resolveremos essa questão através do Whatsapp. =)")
+        alertOpen(alerts.deliveryTaxNotFound, "alerts","input[name=district]" )
     }
     
 }
     
 function selectPayment(paymentMethod) {
     const changeInput = document.querySelector('.showCart .payment .input')
+    const pix = document.querySelector('.pixSelected')
 
     paymentMethod == 'money'? changeInput.classList.remove('hide') : changeInput.classList.add('hide')
+    paymentMethod == 'pix'? pix.classList.remove('hide') : pix.classList.add('hide')
     localStorage.setItem('paymentMethod', JSON.stringify(paymentMethod))
 }
 function setChangeValue(value){
@@ -1031,32 +1033,16 @@ function sendToWhatsApp() {
     let note = document.querySelector('#note textarea')
 
 
-    if (!client.data.name || !client.data.telephone ) {
-        alert('Favor preencher os campos obrigatórios marcados com *')
-        window.scrollTo(0,document.querySelector(".buyerData").scrollHeight)
-        return
-    }
+    if (!client.data.name || !client.data.telephone ) return alertOpen(alerts.blankFields, 'alerts', ".buyerData") 
 
-    if(!receiveMethod){
-        alert('Favor escolher uma forma de recebimento do pedido')
-        window.scrollTo(0,document.querySelector(".deliveryMethod").scrollHeight)
-        return
-    }
-    console.log(!client.data.street)
-    console.log(!client.data.district)
-    console.log(!client.data.number)
+    if(!receiveMethod) return alertOpen(alerts.noReceiveMethod, 'alerts', ".deliveryMethod")
 
     if(receiveMethod == 'delivery' && (!client.data.address.street || !client.data.address.district || !client.data.address.number)) {
-        alert('Favor preencher todos os campos obrigatórios de endereço marcados com * para opção de entrega')
-        window.scrollTo(0,document.querySelector(".deliveryMethod").scrollHeight)
+        alertOpen(alerts.addresBlank, "alerts", ".deliveryMethod")
         return
     }
 
-    if(!paymentMethod){
-        alert('Favor escolher uma forma de pagamento')
-        window.scrollTo(0,document.querySelector(".payment").scrollHeight)
-        return
-    }
+    if(!paymentMethod) return alertOpen(alerts.noPaymentMethod, 'alerts',".payment") 
 
     let texto = `
     *PEDIDO:*
@@ -1085,6 +1071,8 @@ function sendToWhatsApp() {
                 +${additional.quantity}x ${additional.flavour}`
             });
         }
+        if(item.product.note)texto +=`
+        Observação: ${item.product.note}`
         
     }
     texto += `\n
