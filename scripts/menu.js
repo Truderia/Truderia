@@ -1,3 +1,4 @@
+//Loading MenuView data
 
 const menuHtml = document.querySelector('#menu')
 menuView.forEach(category => {
@@ -9,6 +10,7 @@ menuView.forEach(category => {
                 <h3>${category.name}</h3>
             </div>
     `
+    
     category.items.forEach(item => {
             html += `
             <div class="menuItem hide">
@@ -17,13 +19,19 @@ menuView.forEach(category => {
                 </div>
                 <div class="item flex-column type${category.category} ${item.flavour == "KIT MINI TRUDEL" ? "kitmini" : ""}">
                     <div class="itemName">
-                        ${item.span? `<p>${item.flavour}<br><span>${item.span}</span></p>` : `<p>${item.flavour} </p>`}
+                        ${item.span? `<p>${item.flavour}</p><span>${item.span}</span>` : `<p>${item.flavour} </p>`}
                     </div>
                         ${item.description? `<div class="description flex-column"><p>${item.description}</p></div>`:''}
-                    <div class="price flex-column">
-                            <p>R$ <span>${item.price.toFixed(2).replace('.',',')}</span></p>
-                            ${item.miniPrice ? `<p class="mini"> Mini <span>${item.miniPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</span></p>` : ''} 
-                    </div>
+                    <div class="priceAndAddCart">
+                        <div class="price flex-column">
+                                <p>R$ <span>${item.price.toFixed(2).replace('.',',')}</span></p>
+                                ${item.miniPrice ? `<p class="mini"> Mini <span>${item.miniPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</span></p>` : ''} 
+                        </div>
+                        ${category.category != 'additional'? `
+                        <div class="addCart">
+                            <button onclick="choose(this)">Escolher</button>
+                        </div>`: ''}
+                    </div>    
                 </div>
                     
                 </div> <!-- menuItem -->
@@ -36,6 +44,36 @@ menuView.forEach(category => {
     menuHtml.innerHTML += html
 });
 
+
+// Loading Cart
+function loadFixedCart() {
+    const cart = JSON.parse(localStorage.getItem('cart'))
+    
+    if(cart) {
+        document.querySelector('.fixedCart').style.opacity= '1'
+        document.querySelector('.fixedCart').style.visible= 'visible'
+        document.querySelector('.fixedCart').style.transform = 'scale(1)'
+        document.querySelector('.fixedCart').style.transition= '1000ms'
+    
+        document.querySelector('.fixedCart').innerHTML = `
+            <h3>
+                Carrinho 
+                <i class="fas fa-shopping-cart"></i>
+                <span>${cart.total.quantity}</span>
+            </h3>
+        `
+    }
+}
+
+function hideFixedCart(){
+    
+    document.querySelector('.fixedCart').style.opacity= '0'
+    document.querySelector('.fixedCart').style.visible= 'hidden'
+    document.querySelector('.fixedCart').style.transform = 'scale(0)'
+    document.querySelector('.fixedCart').style.transition= '1000ms'
+}
+
+// Lightbox 
 
 const lightbox = {
     target: document.querySelector('.lightbox-target'),
@@ -57,10 +95,10 @@ const lightbox = {
 
 // Destaque de novidade/combinação com Lightbox e SetTimeout
 
-lightbox.open(false)
-setTimeout(lightbox.close, 5000);
+// lightbox.open(false)
+// setTimeout(lightbox.close, 5000);
 
-//Função Show Hide
+//Função Show Hide Category
 
 function show_hide(categoryChild) {
     let category = categoryChild.parentNode

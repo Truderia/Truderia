@@ -1133,7 +1133,7 @@ function sendToWhatsApp() {
     texto = window.encodeURIComponent(texto);
     
   
-    window.open("https://api.whatsapp.com/send?phone=5519996129909&text=" + texto, "_blank");
+    window.open("https://api.whatsapp.com/send?phone=5519996929909&text=" + texto, "_blank");
 }
 
 
