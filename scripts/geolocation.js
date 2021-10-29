@@ -1,15 +1,15 @@
 
-if(navigator.geolocation){
-    navigator.geolocation.getCurrentPosition((position) => {
-        localStorage.setItem('latitude', JSON.stringify(position.coords.latitude))
-        localStorage.setItem('longitude', JSON.stringify(position.coords.longitude))
-        }, 
-        (error) => console.log(error), 
-        {
-            enableHighAccuracy:true,
-            timeout: 5000
-        })
-}
+// if(navigator.geolocation){
+//     navigator.geolocation.getCurrentPosition((position) => {
+//         localStorage.setItem('latitude', JSON.stringify(position.coords.latitude))
+//         localStorage.setItem('longitude', JSON.stringify(position.coords.longitude))
+//         }, 
+//         (error) => console.log(error), 
+//         {
+//             enableHighAccuracy:true,
+//             timeout: 5000
+//         })
+// }
 
 // Initialize and add the map
 function initMap() {
