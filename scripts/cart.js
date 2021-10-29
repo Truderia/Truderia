@@ -103,8 +103,10 @@ function closeView() {
 function selectItemHtml(itemChosed,categoryChosed) {
     const isTrudel = categoryChosed.category == 'trudel' || categoryChosed.category == 'miniTrudel'
     const isMini = categoryChosed.category == 'miniTrudel'? true: false
+    const isDrinks = categoryChosed.category == 'drinks'? true: false
     const additionalData = menu.find(category=>category.category == 'additional')
     const miniadditionalData = menu.find(category=>category.category == 'miniAdditional')
+    const drinksData = menu.find(category=>category.category == 'drinks')
     const icecreamData = menu.find(category=>category.category == 'icecream')
 
     function fillOptionals(data) {
@@ -179,6 +181,22 @@ function selectItemHtml(itemChosed,categoryChosed) {
         </div><!--addToOrder-->
         `
     }       
+    if(!isDrinks){
+        html += `
+            <div class="addToOrder">
+        `
+        html += `
+                <div class="title">${drinksData.name}</div>
+                <div class="options">
+            `   
+            fillOptionals(drinksData)
+
+            html += `
+            </div><!--options-->
+        </div><!--addToOrder-->
+        `
+    }
+
     html +=`
     <div class="addToOrder">
     <div class="title">OBSERVAÇÕES</div>
@@ -189,9 +207,12 @@ function selectItemHtml(itemChosed,categoryChosed) {
     html += ` 
         <div class="total">
             <div class="quantity">
-                <i class="fas fa-minus" onclick="minusOneProduct()"></i>
-                <span>1</span> 
-                <i class="fas fa-plus" onclick="plusOneProduct()"></i>
+                <div style="font-weight: bold">Qntde. </div>
+                <div class="plusMinus">
+                    <i class="fas fa-minus" onclick="minusOneProduct()"></i>
+                    <span>1</span> 
+                    <i class="fas fa-plus" onclick="plusOneProduct()"></i>
+                </div>
             </div>
             <div class="value" onclick="addToCart()">
                 <span>Adicionar ao carrinho</span>
@@ -531,7 +552,7 @@ function showCartHtml(cart){
                                 name="houseNumber" 
                                 value="${client? client.data.address.number : ''}" 
                                 placeholder="" 
-                                onblur="localStorage.setItem('client', JSON.stringify(Client.init().updateNumber(this.value)))"
+                                onchange="localStorage.setItem('client', JSON.stringify(Client.init().updateNumber(this.value)))"
                             >
                         </div>
                     </div>
@@ -543,7 +564,8 @@ function showCartHtml(cart){
                             name="street" 
                             value="${client? client.data.address.street : ''}" 
                             placeholder="" 
-                            onblur="localStorage.setItem('client', JSON.stringify(Client.init().updateStreet(this.value)))"
+                            onchange="localStorage.setItem('client', JSON.stringify(Client.init().updateStreet(this.value)))"
+                            onfocus="initAutocomplete()"
                         >
                     </div>
                     <div class="input">
@@ -1092,7 +1114,7 @@ function sendToWhatsApp() {
             });
         }
         if(item.product.note)texto +=`
-            Observação: ${item.product.note}`
+            *Observação:* ${item.product.note}`
         
     }
     texto += `\n

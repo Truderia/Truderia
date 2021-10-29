@@ -311,18 +311,22 @@ const miniAdd =
     }
 
 const promotion = {
-    name: "COMBINACAO",
+    name: "COMBINAÇÃO DA QUINTA",
     category:"promotion",
     items: [
             {
-                value:"COMBINACAO",
+                value:"COMBINAÇÃO DA QUINTA",
                 flavour: "NUTELLA + AMENDOIM + MORANGO",
+                description: "COLOCAR DESCRIÇÃO",
+                image: "./assets/Menu/Promotion/thursdayCombination.webp",
                 price: 16,
             },
             {
-                value:"MINI-COMBINACAO",
+                value:"MINI-COMBINAÇÃO DA QUINTA",
                 flavour: "MINI-NUTELLA + MINI-AMENDOIM + MINI-MORANGO",
-                price: 11.50,
+                description: "COLOCAR DESCRIÇÃO",
+                image: "./assets/Menu/Promotion/thursdayCombination.webp",
+                price: 11.5,
             },
         // {
         //     value:"MINI PROMOCAO",
@@ -372,6 +376,8 @@ const promotion = {
         
     ]
 }
+
+// menuView.unshift(promotion)
 
 const entregas = {
     name: "ENTREGAS",

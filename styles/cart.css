@@ -176,7 +176,13 @@
     font-weight: bold;
 }
 .selectItem .total .quantity{
-    background-color: var(--principal)
+    background-color: var(--principal);
+    flex-direction: column;
+}
+.selectItem .total .quantity .plusMinus{
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
 }
 
 
@@ -402,5 +408,37 @@
 .showCart .closeView span{
     color: white;
 }
-   
+.pac-container .pac-item span{
+    color: black;
+}
 
+@media  (min-width:650px){
+    .selectItem .addToOrder .options .input{
+        grid-template-columns: 150px 90px 1fr 160px;
+        padding: 8px 10%;
+    }
+    .selectItem .addToOrder .image {
+        width: 90px;
+        height: 90px;
+    }
+    .showCart .cartSections {
+        margin: 32px auto;
+    }
+    .showCart .cartItems .item {
+        grid-template-columns: 30px 100px 1fr 120px 40px
+    }   
+    .deliveryMethod .deliveryOptions > div {
+        width: 240px;
+        height: 160px;
+    }
+    .payment .pixSelected span, .deliveryMethod .takeAwaySelected span{
+        font-size: 16px;
+    }
+    .selectItem .total .quantity, .selectItem .total .value {
+        padding: 32px 48px;
+    }
+    .selectItem .total .quantity .plusMinus {
+        margin-top: 12px;
+    }
+   
+}

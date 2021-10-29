@@ -5,7 +5,7 @@
 .container{
     max-width: 1000px;
     width: 90%;
-    margin: 0 auto;
+    margin: auto auto;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -22,7 +22,8 @@ body {
 header{
     display: flex;
     align-items: center;
-    justify-content: center
+    justify-content: center;
+    margin-bottom: 1rem;
 }
 hr{
     display: inline-block;
@@ -88,6 +89,7 @@ header .menu{
     margin-bottom: 0.5rem;
     width: 100%;
     transition: 400ms ease-in-out;
+    transform: scale(1);
 }
 main .menuItem .image{ 
     display: flex;
@@ -102,10 +104,12 @@ main .menuItem .image img{
     object-fit:cover;
     cursor:zoom-in;
 }
+main .menuItem .image.promotion,
 main .menuItem .image.trudel{
     width: 300px;
     height: 200px;
 }
+main .menuItem .image.promotion img,
 main .menuItem .image.trudel img{
     width: 100%;
     height: 100%;
@@ -215,6 +219,7 @@ main .menuItem .image.drinks img{
     opacity: 0;
     height: 0;
     margin: 0;
+    transform: scale(0);
     transition: 400ms ease-in-out;
 }
 .category .rotate{
@@ -318,6 +323,7 @@ a.lightbox-close {
     .menuItem .item {
         height: 100px;
     }
+    main .menuItem .image.promotion,
     main .menuItem .image.trudel{
         width: 150px;
         height:100px;

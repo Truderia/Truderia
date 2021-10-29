@@ -21,7 +21,7 @@ menuView.forEach(category => {
                     </div>
                         ${item.description? `<div class="description flex-column"><p>${item.description}</p></div>`:''}
                     <div class="price flex-column">
-                            <p>R$ <span>${item.price},00</span></p>
+                            <p>R$ <span>${item.price.toFixed(2).replace('.',',')}</span></p>
                             ${item.miniPrice ? `<p class="mini"> Mini <span>${item.miniPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</span></p>` : ''} 
                     </div>
                 </div>
