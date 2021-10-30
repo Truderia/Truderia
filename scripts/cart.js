@@ -620,7 +620,7 @@ function showCartHtml(cart){
                         value="" 
                         placeholder="R$" 
                         onchange="setChangeValue(this.value)"
-                        oninput="Mask.apply(this, 'formatBRL')"
+                        oninput="Mask.apply(this, 'formatBRL');"
                     >
                 </div>
                 <div class="pixSelected hide">
@@ -1126,10 +1126,14 @@ function sendToWhatsApp() {
     texto += `
     *Forma de Pagamento:* ${paymentMethod}
     `
-    if (paymentMethod == 'money' && changeNeeded) {
-        texto += `*Troco para:* ${changeNeeded} `
+    if (paymentMethod == 'Dinheiro') {
+        if (changeNeeded || document.querySelector('input[name="change"').value) {
+        
+        texto += `*Troco para:* ${changeNeeded || document.querySelector('input[name="change"').value} `
+        }else {
+        texto += `Não será necessário troco.`
+        }
     }
-
     texto = window.encodeURIComponent(texto);
     
   
