@@ -1131,7 +1131,7 @@ function sendToWhatsApp() {
         
         texto += `*Troco para:* ${changeNeeded || document.querySelector('input[name="change"').value} `
         }else {
-        texto += `Não será necessário troco.`
+        texto += `*Não será necessário troco.`
         }
     }
     texto = window.encodeURIComponent(texto);

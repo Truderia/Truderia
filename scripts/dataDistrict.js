@@ -500,7 +500,7 @@ const districts = [
         price: 7
     },
     {
-        name: 'Conjunto Residencial Prefeito Warley Colombini   ',
+        name: 'Conjunto Residencial Prefeito Warley Colombini',
         price: 7
     },
     {
