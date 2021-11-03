@@ -316,14 +316,14 @@ const promotion = {
     items: [
             {
                 value:"COMBINAÇÃO DA QUINTA",
-                flavour: "DOCE DE LEITE + NOZES + BEM CASADO",
+                flavour: "TAMANHO NORMAL",
                 description: "Delicioso Trudel de Doce de Leite com adicional de Nozes e sorvete Bem Casado por um preço especial!",
                 image: "./assets/Menu/Promotion/thursdayCombination.webp",
                 price: 15,
             },
             {
                 value:"MINI-COMBINAÇÃO DA QUINTA",
-                flavour: "MINI-NUTELLA + MINI-AMENDOIM + MINI-MORANGO",
+                flavour: "TAMANHO MINI",
                 description: "Delicioso Mini-Trudel de Doce de Leite com adicional Mini de Nozes e sorvete Bem Casado por um preço especial!",
                 image: "./assets/Menu/Promotion/thursdayCombination.webp",
                 price: 11,
@@ -377,7 +377,7 @@ const promotion = {
     ]
 }
 
-menuView.unshift(promotion)
+// menuView.unshift(promotion)
 
 const entregas = {
     name: "ENTREGAS",
