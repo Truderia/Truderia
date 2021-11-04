@@ -141,7 +141,7 @@ function selectItemHtml(itemChosed,categoryChosed) {
         </div><!--image-->
 
         <div class="description container">
-            <h1>${categoryChosed.name.slice(0, -1)} ${itemChosed.flavour}</h1>
+            <h1>${categoryChosed.name.replace(/[sS]$/, "")} ${itemChosed.flavour}</h1>
             <p>${itemChosed.description}</p>
         </div><!--description-->   
     `
@@ -438,7 +438,7 @@ function showCartHtml(cart){
                 <div class="quantity">${item.quantity}x</div>
                 <div class="category">${menu.find(category => item.product.category == category.category).name.toLowerCase().replace(/(?:^|\s)\S/g, function(a) {
                     return a.toUpperCase();
-                  }).slice(0, -1)}</div>
+                  }).replace(/[sS]$/, "")}</div>
                 <div class="flavourAndAdd">
                     <div class="flavour">${item.product.flavour.toLowerCase().replace(/(?:^|\s)\S/g, function(a) {
                         return a.toUpperCase();

@@ -83,7 +83,7 @@ const lightbox = {
         lightbox.target.style.opacity = 1
         lightbox.target.style.top = 0
         lightbox.closeButton.style.top = 0
-        let source = e? e.target.src : './assets/Menu/mini2.jpg'
+        let source = e? e.target.src : './assets/Menu/thursdayCombination.webp'
         lightbox.image.src = source
     },
     close(){
@@ -95,8 +95,8 @@ const lightbox = {
 
 // Destaque de novidade/combinação com Lightbox e SetTimeout
 
-// lightbox.open(false)
-// setTimeout(lightbox.close, 5000);
+lightbox.open(false)
+setTimeout(lightbox.close, 7000);
 
 //Função Show Hide Category
 

@@ -311,7 +311,7 @@ const miniAdd =
     }
 
 const promotion = {
-    name: "COMBINAÇÃO DA QUINTA",
+    name: "COMBO DA QUINTA",
     category:"promotion",
     items: [
             {
@@ -377,7 +377,7 @@ const promotion = {
     ]
 }
 
-// menuView.unshift(promotion)
+menuView.unshift(promotion)
 
 const entregas = {
     name: "ENTREGAS",
