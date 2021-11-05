@@ -104,10 +104,12 @@ function selectItemHtml(itemChosed,categoryChosed) {
     const isTrudel = categoryChosed.category == 'trudel' || categoryChosed.category == 'miniTrudel'
     const isMini = categoryChosed.category == 'miniTrudel'? true: false
     const isDrinks = categoryChosed.category == 'drinks'? true: false
+    const isRings = categoryChosed.category == 'rings'? true: false
     const additionalData = menu.find(category=>category.category == 'additional')
     const miniadditionalData = menu.find(category=>category.category == 'miniAdditional')
     const drinksData = menu.find(category=>category.category == 'drinks')
     const icecreamData = menu.find(category=>category.category == 'icecream')
+    const stuffingPotsData = menu.find(category=>category.category == 'stuffingPots')
 
     function fillOptionals(data) {
         data.items.forEach(additional => {
@@ -145,7 +147,21 @@ function selectItemHtml(itemChosed,categoryChosed) {
             <p>${itemChosed.description}</p>
         </div><!--description-->   
     `
-    
+    if(isRings){
+        html += `
+        <div class="addToOrder">
+    `
+    html += `
+            <div class="title"><p>${stuffingPotsData.name} <small>(50g)</small></p></div>
+            <div class="options">
+        `   
+        fillOptionals(stuffingPotsData)
+
+        html += `
+        </div><!--options-->
+    </div><!--addToOrder-->
+    `
+    }
     if(isTrudel && itemChosed.flavour != 'KIT MINI TRUDEL'){
 
         if(itemChosed.flavour != 'TRADICIONAL' ){

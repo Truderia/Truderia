@@ -104,11 +104,13 @@ main .menuItem .image img{
     object-fit:cover;
     cursor:zoom-in;
 }
+main .menuItem .image.rings,
 main .menuItem .image.promotion,
 main .menuItem .image.trudel{
     width: 300px;
     height: 200px;
 }
+main .menuItem .image.rings img,
 main .menuItem .image.promotion img,
 main .menuItem .image.trudel img{
     width: 100%;
@@ -178,6 +180,7 @@ main .menuItem .image.drinks img{
     margin-left: 0.5rem;
 }
 .menuItem .item .description p{
+    margin: 2px 0;
     font-size: 18px;
     text-shadow: none;
 }
@@ -321,8 +324,9 @@ a.lightbox-close {
         text-align: center;
     }
     .menuItem .item {
-        height: 100px;
+        height: 100%;
     }
+    main .menuItem .image.rings,
     main .menuItem .image.promotion,
     main .menuItem .image.trudel{
         width: 150px;
@@ -351,7 +355,7 @@ a.lightbox-close {
     }
     
     .menuItem .item .description p{
-        font-size: 10px;
+        font-size: 11px;
     }
    
     .menuItem .price p{
