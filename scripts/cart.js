@@ -145,45 +145,46 @@ function selectItemHtml(itemChosed,categoryChosed) {
             <p>${itemChosed.description}</p>
         </div><!--description-->   
     `
-    console.log(itemChosed.flavour)
+    
     if(isTrudel && itemChosed.flavour != 'KIT MINI TRUDEL'){
 
         if(itemChosed.flavour != 'TRADICIONAL' ){
 
             html += `
-            <div class="addToOrder">
-        `
-        if (isMini){
-            html += `
-                <div class="title">${miniadditionalData.name}</div>
-                <div class="options">
-            `   
-            fillOptionals(miniadditionalData)
-            
-        } else {
-            html += `
-                <div class="title">${additionalData.name}</div>
-                <div class="options">
-            `   
-            fillOptionals(additionalData)
-            
-        }
+                <div class="addToOrder">
+            `
+            if (isMini){
+                html += `
+                    <div class="title">${miniadditionalData.name}</div>
+                    <div class="options">
+                `   
+                fillOptionals(miniadditionalData)
+                
+            } else {
+                html += `
+                    <div class="title">${additionalData.name}</div>
+                    <div class="options">
+                `   
+                fillOptionals(additionalData)
+                
+            }
 
-        html += `
+            html += `
                 </div><!--options-->
-            </div><!--addToOrder-->`
+                </div><!--addToOrder-->`
         }
         
 
-        html += `<div class="addToOrder">
-                <div class="title">${icecreamData.name}</div>
-                <div class="options">
+        html += `
+            <div class="addToOrder">
+            <div class="title">${icecreamData.name}</div>
+            <div class="options">
         `
         fillOptionals(icecreamData)
 
         html += `
             </div><!--options-->
-        </div><!--addToOrder-->
+            </div><!--addToOrder-->
         `
     }       
     if(!isDrinks){
@@ -1139,6 +1140,8 @@ function sendToWhatsApp() {
         texto += `*Não será necessário troco.`
         }
     }
+
+    if(paymentMethod == "PIX") texto += `*Chave PIX = 41925485000101 (CNPJ)`
     texto = window.encodeURIComponent(texto);
     
   
