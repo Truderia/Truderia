@@ -145,9 +145,12 @@ function selectItemHtml(itemChosed,categoryChosed) {
             <p>${itemChosed.description}</p>
         </div><!--description-->   
     `
-
+    console.log(itemChosed.flavour)
     if(isTrudel && itemChosed.flavour != 'KIT MINI TRUDEL'){
-        html += `
+
+        if(itemChosed.flavour != 'TRADICIONAL' ){
+
+            html += `
             <div class="addToOrder">
         `
         if (isMini){
@@ -168,9 +171,11 @@ function selectItemHtml(itemChosed,categoryChosed) {
 
         html += `
                 </div><!--options-->
-            </div><!--addToOrder-->
+            </div><!--addToOrder-->`
+        }
+        
 
-            <div class="addToOrder">
+        html += `<div class="addToOrder">
                 <div class="title">${icecreamData.name}</div>
                 <div class="options">
         `
