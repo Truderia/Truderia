@@ -348,7 +348,18 @@ const menuView = [
         name: "BEBIDAS",
         category: "drinks",
         items: drinks
-    }
+    },
+    {
+        name: "TRUDEL FINGERS <small>(EVENTOS/FESTAS)</small>",
+        category: "fingers",
+        items: [{
+            flavour: "",
+            span: "",
+            description: 'Nossos irresistíveis trudels, no tamanho ideal (35 gramas) para surpreender seus convidados e deixar sua mesa de doces simplesmente maravilhosa em seu evento.<br> <small>* Disponível apenas para encomendas.</small>',
+            image: "./assets/Menu/Fingers/fingers.webp",
+            price: '**Sob Consulta'
+        }]
+    },
 ]
 
 // Full-Menu data 
