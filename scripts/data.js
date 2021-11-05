@@ -377,7 +377,7 @@ const promotion = {
     ]
 }
 
-menuView.unshift(promotion)
+// menuView.unshift(promotion)
 
 const entregas = {
     name: "ENTREGAS",
