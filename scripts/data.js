@@ -221,7 +221,7 @@ const trudelRings = [
     {
         flavour: "RINGS FIVE",
         span: "(5 unidades)",
-        description: `Nossa deliciosa massa romena em formato de anéis, perfeitos para aquele lanchinho rápido! 
+        description: `Nossa deliciosa massa romena em formato de anéis, perfeitos para aquele lanchinho rápido! <br>
         Acrescente seu recheio preferido para mergulhar seus rings.`,
         image: "./assets/Menu/Rings/Rings5.webp",
         price: 7,
@@ -229,7 +229,8 @@ const trudelRings = [
     {
         flavour: "RINGS TEN",
         span: "(10 unidades)",
-        description: "Brigadeiro de produção artesanal, feito com leite condensado Moça e Cacau 50%. Aquele sabor de infância!",
+        description: `Nossa deliciosa massa romena em formato de anéis, perfeitos para aquele lanchinho rápido! <br>
+        Acrescente seu recheio preferido para mergulhar seus rings.`,
         image: "./assets/Menu/Rings/Rings10.webp",
         price: 10,
     },
@@ -243,7 +244,7 @@ const stuffingPots = {
             flavour: "BRIGADEIRO",
             span: "",
             description: "",
-            image: "./assets/Menu/Potes/poteChocolate.webp",
+            image: "./assets/Menu/Potes/poteBrigadeiro.webp",
             price: 4,
         },
         {
@@ -257,21 +258,21 @@ const stuffingPots = {
             flavour: "KITKAT CREMOSO",
             span: "",
             description: "",
-            image: "./assets/Menu/Potes/poteChocolate.webp",
+            image: "./assets/Menu/Potes/poteKitkat.webp",
             price: 5,
         },
         {
             flavour: "NUTELLA",
             span: "",
             description: "",
-            image: "./assets/Menu/Potes/poteChocolate.webp",
+            image: "./assets/Menu/Potes/poteNutella.webp",
             price: 5,
         },
         {
             flavour: "OVOMALTINE",
             span: "",
             description: "",
-            image: "./assets/Menu/Potes/poteChocolate.webp",
+            image: "./assets/Menu/Potes/poteOvomaltine.webp",
             price: 5,
         },
         {
@@ -339,11 +340,11 @@ const menuView = [
         category: "additional",
         items: additional
     },
-    // {
-    //     name: "TRUDEL RINGS",
-    //     category: "rings",
-    //     items: trudelRings
-    // },
+    {
+        name: "TRUDEL RINGS",
+        category: "rings",
+        items: trudelRings
+    },
     {
         name: "BEBIDAS",
         category: "drinks",
