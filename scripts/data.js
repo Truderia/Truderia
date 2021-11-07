@@ -68,7 +68,7 @@ const trudel = [
         flavour: "LAKAOREO",
         span: "",
         description: 'A junção do chocolate branco mais famoso do Brasil e o biscoito que toda família adora. Muita gostosura em apenas um recheio.',
-        image: "./assets/Menu/Trudels/PoteLakaOreo.webp",
+        image: "./assets/Menu/Trudels/Lakaoreo.webp",
         price: 15,
         miniPrice: 11
     },
@@ -279,7 +279,7 @@ const stuffingPots = {
             flavour: "LAKAOREO",
             span: "",
             description: "",
-            image: "./assets/Menu/Potes/PoteLakaoreo.webp",
+            image: "./assets/Menu/Potes/PoteLakaOreo.webp",
             price: 5,
         },
     ]
