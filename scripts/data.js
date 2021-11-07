@@ -221,16 +221,16 @@ const trudelRings = [
     {
         flavour: "RINGS FIVE",
         span: "(5 unidades)",
-        description: `Nossa deliciosa massa romena em formato de anéis, perfeitos para aquele lanchinho rápido! <br>
-        Acrescente seu recheio preferido para mergulhar seus rings.`,
+        description: `Nossa deliciosa massa romena em formato de anéis, perfeitos para compartilhar e para aquele lanchinho rápido! <br>
+        *Acrescente seu recheio preferido para acompanhar seus rings.`,
         image: "./assets/Menu/Rings/Rings5.webp",
         price: 7,
     },
     {
         flavour: "RINGS TEN",
         span: "(10 unidades)",
-        description: `Nossa deliciosa massa romena em formato de anéis, perfeitos para aquele lanchinho rápido! <br>
-        Acrescente seu recheio preferido para mergulhar seus rings.`,
+        description: `Nossa deliciosa massa romena em formato de anéis, perfeitos para compartilhar e para aquele lanchinho rápido! <br>
+        *Acrescente seu recheio preferido para acompanhar seus rings.`,
         image: "./assets/Menu/Rings/Rings10.webp",
         price: 10,
     },
