@@ -158,9 +158,20 @@ function selectItemHtml(itemChosed,categoryChosed) {
         fillOptionals(stuffingPotsData)
 
         html += `
-        </div><!--options-->
-    </div><!--addToOrder-->
+            </div><!--options-->
+            </div><!--addToOrder-->
     `
+        html += `
+            <div class="addToOrder">
+            <div class="title">${icecreamData.name}</div>
+            <div class="options">
+    `
+        fillOptionals(icecreamData)
+
+        html += `
+            </div><!--options-->
+            </div><!--addToOrder-->
+        `
     }
     if(isTrudel && itemChosed.flavour != 'KIT MINI TRUDEL'){
 
