@@ -454,7 +454,7 @@ function sendToWhatsApp() {
 
     for (const item of cart.items) {
         texto += `
-        ${item.quantity}x *${menu.find(category => category.category == item.product.category).name.slice(0, -1).replace(/-/g, ' ')} - ${item.product.flavour}*`
+        ${item.quantity}x *${menu.find(category => category.category == item.product.category).name.replace(/[sS]$/, "").replace(/-/g, ' ')} - ${item.product.flavour}*`
         if (item.product.additional) {
             item.product.additional.forEach(additional => {
                 texto += `
