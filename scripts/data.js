@@ -400,14 +400,14 @@ const promotion = {
             {
                 value:"COMBINAÇÃO DA QUINTA",
                 flavour: "TAMANHO NORMAL",
-                description: "Delicioso Trudel de Doce de Leite com adicional de Nozes e sorvete Bem Casado por um preço especial!",
+                description: "Delicioso Trudel de Chocolate Branco com adicional de Amendoim e sorvete Cafe Mocha por um preço especial!",
                 image: "./assets/Menu/Promotion/thursdayCombination.webp",
                 price: 15,
             },
             {
                 value:"MINI-COMBINAÇÃO DA QUINTA",
                 flavour: "TAMANHO MINI",
-                description: "Delicioso Mini-Trudel de Doce de Leite com adicional Mini de Nozes e sorvete Bem Casado por um preço especial!",
+                description: "Delicioso Trudel de Chocolate Branco com adicional de Amendoim e sorvete Cafe Mocha por um preço especial!",
                 image: "./assets/Menu/Promotion/thursdayCombination.webp",
                 price: 11,
             },
@@ -460,7 +460,7 @@ const promotion = {
     ]
 }
 
-// menuView.unshift(promotion)
+menuView.unshift(promotion)
 
 const entregas = {
     name: "ENTREGAS",
