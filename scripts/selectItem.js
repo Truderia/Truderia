@@ -2,14 +2,18 @@
 
 function selectItemHtml(itemChosed, categoryChosed) {
     const isTrudel = categoryChosed.category == 'trudel' || categoryChosed.category == 'miniTrudel'
-    const isMini = categoryChosed.category == 'miniTrudel' ? true : false
-    const isDrinks = categoryChosed.category == 'drinks' ? true : false
-    const isRings = categoryChosed.category == 'rings' ? true : false
+    const isMini = categoryChosed.category == 'miniTrudel' 
+    const isMiniTrudelttone = categoryChosed.category == 'miniChristmasTrudel'
+    const isDrinks = categoryChosed.category == 'drinks' 
+    const isRings = categoryChosed.category == 'rings' 
+    const isTrudelttone = categoryChosed.category == 'christmasTrudel' || categoryChosed.category == 'miniChristmasTrudel'
     const additionalData = menu.find(category => category.category == 'additional')
     const miniadditionalData = menu.find(category => category.category == 'miniAdditional')
     const drinksData = menu.find(category => category.category == 'drinks')
     const icecreamData = menu.find(category => category.category == 'icecream')
     const stuffingPotsData = menu.find(category => category.category == 'stuffingPots')
+    console.log(categoryChosed.category)
+    console.log(isMiniTrudelttone)
 
     function fillOptionals({ name, items }) {
         html += `
@@ -65,9 +69,9 @@ function selectItemHtml(itemChosed, categoryChosed) {
         fillOptionals(icecreamData)
     }
 
-    if (isTrudel && itemChosed.flavour != 'KIT MINI TRUDEL') {
+    if ((isTrudel && itemChosed.flavour != 'KIT MINI TRUDEL') || isTrudelttone) {
         if (itemChosed.flavour != 'TRADICIONAL') {
-            if (isMini) {
+            if (isMini || isMiniTrudelttone) {
                 fillOptionals(miniadditionalData)
             } else {
                 fillOptionals(additionalData)
@@ -155,7 +159,7 @@ function selectSize(size) {
 
     if (size.toLowerCase() == 'mini') {
         categoryChosed = `mini${categoryChosed.category}`
-        let category = menu.find(menuCategory => menuCategory.category.toLowerCase() == categoryChosed)
+        let category = menu.find(({category}) => category.toLowerCase() == categoryChosed.toLowerCase())
         localStorage.setItem('categoryChosed', JSON.stringify(category))
         itemChosed.category = category.category
         itemChosed.price = category.items.find(flavour => itemChosed.flavour == flavour.flavour).price

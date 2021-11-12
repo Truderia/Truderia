@@ -481,8 +481,22 @@ const christmasTrudel = {
     ]
 }
 
+const miniChristmas = 
+    {
+        name: "MINI-ESPECIAL DE NATAL",
+        category: "miniChristmasTrudel",
+        items:christmasTrudel.items.filter(item =>item.miniPrice).map(filtered=> {
+            return {
+                flavour:filtered.flavour,
+                price:filtered.miniPrice,
+                description:filtered.description,
+                image:filtered.image
+            }
+        })
+    }
+
 // menuView.unshift(promotion)
-// menuView.unshift(christmasTrudel)
+menuView.unshift(christmasTrudel)
 
 const entregas = {
     name: "ENTREGAS",
@@ -524,6 +538,7 @@ const entregas = {
 const menu = [
     ...menuView, 
     miniTrudel,
+    miniChristmas,
     miniAdd,
     stuffingPots,
     promotion,
