@@ -460,7 +460,29 @@ const promotion = {
     ]
 }
 
-menuView.unshift(promotion)
+const christmasTrudel = {
+    name: "ESPECIAL DE NATAL",
+    category:"christmasTrudel",
+    items: [
+        {
+            flavour: "TRUDELTTONE",
+            description: "Nossa deliciosa e exclusiva massa romena, com um recheio muito especial de Natal: brigadeiro branco sabor panetone e frutas cristalizadas!",
+            image: "./assets/Menu/Christmas/Trudeltone.webp",
+            price: 16,
+            miniPrice:12
+        },
+        {
+            flavour: "TRUDELTTONE GOTAS",
+            description: "Nosso recheio especial de Natal na versão com chocolate: brigadeiro branco sabor chocotone com gotas de chocolate!",
+            image: "./assets/Menu/Christmas/TrudeltoneGotas.webp",
+            price: 16,
+            miniPrice:12
+        },
+    ]
+}
+
+// menuView.unshift(promotion)
+// menuView.unshift(christmasTrudel)
 
 const entregas = {
     name: "ENTREGAS",

@@ -454,7 +454,9 @@ function sendToWhatsApp() {
 
     for (const item of cart.items) {
         texto += `
-        ${item.quantity}x *${menu.find(category => category.category == item.product.category).name.replace(/[sS]$/, "").replace(/-/g, ' ')} - ${item.product.flavour}*`
+        ${item.quantity}x *${menu.find(category => category.category == item.product.category).name
+            .replace(/[sS]$/, "")
+            .replace(/-/g, ' ')} - ${item.product.flavour}*`
         if (item.product.additional) {
             item.product.additional.forEach(additional => {
                 texto += `
@@ -466,9 +468,9 @@ function sendToWhatsApp() {
 
     }
     texto += `\n
-    *Subtotal:* ${cart.total.totalPrice.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}
-    *Taxa de entrega:* ${deliveryTax ? deliveryTax.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) : ''}
-    *Total:* ${deliveryTax ? (cart.total.totalPrice + deliveryTax).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) : cart.total.totalPrice.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}`
+    *Subtotal:* ${transformToRealBRL(cart.total.totalPrice)}
+    *Taxa de entrega:* ${deliveryTax ? transformToRealBRL(deliveryTax)  : ''}
+    *Total:* ${transformToRealBRL(deliveryTax ? (cart.total.totalPrice + deliveryTax) : cart.total.totalPrice ) }`
 
 
     texto += `
