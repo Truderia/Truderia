@@ -12,8 +12,6 @@ function selectItemHtml(itemChosed, categoryChosed) {
     const drinksData = menu.find(category => category.category == 'drinks')
     const icecreamData = menu.find(category => category.category == 'icecream')
     const stuffingPotsData = menu.find(category => category.category == 'stuffingPots')
-    console.log(categoryChosed.category)
-    console.log(isMiniTrudelttone)
 
     function fillOptionals({ name, items }) {
         html += `
@@ -53,7 +51,7 @@ function selectItemHtml(itemChosed, categoryChosed) {
             </div><!--addToOrder-->
         `
     }
-
+    console.log(itemChosed)
     let html = `
         <div class="image">
             <img src="${itemChosed.image}" alt="">
@@ -163,6 +161,7 @@ function selectSize(size) {
         localStorage.setItem('categoryChosed', JSON.stringify(category))
         itemChosed.category = category.category
         itemChosed.price = category.items.find(flavour => itemChosed.flavour == flavour.flavour).price
+        itemChosed.image = category.items.find(flavour => itemChosed.flavour == flavour.flavour).image
         localStorage.setItem('itemChosed', JSON.stringify(itemChosed))
 
         itemHtml = selectItemHtml(itemChosed, category)
@@ -210,9 +209,11 @@ function minusOneAdd(target) {
 function plusOneAdd(target) {
     const totalQuantity = document.querySelector('.total .quantity span').innerHTML
     let itemChosed = JSON.parse(localStorage.getItem('itemChosed'))
+    console.log(itemChosed)
     const categoryName = target.parentNode.parentNode.parentNode.parentNode.querySelector('.title').innerText.replace(' (50g)', '')
     console.log(categoryName)
     const addCategory = menu.find(category => category.name == categoryName)
+    console.log(addCategory)
     let addTarget = addCategory.items.find(item => item.flavour == target.parentNode.parentNode.querySelector('.flavour p').innerText)
     const totalPrice = () => {
         let total = itemChosed.price

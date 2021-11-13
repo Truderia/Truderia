@@ -374,7 +374,7 @@ const miniTrudel =
                 flavour:filtered.flavour,
                 price:filtered.miniPrice,
                 description:filtered.description,
-                image:filtered.image
+                image:filtered.image.replace('Trudels', 'MiniTrudels')
             }
         })
     }
