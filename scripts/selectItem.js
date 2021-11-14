@@ -18,7 +18,7 @@ function selectItemHtml(itemChosed, categoryChosed) {
         <div class="addToOrder">
         `
         html += `
-            <div class="title"><p>${name}</p></div>
+            <div class="title"><p>${name}</p>${name == 'POTES DE RECHEIO' ? '<small>&nbsp; (50g)</small>' : ''}</div>
             <div class="options">
         `
 
@@ -176,8 +176,8 @@ function selectSize(size) {
 function minusOneAdd(target) {
     const totalQuantity = document.querySelector('.total .quantity span').innerHTML
     let itemChosed = JSON.parse(localStorage.getItem('itemChosed'))
-    const categoryName = target.parentNode.parentNode.parentNode.parentNode.querySelector('.title')
-    const addCategory = menu.find(category => category.name == categoryName)
+    const categoryName = target.parentNode.parentNode.parentNode.parentNode.querySelector('.title p').innerText
+    const addCategory = menu.find(category => category.name.trim() == categoryName.trim())
     const addTarget = addCategory.items.find(item => item.flavour == target.parentNode.parentNode.querySelector('.flavour p').innerText)
     const totalPrice = () => {
         let total = itemChosed.price
@@ -209,9 +209,8 @@ function minusOneAdd(target) {
 function plusOneAdd(target) {
     const totalQuantity = document.querySelector('.total .quantity span').innerHTML
     let itemChosed = JSON.parse(localStorage.getItem('itemChosed'))
-    const categoryName = target.parentNode.parentNode.parentNode.parentNode.querySelector('.title')
-    const addCategory = menu.find(category => category.name == categoryName);
-    console.log(addCategory)
+    const categoryName = target.parentNode.parentNode.parentNode.parentNode.querySelector('.title p').innerText
+    const addCategory = menu.find(category => category.name.trim() == categoryName.trim());
     let addTarget = addCategory.items.find(item => item.flavour == target.parentNode.parentNode.querySelector('.flavour p').innerText)
     const totalPrice = () => {
         let total = itemChosed.price
