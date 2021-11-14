@@ -213,7 +213,7 @@ function plusOneAdd(target) {
     const addCategory = menu.find(category => {
         console.log(category.name)
         console.log(categoryName)
-        category.name == categoryName
+        return category.name == categoryName
     });
     console.log(addCategory)
     let addTarget = addCategory.items.find(item => item.flavour == target.parentNode.parentNode.querySelector('.flavour p').innerText)
