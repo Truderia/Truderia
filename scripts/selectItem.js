@@ -178,7 +178,6 @@ function minusOneAdd(target) {
     let itemChosed = JSON.parse(localStorage.getItem('itemChosed'))
     const categoryName = target.parentNode.parentNode.parentNode.parentNode.querySelector('.title').innerText.replace(' (50g)', '')
     const addCategory = menu.find(category => category.name == categoryName)
-    console.log(addCategory)
     const addTarget = addCategory.items.find(item => item.flavour == target.parentNode.parentNode.querySelector('.flavour p').innerText)
     const totalPrice = () => {
         let total = itemChosed.price
@@ -210,10 +209,12 @@ function minusOneAdd(target) {
 function plusOneAdd(target) {
     const totalQuantity = document.querySelector('.total .quantity span').innerHTML
     let itemChosed = JSON.parse(localStorage.getItem('itemChosed'))
-    console.log(itemChosed)
     const categoryName = target.parentNode.parentNode.parentNode.parentNode.querySelector('.title').innerText.replace(' (50g)', '')
-    console.log(categoryName)
-    const addCategory = menu.find(category => category.name == categoryName)
+    const addCategory = menu.find(category => {
+        console.log(category.name)
+        console.log(categoryName)
+        category.name == categoryName
+    });
     console.log(addCategory)
     let addTarget = addCategory.items.find(item => item.flavour == target.parentNode.parentNode.querySelector('.flavour p').innerText)
     const totalPrice = () => {
