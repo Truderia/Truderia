@@ -145,6 +145,25 @@ class ClientClass {
 
 const Client = new ClientClass
 
+class LocalStorage {
+    constructor(){
+        this.cart = JSON.parse(localStorage.getItem('cart'))
+        this.itemChosed = JSON.parse(localStorage.getItem('itemChosed'))
+        this.paymentMethod = JSON.parse(localStorage.getItem('paymentMethod'))
+        this.receiveMethod = JSON.parse(localStorage.getItem('receiveMethod'))
+        this.categoryChosed = JSON.parse(localStorage.getItem('categoryChosed'))
+        this.client = JSON.parse(localStorage.getItem('client'))
+        this.changeNeeded = JSON.parse(localStorage.getItem('changeNeeded'))
+        this.deliveryTax = JSON.parse(localStorage.getItem('deliveryTax'))
+    }
+    static save(key, value){
+        localStorage.setItem(key, JSON.stringify(value))
+    }
+    static delete(key){
+        localStorage.removeItem(key)
+    }
+}
+
 
 
 

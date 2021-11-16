@@ -94,14 +94,14 @@ function fillInAddress() {
       }
       case "sublocality_level_1": {
         document.querySelector("input[name=district]").value = `${component.long_name}`;
-        localStorage.setItem('client', JSON.stringify(Client.init().updateDistrict(component.long_name)))
+        localStorage.setItem('client', JSON.stringify(Client.updateDistrict(component.long_name)))
         break;
       }
     }
   }
 
   address1Field.value = address1;
-  localStorage.setItem('client', JSON.stringify(Client.init().updateStreet(address1)))
+  localStorage.setItem('client', JSON.stringify(Client.updateStreet(address1)))
   if(postcode) postalField.value = postcode;
   
 

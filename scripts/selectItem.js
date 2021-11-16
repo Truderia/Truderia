@@ -51,7 +51,7 @@ function selectItemHtml(itemChosed, categoryChosed) {
             </div><!--addToOrder-->
         `
     }
-    console.log(itemChosed)
+    
     let html = `
         <div class="image">
             <img src="${itemChosed.image}" alt="">

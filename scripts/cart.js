@@ -267,7 +267,6 @@ function deleteFromCart(target) {
         .map((element, index) => ({ element, index }))
         .find(({ element }) => element == elementToDelete).index
     const productToDelete = cart.items[indexOfItem]
-
     cart = Cart.init(cart).deleteItem(productToDelete.product)
     localStorage.setItem('cart', JSON.stringify(cart))
     elementToDelete.remove()
@@ -335,25 +334,19 @@ const getAddress = async (zipCode) => {
 
 function getDeliveryTax() {
     const district = document.querySelector('.deliveryMethod input[name="district"]').value
-    function removeAcento(text) {
-        text = text.replace(new RegExp('[ÁÀÂÃ]', 'gi'), 'a');
-        text = text.replace(new RegExp('[ÉÈÊ]', 'gi'), 'e');
-        text = text.replace(new RegExp('[ÍÌÎ]', 'gi'), 'i');
-        text = text.replace(new RegExp('[ÓÒÔÕ]', 'gi'), 'o');
-        text = text.replace(new RegExp('[ÚÙÛÜ]', 'gi'), 'u');
-        text = text.replace(new RegExp('[Ç]', 'gi'), 'c');
-        return text;
-    }
+    const deliveryTax = document.querySelector('#deliveryTaxValue')
+    
     try {
         const price = districts.find(districtData => {
             return (removeAcento(districtData.name).toLowerCase() == removeAcento(district).toLowerCase())
         }).price
-        document.querySelector('#deliveryTaxValue').innerHTML = price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+        deliveryTax.innerHTML = price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
         localStorage.setItem('deliveryTax', JSON.stringify(price))
         getTotal()
     } catch (error) {
         console.log(error)
         localStorage.removeItem('deliveryTax')
+        deliveryTax.innerHTML = ""
         alertOpen(alerts.deliveryTaxNotFound, "alerts", "input[name=district]")
     }
 
@@ -389,7 +382,7 @@ function selectPayment(paymentMethod) {
 }
 function setChangeValue(value) {
     localStorage.setItem('changeNeeded', JSON.stringify(value))
-    if (!value) localStorage.removeItem('changeNeeded', JSON.stringify(value))
+    if (!value) localStorage.removeItem('changeNeeded')
 }
 
 function getTotal() {
@@ -414,20 +407,20 @@ function getTotal() {
 }
 
 function sendToWhatsApp() {
-    const client = JSON.parse(localStorage.getItem('client'))
-    const cart = JSON.parse(localStorage.getItem('cart'))
-    const receiveMethod = JSON.parse(localStorage.getItem('receiveMethod'))
-    const deliveryTax = JSON.parse(localStorage.getItem('deliveryTax'))
-    const paymentMethod = JSON.parse(localStorage.getItem('paymentMethod'))
-    const changeNeeded = JSON.parse(localStorage.getItem('changeNeeded'))
-    let note = document.querySelector('#note textarea')
+    const {
+        client:{data: client},
+        cart:{items:cartItems},
+        cart:{total:{totalPrice:cartTotalprice}},
+        receiveMethod,
+        deliveryTax,
+        paymentMethod,
+        changeNeeded} = new LocalStorage
 
-
-    if (!client.data.name || !client.data.telephone) return alertOpen(alerts.blankFields, 'alerts', ".buyerData")
+    if (!client.name || !client.telephone) return alertOpen(alerts.blankFields, 'alerts', ".buyerData")
 
     if (!receiveMethod) return alertOpen(alerts.noReceiveMethod, 'alerts', ".deliveryMethod")
 
-    if (receiveMethod == 'delivery' && (!client.data.address.street || !client.data.address.district || !client.data.address.number)) {
+    if (receiveMethod == 'delivery' && (!client.address.street || !client.address.district || !client.address.number)) {
         alertOpen(alerts.addresBlank, "alerts", ".deliveryMethod")
         return
     }
@@ -436,14 +429,15 @@ function sendToWhatsApp() {
 
     let texto = `
     *PEDIDO:*
-    *Nome:* ${client.data.name} 
-    *Telefone:* ${client.data.telephone}`
+    *Nome:* ${client.name} 
+    *Telefone:* ${client.telephone}`
+
     if (receiveMethod == 'delivery') {
         texto += `
     *Endereço:* 
-    ${client.data.address.street}, ${client.data.address.number}.
-    ${client.data.address.district} - ${client.data.address.zipCode} 
-    ${client.data.address.complement}`
+    ${client.address.street}, ${client.address.number}.
+    ${client.address.district} - ${client.address.zipCode} 
+    ${client.address.complement}`
     } else {
         texto += `
         
@@ -452,7 +446,7 @@ function sendToWhatsApp() {
     }
 
 
-    for (const item of cart.items) {
+    for (const item of cartItems) {
         texto += `
         ${item.quantity}x *${menu.find(category => category.category == item.product.category).name
             .replace(/[sS]$/, "")
@@ -465,12 +459,12 @@ function sendToWhatsApp() {
         }
         if (item.product.note) texto += `
             *Observação:* ${item.product.note}`
-
     }
+
     texto += `\n
-    *Subtotal:* ${transformToRealBRL(cart.total.totalPrice)}
+    *Subtotal:* ${transformToRealBRL(cartTotalprice)}
     *Taxa de entrega:* ${deliveryTax ? transformToRealBRL(deliveryTax)  : ''}
-    *Total:* ${transformToRealBRL(deliveryTax ? (cart.total.totalPrice + deliveryTax) : cart.total.totalPrice ) }`
+    *Total:* ${transformToRealBRL(deliveryTax ? (cartTotalprice + deliveryTax) : cartTotalprice ) }`
 
 
     texto += `
@@ -486,10 +480,88 @@ function sendToWhatsApp() {
     }
 
     if (paymentMethod == "PIX") texto += `*Chave PIX = 41925485000101 (CNPJ)`
+
     texto = window.encodeURIComponent(texto);
 
 
     window.open("https://api.whatsapp.com/send?phone=5519996929909&text=" + texto, "_blank");
 }
+// function sendToWhatsApp() {
+//     const client = JSON.parse(localStorage.getItem('client'))
+//     const cart = JSON.parse(localStorage.getItem('cart'))
+//     const receiveMethod = JSON.parse(localStorage.getItem('receiveMethod'))
+//     const deliveryTax = JSON.parse(localStorage.getItem('deliveryTax'))
+//     const paymentMethod = JSON.parse(localStorage.getItem('paymentMethod'))
+//     const changeNeeded = JSON.parse(localStorage.getItem('changeNeeded'))
+
+
+//     if (!client.data.name || !client.data.telephone) return alertOpen(alerts.blankFields, 'alerts', ".buyerData")
+
+//     if (!receiveMethod) return alertOpen(alerts.noReceiveMethod, 'alerts', ".deliveryMethod")
+
+//     if (receiveMethod == 'delivery' && (!client.data.address.street || !client.data.address.district || !client.data.address.number)) {
+//         alertOpen(alerts.addresBlank, "alerts", ".deliveryMethod")
+//         return
+//     }
+
+//     if (!paymentMethod) return alertOpen(alerts.noPaymentMethod, 'alerts', ".payment")
+
+//     let texto = `
+//     *PEDIDO:*
+//     *Nome:* ${client.data.name} 
+//     *Telefone:* ${client.data.telephone}`
+//     if (receiveMethod == 'delivery') {
+//         texto += `
+//     *Endereço:* 
+//     ${client.data.address.street}, ${client.data.address.number}.
+//     ${client.data.address.district} - ${client.data.address.zipCode} 
+//     ${client.data.address.complement}`
+//     } else {
+//         texto += `
+        
+//     *RETIRADA*
+//     `
+//     }
+
+
+//     for (const item of cart.items) {
+//         texto += `
+//         ${item.quantity}x *${menu.find(category => category.category == item.product.category).name
+//             .replace(/[sS]$/, "")
+//             .replace(/-/g, ' ')} - ${item.product.flavour}*`
+//         if (item.product.additional) {
+//             item.product.additional.forEach(additional => {
+//                 texto += `
+//                 +${additional.quantity}x ${additional.flavour}`
+//             });
+//         }
+//         if (item.product.note) texto += `
+//             *Observação:* ${item.product.note}`
+
+//     }
+//     texto += `\n
+//     *Subtotal:* ${transformToRealBRL(cart.total.totalPrice)}
+//     *Taxa de entrega:* ${deliveryTax ? transformToRealBRL(deliveryTax)  : ''}
+//     *Total:* ${transformToRealBRL(deliveryTax ? (cart.total.totalPrice + deliveryTax) : cart.total.totalPrice ) }`
+
+
+//     texto += `
+//     *Forma de Pagamento:* ${paymentMethod}
+//     `
+//     if (paymentMethod == 'Dinheiro') {
+//         if (changeNeeded || document.querySelector('input[name="change"').value) {
+
+//             texto += `*Troco para:* ${changeNeeded || document.querySelector('input[name="change"').value} `
+//         } else {
+//             texto += `*Não será necessário troco.`
+//         }
+//     }
+
+//     if (paymentMethod == "PIX") texto += `*Chave PIX = 41925485000101 (CNPJ)`
+//     texto = window.encodeURIComponent(texto);
+
+
+//     window.open("https://api.whatsapp.com/send?phone=5519996929909&text=" + texto, "_blank");
+// }
 
 
