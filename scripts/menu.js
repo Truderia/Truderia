@@ -91,7 +91,7 @@ function hideFixedCart(){
     fixedCart.style.transition= '1000ms'
 }
 
-loadFixedCart()
+
 
 // Lightbox 
 const lightbox = {
@@ -144,3 +144,18 @@ function closeView() {
     menu.classList.remove('hideMenu')
     loadFixedCart()
 }
+
+function checkIfCartIsFromToday(){
+    const cart = JSON.parse(localStorage.getItem('cart'))
+    const cartDate = new Date(cart.date)
+    const today = new Date()
+
+    if (cartDate.getDate() != today.getDate() || 
+        cartDate.getMonth() != today.getMonth() || 
+        cartDate.getFullYear() != today.getFullYear())
+    {
+            localStorage.removeItem('cart')
+    }
+}
+checkIfCartIsFromToday()
+loadFixedCart()

@@ -4,12 +4,14 @@ const Cart = {
         if (oldCart) {
             this.items = oldCart.items
             this.total = oldCart.total
+            this.date = oldCart.date
         } else {
             this.items = []
             this.total = {
                 quantity: 0,
                 totalPrice: 0,
             }
+            this.date = new Date()
         }
 
         return this
