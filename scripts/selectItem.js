@@ -2,12 +2,14 @@
 
 function selectItemHtml(itemChosed, categoryChosed) {
     const isTrudel = categoryChosed.category == 'trudel' || categoryChosed.category == 'miniTrudel'
+    const isSavoryTrudel = categoryChosed.category == 'savoryTrudel' 
     const isMini = categoryChosed.category == 'miniTrudel' 
     const isMiniTrudelttone = categoryChosed.category == 'miniChristmasTrudel'
     const isDrinks = categoryChosed.category == 'drinks' 
     const isRings = categoryChosed.category == 'rings' 
     const isTrudelttone = categoryChosed.category == 'christmasTrudel' || categoryChosed.category == 'miniChristmasTrudel'
     const additionalData = menu.find(category => category.category == 'additional')
+    const savoryAdditionalData = menu.find(category => category.category == 'savoryAdditional')
     const miniadditionalData = menu.find(category => category.category == 'miniAdditional')
     const drinksData = menu.find(category => category.category == 'drinks')
     const icecreamData = menu.find(category => category.category == 'icecream')
@@ -51,7 +53,7 @@ function selectItemHtml(itemChosed, categoryChosed) {
             </div><!--addToOrder-->
         `
     }
-    
+
     let html = `
         <div class="image">
             <img src="${itemChosed.image}" alt="">
@@ -77,6 +79,7 @@ function selectItemHtml(itemChosed, categoryChosed) {
         }
         fillOptionals(icecreamData)
     }
+    if(isSavoryTrudel && itemChosed.flavour != 'TRADICIONAL') fillOptionals(savoryAdditionalData)
 
     if (!isDrinks) {
         fillOptionals(drinksData)
@@ -201,7 +204,7 @@ function minusOneAdd(target) {
 
         localStorage.setItem('itemChosed', JSON.stringify(itemChosed))
 
-        document.querySelector('.total .value span:nth-child(2)').innerHTML = totalPrice().toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+        document.querySelector('.total .value span:nth-child(2)').innerHTML = transformToRealBRL(totalPrice())
 
     }
 }
@@ -237,7 +240,7 @@ function plusOneAdd(target) {
 
     localStorage.setItem('itemChosed', JSON.stringify(itemChosed))
 
-    document.querySelector('.total .value span:nth-child(2)').innerHTML = totalPrice().toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+    document.querySelector('.total .value span:nth-child(2)').innerHTML = transformToRealBRL(totalPrice())
 
 
 }
@@ -256,7 +259,7 @@ function minusOneProduct() {
     if (document.querySelector('.total .quantity span').innerHTML > 0) {
         document.querySelector('.total .quantity span').innerHTML--
         const totalQuantity = document.querySelector('.total .quantity span').innerHTML
-        document.querySelector('.total .value span:nth-child(2)').innerHTML = totalPrice(totalQuantity).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+        document.querySelector('.total .value span:nth-child(2)').innerHTML = transformToRealBRL(totalPrice(totalQuantity))
     }
 }
 
@@ -273,7 +276,7 @@ function plusOneProduct() {
 
     document.querySelector('.total .quantity span').innerHTML++
     const totalQuantity = document.querySelector('.total .quantity span').innerHTML
-    document.querySelector('.total .value span:nth-child(2)').innerHTML = totalPrice(totalQuantity).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+    document.querySelector('.total .value span:nth-child(2)').innerHTML = transformToRealBRL(totalPrice(totalQuantity))
 }
 
 function addToCart() {

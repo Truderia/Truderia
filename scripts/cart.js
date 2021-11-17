@@ -21,7 +21,7 @@ function showCartHtml(cart) {
                 <div class="quantity">${item.quantity}x</div>
                 <div class="category">${menu.find(category => item.product.category == category.category).name.toLowerCase().replace(/(?:^|\s)\S/g, function (a) {
             return a.toUpperCase();
-        }).replace(/[sS]$/, "")}</div>
+        }).replace(/[sS]$/, "").replace('Trudels','Trudel')}</div>
                 <div class="flavourAndAdd">
                     <div class="flavour">${item.product.flavour.toLowerCase().replace(/(?:^|\s)\S/g, function (a) {
             return a.toUpperCase();
@@ -263,9 +263,7 @@ function deleteFromCart(target) {
     let cart = JSON.parse(localStorage.getItem('cart'))
     const elementToDelete = target.parentNode
     const cartItemsNodes = target.parentNode.parentNode.children
-    const indexOfItem = Array.from(cartItemsNodes)
-        .map((element, index) => ({ element, index }))
-        .find(({ element }) => element == elementToDelete).index
+    const indexOfItem = Array.from(cartItemsNodes).indexOf(elementToDelete)
     const productToDelete = cart.items[indexOfItem]
     cart = Cart.init(cart).deleteItem(productToDelete.product)
     localStorage.setItem('cart', JSON.stringify(cart))

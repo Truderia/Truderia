@@ -28,7 +28,7 @@ menuView.forEach(({category,  name: categoryName, items: categoryItems}) => {
                                 <p>R$ <span>${typeof(price) == 'number'? price.toFixed(2).replace('.',',') : price}</span></p>
                                 ${miniPrice ? `<p class="mini"> Mini <span>${transformToRealBRL(miniPrice)}</span></p>` : ''} 
                         </div>
-                        ${category != 'additional' && category != 'fingers'? `
+                        ${category != 'additional' && category != 'fingers' && category != 'savoryAdditional'? `
                         <div class="addCart">
                             <button onclick="choose(this)">Escolher</button>
                         </div>`: ''}

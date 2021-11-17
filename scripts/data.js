@@ -172,7 +172,80 @@ const additional = [
     },
 
 ]
-
+const savoryTrudel = [
+    {
+        flavour: "TRADICIONAL",
+        span: "",
+        description: "Nossa deliciosa massa romena assada, na versão salgada, com uma casca crocante de queijo parmesão e um mix de ervas. Uma experiência única de sabor!",
+        image: "./assets/Menu/Savory/Tradicional.webp",
+        price: 10
+    },
+    {
+        flavour: "FRANGO",
+        span: "",
+        description: "Frango desfiado com especiarias. Recheio cremoso, simplesmente delicioso!",
+        image: "./assets/Menu/Savory/Frango.webp",
+        price: 10
+    },
+    {
+        flavour: "FRANGO COM CATUPIRY",
+        span: "",
+        description: "Nosso delicioso recheio de frango com Catupiry original. Combinação mais que perfeita",
+        image: "./assets/Menu/Savory/FrangoCatupiry.webp",
+        price: 10
+    },
+    {
+        flavour: "FRANGO COM CHEDDAR",
+        span: "",
+        description: "Nosso delicioso recheio de frango com Cheddar cremoso. Essa combinação é sucesso garantido!",
+        image: "./assets/Menu/Savory/FrangoCheddar.webp",
+        price: 10
+    },
+    {
+        flavour: "ALHO PORÓ",
+        span: "",
+        description: "Recheio de requeijão cremoso sabor Alho Poró. Suave, sofisticado e surpreendente.",
+        image: "./assets/Menu/Savory/AlhoPoro.webp",
+        price: 10
+    },
+    {
+        flavour: "4 QUEIJOS",
+        span: "",
+        description: "Recheio de requeijão cremoso sabor 4 Queijos. A junção do sabor Catupiry com parmesão, gorgonzola e provolone. Perfeito para aqueles que adoram queijos!",
+        image: "./assets/Menu/Savory/QuatroQueijos.webp",
+        price: 10
+    }
+]
+const savoryAdditional = [
+    {
+        flavour: "ALHO FRITO",
+        span: "",
+        description: "",
+        image: "./assets/Menu/AdicionaisSalgados/AlhoFrito.webp",
+        price: 4
+    },
+    {
+        flavour: "MILHO",
+        span: "",
+        description: "",
+        image: "./assets/Menu/AdicionaisSalgados/Milho.webp",
+        price: 4
+    },
+    {
+        flavour: "BATATA PALHA",
+        span: "",
+        description: "",
+        image: "./assets/Menu/AdicionaisSalgados/BatataPalha.webp",
+        price: 4
+    },
+    {
+        flavour: "PARMESÃO RALADO",
+        span: "",
+        description: "",
+        image: "./assets/Menu/AdicionaisSalgados/ParmesaoRalado.webp",
+        price: 4
+    }
+]
 const iceCream = [
     {
         flavour: "CREME",
@@ -331,6 +404,11 @@ const menuView = [
         items: trudel
     },
     {
+        name: "TRUDEL RINGS",
+        category: "rings",
+        items: trudelRings
+    },
+    {
         name: "SORVETES",
         category: "icecream",
         items: iceCream
@@ -340,11 +418,16 @@ const menuView = [
         category: "additional",
         items: additional
     },
-    {
-        name: "TRUDEL RINGS",
-        category: "rings",
-        items: trudelRings
-    },
+    // {
+    //     name: "TRUDELS SALGADOS",
+    //     category: "savoryTrudel",
+    //     items: savoryTrudel
+    // },
+    // {
+    //     name: "ADICIONAIS SALGADOS",
+    //     category: "savoryAdditional",
+    //     items: savoryAdditional
+    // },
     {
         name: "BEBIDAS",
         category: "drinks",
