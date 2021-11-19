@@ -222,28 +222,28 @@ const savoryAdditional = [
         span: "",
         description: "",
         image: "./assets/Menu/AdicionaisSalgados/AlhoFrito.webp",
-        price: 4
+        price: 1
     },
     {
         flavour: "MILHO",
         span: "",
         description: "",
         image: "./assets/Menu/AdicionaisSalgados/Milho.webp",
-        price: 4
+        price: 1
     },
     {
         flavour: "BATATA PALHA",
         span: "",
         description: "",
         image: "./assets/Menu/AdicionaisSalgados/BatataPalha.webp",
-        price: 4
+        price: 1.5
     },
     {
         flavour: "PARMESÃO RALADO",
         span: "",
         description: "",
         image: "./assets/Menu/AdicionaisSalgados/ParmesaoRalado.webp",
-        price: 4
+        price: 2
     }
 ]
 const iceCream = [
