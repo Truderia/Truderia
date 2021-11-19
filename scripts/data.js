@@ -178,42 +178,42 @@ const savoryTrudel = [
         span: "",
         description: "Nossa deliciosa massa romena assada, na versão salgada, com uma casca crocante de queijo parmesão e um mix de ervas. Uma experiência única de sabor!",
         image: "./assets/Menu/Savory/Tradicional.webp",
-        price: 10
+        price: 9
     },
     {
         flavour: "FRANGO",
         span: "",
         description: "Frango desfiado com especiarias. Recheio cremoso, simplesmente delicioso!",
         image: "./assets/Menu/Savory/Frango.webp",
-        price: 10
+        price: 13
     },
     {
         flavour: "FRANGO COM CATUPIRY",
         span: "",
-        description: "Nosso delicioso recheio de frango com Catupiry original. Combinação mais que perfeita",
+        description: "Nosso delicioso recheio de frango com Catupiry original. Combinação mais que perfeita!",
         image: "./assets/Menu/Savory/FrangoCatupiry.webp",
-        price: 10
+        price: 14
     },
     {
         flavour: "FRANGO COM CHEDDAR",
         span: "",
         description: "Nosso delicioso recheio de frango com Cheddar cremoso. Essa combinação é sucesso garantido!",
         image: "./assets/Menu/Savory/FrangoCheddar.webp",
-        price: 10
+        price: 14
     },
     {
         flavour: "ALHO PORÓ",
         span: "",
         description: "Recheio de requeijão cremoso sabor Alho Poró. Suave, sofisticado e surpreendente.",
         image: "./assets/Menu/Savory/AlhoPoro.webp",
-        price: 10
+        price: 15
     },
     {
         flavour: "4 QUEIJOS",
         span: "",
-        description: "Recheio de requeijão cremoso sabor 4 Queijos. A junção do sabor Catupiry com parmesão, gorgonzola e provolone. Perfeito para aqueles que adoram queijos!",
+        description: "Recheio de requeijão cremoso sabor 4 Queijos. A junção do sabor do Catupiry, parmesão, gorgonzola e provolone. Perfeito para aqueles que adoram queijos!",
         image: "./assets/Menu/Savory/QuatroQueijos.webp",
-        price: 10
+        price: 15
     }
 ]
 const savoryAdditional = [
@@ -404,6 +404,11 @@ const menuView = [
         items: trudel
     },
     {
+        name: "TRUDELS SALGADOS",
+        category: "savoryTrudel",
+        items: savoryTrudel
+    },
+    {
         name: "TRUDEL RINGS",
         category: "rings",
         items: trudelRings
@@ -418,16 +423,12 @@ const menuView = [
         category: "additional",
         items: additional
     },
-    // {
-    //     name: "TRUDELS SALGADOS",
-    //     category: "savoryTrudel",
-    //     items: savoryTrudel
-    // },
-    // {
-    //     name: "ADICIONAIS SALGADOS",
-    //     category: "savoryAdditional",
-    //     items: savoryAdditional
-    // },
+    
+    {
+        name: "ADICIONAIS SALGADOS",
+        category: "savoryAdditional",
+        items: savoryAdditional
+    },
     {
         name: "BEBIDAS",
         category: "drinks",
@@ -578,7 +579,7 @@ const miniChristmas =
         })
     }
 
-menuView.unshift(promotion)
+// menuView.unshift(promotion)
 menuView.unshift(christmasTrudel)
 
 const entregas = {
