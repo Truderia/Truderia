@@ -643,5 +643,9 @@ const districts = [
         name: 'Samantha',
         price: 7
     },
+    {
+        name: 'Jardim Vida Nova',
+        price: 7
+    },
 
 ]

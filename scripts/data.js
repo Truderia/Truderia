@@ -484,14 +484,14 @@ const promotion = {
             {
                 value:"COMBINAÇÃO DA QUINTA",
                 flavour: "TAMANHO NORMAL",
-                description: "Delicioso Trudel de Ovomaltine com adicional de Ovomaltine Crocante e sorvete Sensação por um preço especial!",
+                description: "Delicioso Trudel de Kitkat com adicional de Kitkat Picado e sorvete de Creme por um preço especial!",
                 image: "./assets/Menu/Promotion/thursdayCombination.webp",
                 price: 16.50,
             },
             {
                 value:"MINI-COMBINAÇÃO DA QUINTA",
                 flavour: "TAMANHO MINI",
-                description: "Delicioso Trudel de Ovomaltine com adicional de Ovomaltine Crocante e sorvete Sensação por um preço especial!",
+                description: "Delicioso Trudel de Kitkat com adicional de Kitkat Picado e sorvete de Creme por um preço especial!",
                 image: "./assets/Menu/Promotion/thursdayCombination.webp",
                 price: 12.5,
             },
@@ -579,7 +579,7 @@ const miniChristmas =
         })
     }
 
-// menuView.unshift(promotion)
+menuView.unshift(promotion)
 menuView.unshift(christmasTrudel)
 
 const entregas = {
