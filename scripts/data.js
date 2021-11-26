@@ -294,7 +294,7 @@ const trudelRings = [
     {
         flavour: "RINGS FIVE",
         span: "(5 unidades)",
-        description: `Nossa deliciosa massa romena em formato de anéis, perfeitos para compartilhar e para aquele lanchinho rápido! <br>
+        description: `Nossa deliciosa massa romena em formato de anéis, perfeitos para compartilhar e para aquele lanchinho rápido! <br><br>
         *Acrescente seu recheio preferido para acompanhar seus rings.`,
         image: "./assets/Menu/Rings/Rings5.webp",
         price: 7,
@@ -302,7 +302,7 @@ const trudelRings = [
     {
         flavour: "RINGS TEN",
         span: "(10 unidades)",
-        description: `Nossa deliciosa massa romena em formato de anéis, perfeitos para compartilhar e para aquele lanchinho rápido! <br>
+        description: `Nossa deliciosa massa romena em formato de anéis, perfeitos para compartilhar e para aquele lanchinho rápido! <br><br>
         *Acrescente seu recheio preferido para acompanhar seus rings.`,
         image: "./assets/Menu/Rings/Rings10.webp",
         price: 10,
@@ -441,14 +441,14 @@ const menuView = [
             {
             flavour: "TRUDEL BOX",
             span: "",
-            description: 'Nossos irresistíveis trudels, no tamanho ideal (35 gramas) para surpreender seus convidados e deixar sua mesa de doces simplesmente maravilhosa em seu evento.<br> <small>* Disponível apenas para encomendas.</small>',
+            description: 'Linda caixa de presente com 9 unidades dos nossos deliciosos Trudel Fingers. Personalize como desejar, escolha os sabores e adicionais.<br><br> <small>* Apenas encomendas.<br>(2 dias de antecedência)</small>',
             image: "./assets/Menu/Fingers/trudelBox.webp",
             price: 50
             },
             {
             flavour: "EVENTOS / FESTAS",
             span: "",
-            description: 'Nossos irresistíveis trudels, no tamanho ideal (35 gramas) para surpreender seus convidados e deixar sua mesa de doces simplesmente maravilhosa em seu evento.<br> <small>* Disponível apenas para encomendas.</small>',
+            description: 'Nossos irresistíveis trudels, no tamanho ideal (35 gramas) para surpreender seus convidados e deixar sua mesa de doces simplesmente maravilhosa em seu evento.<br><br> <small>* Apenas encomendas.<br>(1 semana de antecedência)</small>',
             image: "./assets/Menu/Fingers/fingers.webp",
             price: '**Sob Consulta'
             },

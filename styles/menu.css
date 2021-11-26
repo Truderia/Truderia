@@ -193,7 +193,8 @@ main .menuItem .image.drinks img{
     font-size: 14px;
 }
 .menuItem .item .description{
-    margin-left: 0.5rem;
+    
+    text-indent: 1rem;
 }
 .menuItem .item .description p{
     margin: 2px 0;
@@ -385,7 +386,7 @@ a.lightbox-close {
         font-size: 11px;
     }
     .menuItem .item.typefingers .description p{
-        font-size: 14px;
+        font-size: 11px;
     }
    
     .menuItem .price p{
