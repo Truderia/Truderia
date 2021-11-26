@@ -163,7 +163,7 @@ function checkIfCartIsFromToday(){
 
 function order(event){
     const item = event.target.parentNode.parentNode.parentNode.querySelector('.itemName p').innerText
-    let texto = `Olá, eu gostaria de conversar sobre a encomenda do item: ${item} do cárdapio.`
+    let texto = `Olá, eu gostaria de informações sobre a encomenda do item: ${item}.`
     texto = window.encodeURIComponent(texto);
 
     window.open("https://api.whatsapp.com/send?phone=5519996929909&text=" + texto, "_blank");
