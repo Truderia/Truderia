@@ -70,6 +70,7 @@ header .menu{
     letter-spacing:12px;
     font-size: 36PX;
     font-family: 'Roboto Slab', sans-serif;
+    line-height: 22px;
 }
 .categoryName i{
     font-size: 54px;
@@ -80,6 +81,11 @@ header .menu{
 .categoryName h3,
 .categoryName i{
     color: var(--text);
+}
+.categoryName h3 small{
+    letter-spacing:2px;
+    font-size: 18px;
+    
 }
 
 /*------- ITEM MENU-------- */
@@ -332,6 +338,9 @@ a.lightbox-close {
         font-weight: 500;
         letter-spacing:0.2rem;
         font-size: 24PX;
+    }
+    .categoryName h3 small{
+        font-size: 14px;
     }
     .categoryName i{
         font-size: 54px;
