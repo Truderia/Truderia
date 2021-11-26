@@ -32,6 +32,9 @@ menuView.forEach(({category,  name: categoryName, items: categoryItems}) => {
                         <div class="addCart">
                             <button onclick="choose(this)">Escolher</button>
                         </div>`: ''}
+                        ${category == 'fingers' ? `<div class="addCart">
+                        <button onclick="order(event)">Encomendar</button>
+                    </div>`: ''}
                     </div>    
                 </div>
                     
@@ -156,6 +159,14 @@ function checkIfCartIsFromToday(){
     {
             localStorage.removeItem('cart')
     }
+}
+
+function order(event){
+    const item = event.target.parentNode.parentNode.parentNode.querySelector('.itemName p').innerText
+    let texto = `Olá, eu gostaria de conversar sobre a encomenda do item: ${item} do cárdapio.`
+    texto = window.encodeURIComponent(texto);
+
+    window.open("https://api.whatsapp.com/send?phone=5519996929909&text=" + texto, "_blank");
 }
 checkIfCartIsFromToday()
 loadFixedCart()
