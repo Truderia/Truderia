@@ -70,6 +70,9 @@ header .menu{
     letter-spacing:12px;
     font-size: 36PX;
     font-family: 'Roboto Slab', sans-serif;
+    
+}
+.category:last-child .categoryName h3{
     line-height: 22px;
 }
 .categoryName i{
