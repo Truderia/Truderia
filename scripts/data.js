@@ -48,14 +48,14 @@ const trudel = [
         price: 14,
         miniPrice: 10
     },
-    {
-        flavour: "KIT KAT CREMOSO",
-        span: "",
-        description: "Um recheio que mistura a cremosidade do chocolate e o crocante do biscoito wafer.",
-        image: "./assets/Menu/Trudels/Kitkat.webp",
-        price: 14,
-        miniPrice: 10
-    },
+    // {
+    //     flavour: "KIT KAT CREMOSO",
+    //     span: "",
+    //     description: "Um recheio que mistura a cremosidade do chocolate e o crocante do biscoito wafer.",
+    //     image: "./assets/Menu/Trudels/Kitkat.webp",
+    //     price: 14,
+    //     miniPrice: 10
+    // },
     {
         flavour: "OVOMALTINE",
         span: "",
