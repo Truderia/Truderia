@@ -327,13 +327,13 @@ const stuffingPots = {
             image: "./assets/Menu/Potes/PoteDoceDeLeite.webp",
             price: 4,
         },
-        {
-            flavour: "KITKAT CREMOSO",
-            span: "",
-            description: "",
-            image: "./assets/Menu/Potes/poteKitkat.webp",
-            price: 5,
-        },
+        // {
+        //     flavour: "KITKAT CREMOSO",
+        //     span: "",
+        //     description: "",
+        //     image: "./assets/Menu/Potes/poteKitkat.webp",
+        //     price: 5,
+        // },
         {
             flavour: "NUTELLA",
             span: "",
