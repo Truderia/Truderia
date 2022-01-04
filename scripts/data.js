@@ -45,17 +45,17 @@ const trudel = [
         span: "",
         description: "O verdadeiro creme de avelã, o mais pedido e queridinho dos nossos clientes.",
         image: "./assets/Menu/Trudels/Nutella.webp",
-        price: 14,
+        price: 15,
         miniPrice: 10
     },
-    // {
-    //     flavour: "KIT KAT CREMOSO",
-    //     span: "",
-    //     description: "Um recheio que mistura a cremosidade do chocolate e o crocante do biscoito wafer.",
-    //     image: "./assets/Menu/Trudels/Kitkat.webp",
-    //     price: 14,
-    //     miniPrice: 10
-    // },
+    {
+        flavour: "KIT KAT CREMOSO",
+        span: "",
+        description: "Um recheio que mistura a cremosidade do chocolate e o crocante do biscoito wafer.",
+        image: "./assets/Menu/Trudels/Kitkat.webp",
+        price: 15,
+        miniPrice: 10
+    },
     {
         flavour: "OVOMALTINE",
         span: "",
@@ -99,14 +99,14 @@ const additional = [
         price: 1,
         miniPrice: 0.5
     },
-    {
-        flavour: "CONFETE",
-        span: "",
-        description: "",
-        image: "./assets/Menu/Adicionais/confete.jpg",
-        price: 2,
-        miniPrice: 1
-    },
+    // {
+    //     flavour: "CONFETE",
+    //     span: "",
+    //     description: "",
+    //     image: "./assets/Menu/Adicionais/confete.jpg",
+    //     price: 2,
+    //     miniPrice: 1
+    // },
     {
         flavour: "COCO RALADO",
         span: "",
@@ -123,14 +123,14 @@ const additional = [
         price: 2,
         miniPrice: 1
     },
-    {
-        flavour: "NEGRESCO MOIDO",
-        span: "",
-        description: "",
-        image: "./assets/Menu/Adicionais/Negresco.webp",
-        price: 2,
-        miniPrice: 1
-    },
+    // {
+    //     flavour: "NEGRESCO MOIDO",
+    //     span: "",
+    //     description: "",
+    //     image: "./assets/Menu/Adicionais/Negresco.webp",
+    //     price: 2,
+    //     miniPrice: 1
+    // },
     {
         flavour: "AMENDOIM",
         span: "",
@@ -138,6 +138,13 @@ const additional = [
         image: "./assets/Menu/Adicionais/amendoim.jpg",
         price: 2,
         miniPrice: 1
+    },
+    {
+        flavour: "SONHO DE VALSA PICADO",
+        span: "",
+        description: "",
+        image: "./assets/Menu/Adicionais/sonhoDeValsa.jpg",
+        price: 2
     },
     {
         flavour: "NOZES",
@@ -154,13 +161,6 @@ const additional = [
         image: "./assets/Menu/Adicionais/kitKat2.jpg",
         price: 3,
         miniPrice: 1.5
-    },
-    {
-        flavour: "SONHO DE VALSA PICADO",
-        span: "",
-        description: "",
-        image: "./assets/Menu/Adicionais/sonhoDeValsa.jpg",
-        price: 3
     },
     {
         flavour: "DOBRO DE RECHEIO",
@@ -201,20 +201,20 @@ const savoryTrudel = [
         image: "./assets/Menu/Savory/FrangoCheddar.webp",
         price: 14
     },
-    {
-        flavour: "ALHO PORÓ",
-        span: "",
-        description: "Recheio de requeijão cremoso sabor Alho Poró. Suave, sofisticado e surpreendente.",
-        image: "./assets/Menu/Savory/AlhoPoro.webp",
-        price: 15
-    },
-    {
-        flavour: "4 QUEIJOS",
-        span: "",
-        description: "Recheio de requeijão cremoso sabor 4 Queijos. A junção do sabor do Catupiry, parmesão, gorgonzola e provolone. Perfeito para aqueles que adoram queijos!",
-        image: "./assets/Menu/Savory/QuatroQueijos.webp",
-        price: 15
-    }
+    // {
+    //     flavour: "ALHO PORÓ",
+    //     span: "",
+    //     description: "Recheio de requeijão cremoso sabor Alho Poró. Suave, sofisticado e surpreendente.",
+    //     image: "./assets/Menu/Savory/AlhoPoro.webp",
+    //     price: 15
+    // },
+    // {
+    //     flavour: "4 QUEIJOS",
+    //     span: "",
+    //     description: "Recheio de requeijão cremoso sabor 4 Queijos. A junção do sabor do Catupiry, parmesão, gorgonzola e provolone. Perfeito para aqueles que adoram queijos!",
+    //     image: "./assets/Menu/Savory/QuatroQueijos.webp",
+    //     price: 15
+    // }
 ]
 const savoryAdditional = [
     {
@@ -252,42 +252,42 @@ const iceCream = [
         span: "",
         description: "O clássico sorvete de creme que combina com tudo.",
         image: "./assets/Menu/Sorvetes/Creme.webp",
-        price: 4
+        price: 5
     },
     {
         flavour: "NINHO TRUFADO",
         span: "",
         description: "O nosso sabor mais pedido, a dupla perfeita, leite Ninho e chocolate.",
         image: "./assets/Menu/Sorvetes/NinhoTrufado.webp",
-        price: 4
+        price: 5
     },
     {
         flavour: "IOGURTE COM FRUTAS VERMELHAS",
         span: "",
         description: "A leveza do iogurte com um mix das frutas amora, framboesa, cereja e morango.",
         image: "./assets/Menu/Sorvetes/IogurteFrutasVermelhas.webp",
-        price: 4
+        price: 5
     },
     {
         flavour: "CAFÉ MOCHA",
         span: "",
         description: "O sorvete ideal para quem adora café com um toque especial de chocolate.",
         image: "./assets/Menu/Sorvetes/CafeMocha.webp",
-        price: 4
+        price: 5
     },
     {
         flavour: "BEM CASADO",
         span: "",
         description: "A união que deu certo, sorvete com pedaços de biscoito e doce de leite.",
         image: "./assets/Menu/Sorvetes/BemCasado.webp",
-        price: 4
+        price: 5
     },
     {
         flavour: "SENSAÇÃO",
         span: "",
         description: "A deliciosa combinação do sorvete de morango com pedaços de chocolate.",
         image: "./assets/Menu/Sorvetes/Sensacao.webp",
-        price: 4
+        price: 5
     }
 ]
 const trudelRings = [
@@ -327,13 +327,13 @@ const stuffingPots = {
             image: "./assets/Menu/Potes/PoteDoceDeLeite.webp",
             price: 4,
         },
-        // {
-        //     flavour: "KITKAT CREMOSO",
-        //     span: "",
-        //     description: "",
-        //     image: "./assets/Menu/Potes/poteKitkat.webp",
-        //     price: 5,
-        // },
+        {
+            flavour: "KITKAT CREMOSO",
+            span: "",
+            description: "",
+            image: "./assets/Menu/Potes/poteKitkat.webp",
+            price: 5,
+        },
         {
             flavour: "NUTELLA",
             span: "",
@@ -373,26 +373,40 @@ const drinks = [
         image: "./assets/Menu/Bebidas/AguaComGas.jpg",
         price: 3
     },
+    // {
+    //     flavour: "SODA ITALIANA CRANBERRY",
+    //     span: "500ml",
+    //     description: "Frescor e um toque doce suave definem essa bebida! Feita com água com gás e xarope de frutas importado e gelo.",
+    //     image: "./assets/Menu/Bebidas/Cranberry.webp",
+    //     price: 12
+    // },
+    // {
+    //     flavour: "SODA ITALIANA MAÇÃ VERDE",
+    //     span: "500ml",
+    //     description: "Sabor excepcional, o preferido daqueles que tem o paladar mais doce.  Feita com água com gás e xarope de frutas importado e gelo.",
+    //     image: "./assets/Menu/Bebidas/MacaVerde.webp",
+    //     price: 12
+    // },
+    // {
+    //     flavour: "SODA ITALIANA LIMÃO SICILIANO",
+    //     span: "500ml",
+    //     description: "Refrescante e cítrico, uma verdadeira limonada premium. Feita com água com gás e xarope de frutas importado e gelo.",
+    //     image: "./assets/Menu/Bebidas/LimaoSiciliano.webp",
+    //     price: 12
+    // },
     {
-        flavour: "SODA ITALIANA CRANBERRY",
-        span: "500ml",
-        description: "Frescor e um toque doce suave definem essa bebida! Feita com água com gás e xarope de frutas importado e gelo.",
-        image: "./assets/Menu/Bebidas/Cranberry.webp",
-        price: 12
+        flavour: "COCA-COLA",
+        span: "350ml",
+        description: "Refrigerante Coca-Cola Lata",
+        image: "./assets/Menu/Bebidas/cocacola.webp",
+        price: 4
     },
     {
-        flavour: "SODA ITALIANA MAÇÃ VERDE",
-        span: "500ml",
-        description: "Sabor excepcional, o preferido daqueles que tem o paladar mais doce.  Feita com água com gás e xarope de frutas importado e gelo.",
-        image: "./assets/Menu/Bebidas/MacaVerde.webp",
-        price: 12
-    },
-    {
-        flavour: "SODA ITALIANA LIMÃO SICILIANO",
-        span: "500ml",
-        description: "Refrescante e cítrico, uma verdadeira limonada premium. Feita com água com gás e xarope de frutas importado e gelo.",
-        image: "./assets/Menu/Bebidas/LimaoSiciliano.webp",
-        price: 12
+        flavour: "GUARANÁ",
+        span: "350ml",
+        description: "Refrigerante Guaraná Antartica Lata",
+        image: "./assets/Menu/Bebidas/guarana.webp",
+        price: 4
     },
     
 ]
@@ -553,6 +567,20 @@ const promotion = {
     ]
 }
 
+const combo = {
+    name: "COMBO DA SEMANA",
+    category:"combo",
+    items: [
+            {
+                value:"COMBO DA SEMANA",
+                flavour: "Combo",
+                description: "Trudel de Frango + Mini-Trudel de Doce de Leite + Refrigerante!",
+                image: "./assets/Menu/Promotion/thursdayCombination.webp",
+                price: 23.00,
+            },
+    ]
+}    
+
 const christmasTrudel = {
     name: "ESPECIAL DE NATAL",
     category:"christmasTrudel",
@@ -588,8 +616,9 @@ const miniChristmas =
         })
     }
 
-// menuView.unshift(promotion)
-menuView.unshift(christmasTrudel)
+menuView.unshift(promotion)
+// menuView.unshift(combo)
+// menuView.unshift(christmasTrudel)
 
 const entregas = {
     name: "ENTREGAS",
