@@ -46,7 +46,7 @@ const trudel = [
         description: "O verdadeiro creme de avelã, o mais pedido e queridinho dos nossos clientes.",
         image: "./assets/Menu/Trudels/Nutella.webp",
         price: 15,
-        miniPrice: 10
+        miniPrice: 11
     },
     {
         flavour: "KIT KAT CREMOSO",
@@ -54,7 +54,7 @@ const trudel = [
         description: "Um recheio que mistura a cremosidade do chocolate e o crocante do biscoito wafer.",
         image: "./assets/Menu/Trudels/Kitkat.webp",
         price: 15,
-        miniPrice: 10
+        miniPrice: 11
     },
     {
         flavour: "OVOMALTINE",
@@ -509,7 +509,7 @@ const promotion = {
                 flavour: "TAMANHO NORMAL",
                 description: "Delicioso Trudel Meio Amargo com adicional de Amendoim Picado e sorvete Ninho Trufado por um preço especial!",
                 image: "./assets/Menu/Promotion/thursdayCombination.webp",
-                price: 15.50,
+                price: 15.00,
             },
             {
                 value:"MINI-COMBINAÇÃO DA QUINTA",
