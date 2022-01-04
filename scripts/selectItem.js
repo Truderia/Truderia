@@ -115,7 +115,45 @@ function selectItemHtml(itemChosed, categoryChosed) {
     return html
 }
 
+function inServiceTimetable(){
+    const serviceTimetable = {
+        weekdays:[4,5,6,7],
+        thursdayToSaturday:{
+            open:18,
+            close: 22
+        },
+        monday: {
+            open:16,
+            close: 20
+        }
+    }
+    const currentDate = new Date()
+    const currentWeekday = currentDate.getDay()
+    const currenthour = currentDate.getHours()
+    const inServiceWeekday = serviceTimetable.weekdays.includes(currentWeekday)
+
+    const inMondayHours = 
+        currenthour >= serviceTimetable.monday.open && 
+        currenthour < serviceTimetable.monday.close;
+
+    const inThursdayToSaturdayHours = 
+        currenthour >= serviceTimetable.thursdayToSaturday.open && 
+        currenthour < serviceTimetable.thursdayToSaturday.close;
+
+    if(!inServiceWeekday) return false
+    if(serviceTimetable.weekdays == 7){
+        if(!inMondayHours)return false
+        return true
+    }
+    if(!inThursdayToSaturdayHours)return false
+
+    return true
+}
+
 function choose(item) {
+    if(!inServiceTimetable()) 
+        return alertOpen(alerts.outsideServiceTimetable,'alerts')
+
     // Extract selected category value from HTML
     let category = item.parentNode.parentNode.parentNode.parentNode.parentNode.querySelector('.categoryName h3').innerHTML
     // Get category on data info

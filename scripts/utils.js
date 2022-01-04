@@ -44,4 +44,10 @@ const alerts = {
     noReceiveMethod: `Favor escolher uma forma de recebimento do pedido.`,
     noPaymentMethod: `Favor escolher uma forma de pagamento.`,
     deliveryTaxNotFound: `Não encontramos a taxa de entrega para este bairro. \n Sem problemas !! Pode seguir com o pedido e resolveremos essa questão através do Whatsapp. =)`,
+    outsideServiceTimetable: `No momento não estamos recebendo pedidos.<br><br> Nosso horário de atendimento é : <br><br>
+    <span style="color:orange">- Quinta a Sábado das 18 às 22hrs <br>
+    - Domingo das 16 às 20hrs</span> <br><br>
+    
+    <small>Caso queira tirar alguma dúvida <span style="color:orange;cursor:pointer" onclick=window.open("https://api.whatsapp.com/send?phone=5519996929909","_blank");>clique aqui</span> para ser direcionado(a) ao nosso Whattsapp</small>
+    `
 }
