@@ -119,11 +119,11 @@ function inServiceTimetable(){
     const serviceTimetable = {
         weekdays:[4,5,6,7],
         thursdayToSaturday:{
-            open:18,
+            open:17,
             close: 22
         },
         monday: {
-            open:16,
+            open:15,
             close: 20
         }
     }
