@@ -574,9 +574,9 @@ const combo = {
             {
                 value:"COMBO DA SEMANA",
                 flavour: "Combo",
-                description: "Trudel de Frango + Mini-Trudel de Doce de Leite + Refrigerante!",
-                image: "./assets/Menu/Promotion/thursdayCombination.webp",
-                price: 23.00,
+                description: "Trudel de Frango + Trudel Rings Ten com Nutella + Refrigerante!",
+                image: "./assets/Menu/Promotion/weekCombination.webp",
+                price: 26.00,
             },
     ]
 }    
@@ -616,8 +616,8 @@ const miniChristmas =
         })
     }
 
-menuView.unshift(promotion)
-// menuView.unshift(combo)
+// menuView.unshift(promotion)
+menuView.unshift(combo)
 // menuView.unshift(christmasTrudel)
 
 const entregas = {
