@@ -7,6 +7,7 @@ function selectItemHtml(itemChosed, categoryChosed) {
     const isMiniTrudelttone = categoryChosed.category == 'miniChristmasTrudel'
     const isDrinks = categoryChosed.category == 'drinks' 
     const isRings = categoryChosed.category == 'rings' 
+    const isCombo = categoryChosed.category == 'combo' 
     const isTrudelttone = categoryChosed.category == 'christmasTrudel' || categoryChosed.category == 'miniChristmasTrudel'
     const additionalData = menu.find(category => category.category == 'additional')
     const savoryAdditionalData = menu.find(category => category.category == 'savoryAdditional')
@@ -81,7 +82,7 @@ function selectItemHtml(itemChosed, categoryChosed) {
     }
     if(isSavoryTrudel && itemChosed.flavour != 'TRADICIONAL') fillOptionals(savoryAdditionalData)
 
-    if (!isDrinks) {
+    if (!isDrinks && !isCombo) {
         fillOptionals(drinksData)
     }
 
