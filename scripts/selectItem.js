@@ -132,8 +132,6 @@ function inServiceTimetable(){
     const currentWeekday = currentDate.getDay()
     const currenthour = currentDate.getHours()
     const inServiceWeekday = serviceTimetable.weekdays.includes(currentWeekday)
-    
-    console.log(inServiceWeekday)
 
     const inMondayHours = 
         currenthour >= serviceTimetable.monday.open && 
