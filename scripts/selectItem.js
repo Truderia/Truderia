@@ -118,7 +118,7 @@ function selectItemHtml(itemChosed, categoryChosed) {
 
 function inServiceTimetable(){
     const serviceTimetable = {
-        weekdays:[4,5,6,7],
+        weekdays:[4,5,6,0],
         thursdayToSaturday:{
             open:17,
             close: 22
@@ -132,6 +132,8 @@ function inServiceTimetable(){
     const currentWeekday = currentDate.getDay()
     const currenthour = currentDate.getHours()
     const inServiceWeekday = serviceTimetable.weekdays.includes(currentWeekday)
+    
+    console.log(inServiceWeekday)
 
     const inMondayHours = 
         currenthour >= serviceTimetable.monday.open && 
@@ -142,7 +144,7 @@ function inServiceTimetable(){
         currenthour < serviceTimetable.thursdayToSaturday.close;
 
     if(!inServiceWeekday) return false
-    if(serviceTimetable.weekdays == 7){
+    if(currentWeekday == 0){
         if(!inMondayHours)return false
         return true
     }
