@@ -268,6 +268,10 @@ const districts = [
         price: 6
     },
     {
+        name: 'Parque Alvorada',
+        price: 6
+    },
+    {
         name: 'Jardim Residencial Flamboyant',
         price: 6
     },
