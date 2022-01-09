@@ -125,7 +125,7 @@ function inServiceTimetable(){
         },
         monday: {
             open:15,
-            close: 21
+            close: 20
         }
     }
     const currentDate = new Date()
