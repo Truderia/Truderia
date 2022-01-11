@@ -123,7 +123,7 @@ function inServiceTimetable(){
             open:17,
             close: 22
         },
-        monday: {
+        sunday: {
             open:15,
             close: 20
         }
@@ -133,9 +133,9 @@ function inServiceTimetable(){
     const currenthour = currentDate.getHours()
     const inServiceWeekday = serviceTimetable.weekdays.includes(currentWeekday)
 
-    const inMondayHours = 
-        currenthour >= serviceTimetable.monday.open && 
-        currenthour < serviceTimetable.monday.close;
+    const inSundayHours = 
+        currenthour >= serviceTimetable.sunday.open && 
+        currenthour < serviceTimetable.sunday.close;
 
     const inThursdayToSaturdayHours = 
         currenthour >= serviceTimetable.thursdayToSaturday.open && 
@@ -143,7 +143,7 @@ function inServiceTimetable(){
 
     if(!inServiceWeekday) return false
     if(currentWeekday == 0){
-        if(!inMondayHours)return false
+        if(!inSundayHours)return false
         return true
     }
     if(!inThursdayToSaturdayHours)return false
