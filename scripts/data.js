@@ -616,8 +616,8 @@ const miniChristmas =
         })
     }
 
-// menuView.unshift(promotion)
-menuView.unshift(combo)
+menuView.unshift(promotion)
+// menuView.unshift(combo)
 // menuView.unshift(christmasTrudel)
 
 const entregas = {
