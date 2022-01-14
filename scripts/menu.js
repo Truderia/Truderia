@@ -105,8 +105,8 @@ const lightbox = {
         lightbox.target.style.opacity = 1
         lightbox.target.style.top = 0
         lightbox.closeButton.style.top = 0
-        let source = e? e.target.src : './assets/Menu/lightboxThursdayCombination.webp'
-        // let source = e? e.target.src : './assets/Menu/lightboxWeekCombination.webp'
+        // let source = e? e.target.src : './assets/Menu/lightboxThursdayCombination.webp'
+        let source = e? e.target.src : './assets/Menu/lightboxWeekCombination.webp'
         lightbox.image.src = source
     },
     close(){
