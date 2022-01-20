@@ -27,7 +27,6 @@ function selectItemHtml(itemChosed, categoryChosed) {
 
         items.forEach(({ image, flavour, price }) => {
             if (flavour == 'RECHEIO EXTRA') {
-                console.log(itemChosed)
                 price = Math.ceil(itemChosed.price * 0.3)
                 flavour += `</br><small style="font-size:9px; color:black;">(pote de 50g ${itemChosed.flavour})</small>`
             }

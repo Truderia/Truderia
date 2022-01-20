@@ -581,7 +581,7 @@ const combo = {
     ]
 }
 
-/*const christmasTrudel = {
+const christmasTrudel = {
     name: "ESPECIAL DE NATAL",
     category: "christmasTrudel",
     items: [
@@ -614,7 +614,7 @@ const miniChristmas =
             image: filtered.image
         }
     })
-}*/
+}
 
 menuView.unshift(promotion)
 // menuView.unshift(combo)
