@@ -2,12 +2,12 @@
 
 function selectItemHtml(itemChosed, categoryChosed) {
     const isTrudel = categoryChosed.category == 'trudel' || categoryChosed.category == 'miniTrudel'
-    const isSavoryTrudel = categoryChosed.category == 'savoryTrudel' 
-    const isMini = categoryChosed.category == 'miniTrudel' 
+    const isSavoryTrudel = categoryChosed.category == 'savoryTrudel'
+    const isMini = categoryChosed.category == 'miniTrudel'
     const isMiniTrudelttone = categoryChosed.category == 'miniChristmasTrudel'
-    const isDrinks = categoryChosed.category == 'drinks' 
-    const isRings = categoryChosed.category == 'rings' 
-    const isCombo = categoryChosed.category == 'combo' 
+    const isDrinks = categoryChosed.category == 'drinks'
+    const isRings = categoryChosed.category == 'rings'
+    const isCombo = categoryChosed.category == 'combo'
     const isTrudelttone = categoryChosed.category == 'christmasTrudel' || categoryChosed.category == 'miniChristmasTrudel'
     const additionalData = menu.find(category => category.category == 'additional')
     const savoryAdditionalData = menu.find(category => category.category == 'savoryAdditional')
@@ -26,6 +26,12 @@ function selectItemHtml(itemChosed, categoryChosed) {
         `
 
         items.forEach(({ image, flavour, price }) => {
+            if (flavour == 'RECHEIO EXTRA') {
+                console.log(itemChosed)
+                price = Math.ceil(itemChosed.price * 0.3)
+                flavour += `</br><small style="font-size:9px; color:black;">(pote de 50g ${itemChosed.flavour})</small>`
+            }
+
             html += `
                 <div class="input">
                     
@@ -80,7 +86,7 @@ function selectItemHtml(itemChosed, categoryChosed) {
         }
         fillOptionals(icecreamData)
     }
-    if(isSavoryTrudel && itemChosed.flavour != 'TRADICIONAL') fillOptionals(savoryAdditionalData)
+    if (isSavoryTrudel && itemChosed.flavour != 'TRADICIONAL') fillOptionals(savoryAdditionalData)
 
     if (!isDrinks && !isCombo) {
         fillOptionals(drinksData)
@@ -116,15 +122,15 @@ function selectItemHtml(itemChosed, categoryChosed) {
     return html
 }
 
-function inServiceTimetable(){
+function inServiceTimetable() {
     const serviceTimetable = {
-        weekdays:[4,5,6,0],
-        thursdayToSaturday:{
-            open:17,
+        weekdays: [4, 5, 6, 0],
+        thursdayToSaturday: {
+            open: 17,
             close: 22
         },
         sunday: {
-            open:15,
+            open: 15,
             close: 20
         }
     }
@@ -133,27 +139,27 @@ function inServiceTimetable(){
     const currenthour = currentDate.getHours()
     const inServiceWeekday = serviceTimetable.weekdays.includes(currentWeekday)
 
-    const inSundayHours = 
-        currenthour >= serviceTimetable.sunday.open && 
+    const inSundayHours =
+        currenthour >= serviceTimetable.sunday.open &&
         currenthour < serviceTimetable.sunday.close;
 
-    const inThursdayToSaturdayHours = 
-        currenthour >= serviceTimetable.thursdayToSaturday.open && 
+    const inThursdayToSaturdayHours =
+        currenthour >= serviceTimetable.thursdayToSaturday.open &&
         currenthour < serviceTimetable.thursdayToSaturday.close;
 
-    if(!inServiceWeekday) return false
-    if(currentWeekday == 0){
-        if(!inSundayHours)return false
+    if (!inServiceWeekday) return false
+    if (currentWeekday == 0) {
+        if (!inSundayHours) return false
         return true
     }
-    if(!inThursdayToSaturdayHours)return false
+    if (!inThursdayToSaturdayHours) return false
 
     return true
 }
 
 function choose(item) {
-    if(!inServiceTimetable()) 
-        return alertOpen(alerts.outsideServiceTimetable,'alerts')
+    if (!inServiceTimetable())
+        return alertOpen(alerts.outsideServiceTimetable, 'alerts')
 
     // Extract selected category value from HTML
     let category = item.parentNode.parentNode.parentNode.parentNode.parentNode.querySelector('.categoryName h3').innerHTML
@@ -199,7 +205,7 @@ function selectSize(size) {
 
     if (size.toLowerCase() == 'mini') {
         categoryChosed = `mini${categoryChosed.category}`
-        let category = menu.find(({category}) => category.toLowerCase() == categoryChosed.toLowerCase())
+        let category = menu.find(({ category }) => category.toLowerCase() == categoryChosed.toLowerCase())
         localStorage.setItem('categoryChosed', JSON.stringify(category))
         itemChosed.category = category.category
         itemChosed.price = category.items.find(flavour => itemChosed.flavour == flavour.flavour).price

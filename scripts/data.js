@@ -89,7 +89,7 @@ const additional = [
         image: "./assets/Menu/Adicionais/morango.jpg",
         price: 4,
         miniPrice: 2
-        
+
     },
     {
         flavour: "GRANULADO",
@@ -163,7 +163,7 @@ const additional = [
         miniPrice: 1.5
     },
     {
-        flavour: "DOBRO DE RECHEIO",
+        flavour: "RECHEIO EXTRA",
         span: "",
         description: "",
         image: "./assets/Menu/Adicionais/dobroRecheio.jpg",
@@ -311,7 +311,7 @@ const trudelRings = [
 
 const stuffingPots = {
     name: "POTES DE RECHEIO",
-    category:"stuffingPots",
+    category: "stuffingPots",
     items: [
         {
             flavour: "BRIGADEIRO",
@@ -408,7 +408,7 @@ const drinks = [
         image: "./assets/Menu/Bebidas/guarana.webp",
         price: 4
     },
-    
+
 ]
 
 const menuView = [
@@ -437,7 +437,7 @@ const menuView = [
         category: "additional",
         items: additional
     },
-    
+
     {
         name: "ADICIONAIS SALGADOS",
         category: "savoryAdditional",
@@ -453,18 +453,18 @@ const menuView = [
         category: "fingers",
         items: [
             {
-            flavour: "TRUDEL BOX",
-            span: "",
-            description: 'Linda caixa de presente com 9 unidades dos nossos deliciosos Trudel Fingers. Personalize como desejar, escolha os sabores e adicionais.<br><br> <small>* Apenas encomendas.<br>(2 dias de antecedência)</small>',
-            image: "./assets/Menu/Fingers/trudelBox.webp",
-            price: 50
+                flavour: "TRUDEL BOX",
+                span: "",
+                description: 'Linda caixa de presente com 9 unidades dos nossos deliciosos Trudel Fingers. Personalize como desejar, escolha os sabores e adicionais.<br><br> <small>* Apenas encomendas.<br>(2 dias de antecedência)</small>',
+                image: "./assets/Menu/Fingers/trudelBox.webp",
+                price: 50
             },
             {
-            flavour: "EVENTOS / FESTAS",
-            span: "",
-            description: 'Nossos irresistíveis trudels, no tamanho ideal (35 gramas) para surpreender seus convidados e deixar sua mesa de doces simplesmente maravilhosa em seu evento.<br><br> <small>* Apenas encomendas.<br>(1 semana de antecedência)</small>',
-            image: "./assets/Menu/Fingers/fingers.webp",
-            price: '**Sob Consulta'
+                flavour: "EVENTOS / FESTAS",
+                span: "",
+                description: 'Nossos irresistíveis trudels, no tamanho ideal (35 gramas) para surpreender seus convidados e deixar sua mesa de doces simplesmente maravilhosa em seu evento.<br><br> <small>* Apenas encomendas.<br>(1 semana de antecedência)</small>',
+                image: "./assets/Menu/Fingers/fingers.webp",
+                price: '**Sob Consulta'
             },
         ]
     },
@@ -472,52 +472,52 @@ const menuView = [
 
 // Full-Menu data 
 
-const miniTrudel = 
-    {
-        name: "MINI-TRUDELS",
-        category: "miniTrudel",
-        items:trudel.filter(item =>item.miniPrice).map(filtered=> {
-            return {
-                flavour:filtered.flavour,
-                price:filtered.miniPrice,
-                description:filtered.description,
-                image:filtered.image.replace('Trudels', 'MiniTrudels')
-            }
-        })
-    }
+const miniTrudel =
+{
+    name: "MINI-TRUDELS",
+    category: "miniTrudel",
+    items: trudel.filter(item => item.miniPrice).map(filtered => {
+        return {
+            flavour: filtered.flavour,
+            price: filtered.miniPrice,
+            description: filtered.description,
+            image: filtered.image.replace('Trudels', 'MiniTrudels')
+        }
+    })
+}
 
-const miniAdd = 
-    {
-        name: "MINI-ADICIONAL",
-        category: "miniAdditional",
-        items:additional.filter(item => item.miniPrice).map(filtered=> {
-            return {
-                flavour:filtered.flavour,
-                price:filtered.miniPrice,
-                description:filtered.description,
-                image:filtered.image
-            }
-        })
-    }
+const miniAdd =
+{
+    name: "MINI-ADICIONAL",
+    category: "miniAdditional",
+    items: additional.filter(item => item.miniPrice).map(filtered => {
+        return {
+            flavour: filtered.flavour,
+            price: filtered.miniPrice,
+            description: filtered.description,
+            image: filtered.image
+        }
+    })
+}
 
 const promotion = {
     name: "COMBO DA QUINTA",
-    category:"promotion",
+    category: "promotion",
     items: [
-            {
-                value:"COMBINAÇÃO DA QUINTA",
-                flavour: "TAMANHO NORMAL",
-                description: "Delicioso Trudel LakaOreo com sorvete de Creme por um preço especial!",
-                image: "./assets/Menu/Promotion/thursdayCombination.webp",
-                price: 16.00,
-            },
-            {
-                value:"MINI-COMBINAÇÃO DA QUINTA",
-                flavour: "TAMANHO MINI",
-                description: "Delicioso Trudel LakaOreo com sorvete de Creme por um preço especial!",
-                image: "./assets/Menu/Promotion/thursdayCombination.webp",
-                price: 12.00,
-            },
+        {
+            value: "COMBINAÇÃO DA QUINTA",
+            flavour: "TAMANHO NORMAL",
+            description: "Delicioso Trudel de Kit Kat Cremoso com morangos por um preço especial!",
+            image: "./assets/Menu/Promotion/thursdayCombination.webp",
+            price: 15.00,
+        },
+        {
+            value: "MINI-COMBINAÇÃO DA QUINTA",
+            flavour: "TAMANHO MINI",
+            description: "Delicioso Trudel de Kit Kat Cremoso com morangos por um preço especial!",
+            image: "./assets/Menu/Promotion/thursdayCombination.webp",
+            price: 9.50,
+        },
         // {
         //     value:"MINI PROMOCAO",
         //     flavour: "TRADICIONAL",
@@ -563,102 +563,102 @@ const promotion = {
         //     flavour: "LAKAOREO",
         //     price: 0,
         // },
-        
+
     ]
 }
 
 const combo = {
     name: "COMBO DA SEMANA",
-    category:"combo",
+    category: "combo",
     items: [
-            {
-                value:"COMBO DA SEMANA",
-                flavour: "Combo",
-                description: "Trudel de Frango com Cheddar + Mini Trudel de Doce de Leite + Refrigerante!",
-                image: "./assets/Menu/Promotion/weekCombination.webp",
-                price: 21.50,
-            },
+        {
+            value: "COMBO DA SEMANA",
+            flavour: "Combo",
+            description: "Trudel de Frango com Cheddar + Mini Trudel de Doce de Leite + Refrigerante!",
+            image: "./assets/Menu/Promotion/weekCombination.webp",
+            price: 21.50,
+        },
     ]
-}    
+}
 
-const christmasTrudel = {
+/*const christmasTrudel = {
     name: "ESPECIAL DE NATAL",
-    category:"christmasTrudel",
+    category: "christmasTrudel",
     items: [
         {
             flavour: "TRUDELTTONE",
             description: "Nossa deliciosa e exclusiva massa romena, com um recheio muito especial de Natal: brigadeiro branco sabor panetone e frutas cristalizadas!",
             image: "./assets/Menu/Christmas/Trudeltone.webp",
             price: 16,
-            miniPrice:12
+            miniPrice: 12
         },
         {
             flavour: "TRUDELTTONE GOTAS",
             description: "Nosso recheio especial de Natal na versão com chocolate: brigadeiro branco sabor chocotone com gotas de chocolate!",
             image: "./assets/Menu/Christmas/TrudeltoneGotas.webp",
             price: 16,
-            miniPrice:12
+            miniPrice: 12
         },
     ]
 }
 
-const miniChristmas = 
-    {
-        name: "MINI-ESPECIAL DE NATAL",
-        category: "miniChristmasTrudel",
-        items:christmasTrudel.items.filter(item =>item.miniPrice).map(filtered=> {
-            return {
-                flavour:filtered.flavour,
-                price:filtered.miniPrice,
-                description:filtered.description,
-                image:filtered.image
-            }
-        })
-    }
+const miniChristmas =
+{
+    name: "MINI-ESPECIAL DE NATAL",
+    category: "miniChristmasTrudel",
+    items: christmasTrudel.items.filter(item => item.miniPrice).map(filtered => {
+        return {
+            flavour: filtered.flavour,
+            price: filtered.miniPrice,
+            description: filtered.description,
+            image: filtered.image
+        }
+    })
+}*/
 
-// menuView.unshift(promotion)
-menuView.unshift(combo)
+menuView.unshift(promotion)
+// menuView.unshift(combo)
 // menuView.unshift(christmasTrudel)
 
 const entregas = {
     name: "ENTREGAS",
-    category:"delivery",
+    category: "delivery",
     items: [
-        {   
+        {
             value: '4 REAIS',
-            item:'TAXA DE ENTREGA',
+            item: 'TAXA DE ENTREGA',
             price: 4
         },
         {
             value: '5 REAIS',
-            item:'TAXA DE ENTREGA',
+            item: 'TAXA DE ENTREGA',
             price: 5
         },
         {
             value: '6 REAIS',
-            item:'TAXA DE ENTREGA',
+            item: 'TAXA DE ENTREGA',
             price: 6
         },
         {
             value: '7 REAIS',
-            item:'TAXA DE ENTREGA',
+            item: 'TAXA DE ENTREGA',
             price: 7
         },
         {
             value: '8 REAIS',
-            item:'TAXA DE ENTREGA',
+            item: 'TAXA DE ENTREGA',
             price: 8
         },
         {
             value: 'GRÁTIS',
-            item:'CORTESIA',
+            item: 'CORTESIA',
             price: 0
         }
-]
+    ]
 }
 
 const menu = [
-    ...menuView, 
+    ...menuView,
     miniTrudel,
     miniChristmas,
     miniAdd,
@@ -669,4 +669,3 @@ const menu = [
 
 const payments = ['DINHEIRO', 'DÉBITO', 'CRÉDITO', 'PIX']
 
- 
