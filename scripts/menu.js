@@ -120,8 +120,8 @@ const lightbox = {
 
 // Destaque de novidade/combinação com Lightbox e SetTimeout
 
-// lightbox.open(false)
-// setTimeout(lightbox.close, 7000);
+lightbox.open(false)
+setTimeout(lightbox.close, 7000);
 
 // Views SPA
 
