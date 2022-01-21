@@ -3,7 +3,7 @@
 function openOptions(category) {
     let html = `<input type='hidden' value='${category.id}'>`
     let chosed = menu.filter(menuCategory => menuCategory.category == category.id)
-    
+
     chosed[0].items.forEach(element => {
         html += ` 
         <button class onclick="addItem(this)">${element.flavour || element.value}</button>
@@ -19,10 +19,10 @@ function addItem(item) {
     let categoryChosed = menu.filter(menuCategory => menuCategory.category == category)[0]
     let itemChosed = categoryChosed.items.filter(product => item.innerHTML == product.flavour || item.innerHTML == product.value)[0]
     tbody.innerHTML += `
-    <tr ${categoryChosed.name == 'TRUDEL' ? 'style="height:30px;vertical-align: bottom;"': ''}>
+    <tr ${categoryChosed.name == 'TRUDEL' ? 'style="height:30px;vertical-align: bottom;"' : ''}>
         <td class="quantity" style="text-align:center;">1</td>
         <td colspan="1" style="padding: 0 6px;">${categoryChosed.name}</td>
-        <td colspan="3" ${itemChosed.flavour? 'style="font-weight:bold;"' : ''}>${itemChosed.flavour || itemChosed.item}</td>
+        <td colspan="3" ${itemChosed.flavour ? 'style="font-weight:bold;"' : ''}>${itemChosed.flavour || itemChosed.item}</td>
         <td class="value" style="text-align:center;">${itemChosed.price.toFixed(2)}</td>
         <td onclick="removeItem(this)" class="delete"><div>X</div></td>
     </tr>
@@ -81,10 +81,10 @@ async function printOrder() {
     let district = document.querySelector('#district input')
     let payment = document.querySelector('#paymentChosed span')
     let change = document.querySelector('#change')
-    
+
 
     addDeliveryTax()
-    let hiddenTotal = document.querySelector('#totalValue strong').innerHTML.replace('R$',"")
+    let hiddenTotal = document.querySelector('#totalValue strong').innerHTML.replace('R$', "")
 
     let order = document.querySelector('#orderTable')
     let html = `
@@ -97,16 +97,16 @@ async function printOrder() {
         <p style="margin: 4px 0;"><strong>OBS.:</strong> ${note.value}</p>
         ${order.innerHTML}
     `
-    
 
     if (payment) {
         html += `<p style="margin: 8px 0 4px 0;"><strong>Forma de pagamento:</strong> ${payment.innerHTML}</p>`
     }
 
     if (change) {
-        html += `<p style="margin: 4px 0;"><strong>Troco para:</strong> R$ ${Number(change.value).toFixed(2)} = R$ ${(Number(change.value)-Number(hiddenTotal)).toFixed(2)} </p>`
+        html += `<p style="margin: 4px 0;"><strong>Troco para:</strong> R$ ${Number(change.value).toFixed(2)} = R$ ${(Number(change.value) - Number(hiddenTotal)).toFixed(2)} </p>`
     }
 
+    console.log('hi')
     let printWindow = window.open('about:blank');
 
     printWindow.document.write(html);
@@ -143,7 +143,7 @@ function searchDistricts() {
 
     if (select.value) {
         filteredDistricts = districts.filter(district => removeAcento(district.name.toUpperCase()).includes(select.value.toUpperCase()));
-        let list =''
+        let list = ''
         for (const district of filteredDistricts) {
             list += `
             <li onclick="selectDistrict(this)">${district.name}</li>
@@ -153,8 +153,8 @@ function searchDistricts() {
     } else {
         closeOptions()
     }
-   
-    
+
+
 }
 
 function selectDistrict(selected) {
@@ -176,7 +176,8 @@ async function addDeliveryTax() {
     for (const item of orderItens) {
         if (item.children[1].innerHTML == 'ENTREGAS') {
             taxExists = true
-    }}
+        }
+    }
 
     if (!taxExists) {
         district = districts.find(districtData => districtData.name == district)
@@ -190,7 +191,7 @@ async function addDeliveryTax() {
     </tr>
     `
     }
-    
+
     calculateTotal()
 }
 
@@ -227,20 +228,19 @@ function sendToWhatsApp() {
     }
 
     texto = window.encodeURIComponent(texto);
-    
-  
+
+
     window.open("https://api.whatsapp.com/send?phone=5519996129909&text=" + texto, "_blank");
 }
 
-function removeAcento (text)
-{                                                               
-    text = text.replace(new RegExp('[ÁÀÂÃ]','gi'), 'a');
-    text = text.replace(new RegExp('[ÉÈÊ]','gi'), 'e');
-    text = text.replace(new RegExp('[ÍÌÎ]','gi'), 'i');
-    text = text.replace(new RegExp('[ÓÒÔÕ]','gi'), 'o');
-    text = text.replace(new RegExp('[ÚÙÛ]','gi'), 'u');
-    text = text.replace(new RegExp('[Ç]','gi'), 'c');
-    return text;                 
+function removeAcento(text) {
+    text = text.replace(new RegExp('[ÁÀÂÃ]', 'gi'), 'a');
+    text = text.replace(new RegExp('[ÉÈÊ]', 'gi'), 'e');
+    text = text.replace(new RegExp('[ÍÌÎ]', 'gi'), 'i');
+    text = text.replace(new RegExp('[ÓÒÔÕ]', 'gi'), 'o');
+    text = text.replace(new RegExp('[ÚÙÛ]', 'gi'), 'u');
+    text = text.replace(new RegExp('[Ç]', 'gi'), 'c');
+    return text;
 }
 
 //  Run

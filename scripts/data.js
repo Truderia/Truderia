@@ -123,6 +123,14 @@ const additional = [
         price: 2,
         miniPrice: 1
     },
+    {
+        flavour: "LEITE EM PÓ NINHO",
+        span: "",
+        description: "",
+        image: "./assets/Menu/Adicionais/leiteNinho.webp",
+        price: 2,
+        miniPrice: 1
+    },
     // {
     //     flavour: "NEGRESCO MOIDO",
     //     span: "",
