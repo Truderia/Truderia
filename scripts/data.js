@@ -582,9 +582,9 @@ const combo = {
         {
             value: "COMBO DA SEMANA",
             flavour: "Combo",
-            description: "Trudel de Frango com Cheddar + Mini Trudel de Doce de Leite + Refrigerante!",
+            description: "Trudel de Frango com Catupiry + Trudel Rings Five acompanhado de recheio de Ovomaltine + Refrigerante!",
             image: "./assets/Menu/Promotion/weekCombination.webp",
-            price: 21.50,
+            price: 24.00,
         },
     ]
 }
