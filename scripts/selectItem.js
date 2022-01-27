@@ -225,7 +225,7 @@ function minusOneAdd(target) {
     let itemChosed = JSON.parse(localStorage.getItem('itemChosed'))
     const categoryName = target.parentNode.parentNode.parentNode.parentNode.querySelector('.title p').innerText
     const addCategory = menu.find(category => category.name.trim() == categoryName.trim())
-    const addTarget = addCategory.items.find(item => item.flavour == target.parentNode.parentNode.querySelector('.flavour p').innerText)
+    const addTarget = addCategory.items.find(item => target.parentNode.parentNode.querySelector('.flavour p').innerText.includes(item.flavour))
     const totalPrice = () => {
         let total = itemChosed.price
         if (itemChosed.additional) itemChosed.additional.forEach(additional => {
@@ -258,7 +258,7 @@ function plusOneAdd(target) {
     let itemChosed = JSON.parse(localStorage.getItem('itemChosed'))
     const categoryName = target.parentNode.parentNode.parentNode.parentNode.querySelector('.title p').innerText
     const addCategory = menu.find(category => category.name.trim() == categoryName.trim());
-    let addTarget = addCategory.items.find(item => item.flavour == target.parentNode.parentNode.querySelector('.flavour p').innerText)
+    let addTarget = addCategory.items.find(item => target.parentNode.parentNode.querySelector('.flavour p').innerText.includes(item.flavour))
     const totalPrice = () => {
         let total = itemChosed.price
         if (itemChosed.additional) itemChosed.additional.forEach(additional => {
