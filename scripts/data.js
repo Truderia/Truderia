@@ -41,6 +41,14 @@ const trudel = [
         miniPrice: 9
     },
     {
+        flavour: "CREME DE NINHO",
+        span: "",
+        description: "Cremosidade e doçura na medida certa, feito com o leite em pó mais famoso do Brasil, LEITE NINHO. Recheio com gostinho de quero mais!",
+        image: "./assets/Menu/Trudels/CremeNinho.webp",
+        price: 15,
+        miniPrice: 11
+    },
+    {
         flavour: "NUTELLA",
         span: "",
         description: "O verdadeiro creme de avelã, o mais pedido e queridinho dos nossos clientes.",
@@ -336,6 +344,13 @@ const stuffingPots = {
             price: 4,
         },
         {
+            flavour: "CREME DE NINHO",
+            span: "",
+            description: "",
+            image: "./assets/Menu/Potes/poteCremeNinho.webp",
+            price: 5,
+        },
+        {
             flavour: "KITKAT CREMOSO",
             span: "",
             description: "",
@@ -624,8 +639,8 @@ const miniChristmas =
     })
 }
 
-// menuView.unshift(promotion)
-menuView.unshift(combo)
+menuView.unshift(promotion)
+// menuView.unshift(combo)
 // menuView.unshift(christmasTrudel)
 
 const entregas = {
