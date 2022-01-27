@@ -45,8 +45,8 @@ const trudel = [
         span: "",
         description: "Cremosidade e doçura na medida certa, feito com o leite em pó mais famoso do Brasil, LEITE NINHO. Recheio com gostinho de quero mais!",
         image: "./assets/Menu/Trudels/CremeNinho.webp",
-        price: 15,
-        miniPrice: 11
+        price: 14,
+        miniPrice: 10
     },
     {
         flavour: "NUTELLA",
