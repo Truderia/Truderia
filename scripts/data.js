@@ -530,62 +530,17 @@ const promotion = {
         {
             value: "COMBINAÇÃO DA QUINTA",
             flavour: "TAMANHO NORMAL",
-            description: "Delicioso Trudel de Kit Kat Cremoso com morangos por um preço especial!",
+            description: "Delicioso Trudel de Nutella com sorvete de yogurte com frutas vermelhas e adicional de leite em pó Ninho por um preço especial!",
             image: "./assets/Menu/Promotion/thursdayCombination.webp",
-            price: 15.00,
+            price: 18.00,
         },
         {
             value: "MINI-COMBINAÇÃO DA QUINTA",
             flavour: "TAMANHO MINI",
-            description: "Delicioso Trudel de Kit Kat Cremoso com morangos por um preço especial!",
+            description: "Delicioso Trudel de Nutella com sorvete de yogurte com frutas vermelhas e adicional de leite em pó Ninho por um preço especial!",
             image: "./assets/Menu/Promotion/thursdayCombination.webp",
-            price: 9.50,
+            price: 13.50,
         },
-        // {
-        //     value:"MINI PROMOCAO",
-        //     flavour: "TRADICIONAL",
-        //     price: 0,
-        // },
-        // {
-        //     value:"MINI PROMOCAO",
-        //     flavour: "BRIGADEIRO",
-        //     price: 0,
-        // },
-        // {
-        //     value:"MINI PROMOCAO",
-        //     flavour: "DOCE DE LEITE",
-        //     price: 0,
-        // },
-        // {
-        //     value:"MINI PROMOCAO",
-        //     flavour: "CHOCOLATE MEIO AMARGO",
-        //     price: 0,
-        // },
-        // {
-        //     value:"MINI PROMOCAO",
-        //     flavour: "CHOCOLATE BRANCO",
-        //     price: 0,
-        // },
-        // {
-        //     value:"MINI PROMOCAO",
-        //     flavour: "NUTELLA",
-        //     price: 0,
-        // },
-        // {
-        //     value:"MINI PROMOCAO",
-        //     flavour: "KIT KAT CREMOSO",
-        //     price: 0,
-        // },
-        // {
-        //     value:"MINI PROMOCAO",
-        //     flavour: "OVOMALTINE",
-        //     price: 0
-        // },
-        // {
-        //     value:"MINI PROMOCAO",
-        //     flavour: "LAKAOREO",
-        //     price: 0,
-        // },
 
     ]
 }
@@ -597,9 +552,9 @@ const combo = {
         {
             value: "COMBO DA SEMANA",
             flavour: "Combo",
-            description: "Trudel de Frango com Catupiry + Trudel Rings Five acompanhado de recheio de Ovomaltine + Refrigerante!",
+            description: "Trudel de Frango com adicional de milho + Mini Trudel Laka Oreo + Refrigerante!",
             image: "./assets/Menu/Promotion/weekCombination.webp",
-            price: 24.00,
+            price: 23.00,
         },
     ]
 }
