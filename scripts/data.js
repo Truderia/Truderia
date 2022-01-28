@@ -40,14 +40,14 @@ const trudel = [
         price: 13,
         miniPrice: 9
     },
-    // {
-    //     flavour: "CREME DE NINHO",
-    //     span: "",
-    //     description: "Cremosidade e doçura na medida certa, feito com o leite em pó mais famoso do Brasil, LEITE NINHO. Recheio com gostinho de quero mais!",
-    //     image: "./assets/Menu/Trudels/CremeNinho.webp",
-    //     price: 14,
-    //     miniPrice: 10
-    // },
+    {
+        flavour: "CREME DE NINHO",
+        span: "",
+        description: "Cremosidade e doçura na medida certa, feito com o leite em pó mais famoso do Brasil, LEITE NINHO. Recheio com gostinho de quero mais!",
+        image: "./assets/Menu/Trudels/CremeNinho.webp",
+        price: 14,
+        miniPrice: 10
+    },
     {
         flavour: "NUTELLA",
         span: "",
@@ -343,13 +343,13 @@ const stuffingPots = {
             image: "./assets/Menu/Potes/PoteDoceDeLeite.webp",
             price: 4,
         },
-        // {
-        //     flavour: "CREME DE NINHO",
-        //     span: "",
-        //     description: "",
-        //     image: "./assets/Menu/Potes/poteCremeNinho.webp",
-        //     price: 5,
-        // },
+        {
+            flavour: "CREME DE NINHO",
+            span: "",
+            description: "",
+            image: "./assets/Menu/Potes/poteCremeNinho.webp",
+            price: 5,
+        },
         {
             flavour: "KITKAT CREMOSO",
             span: "",
@@ -594,8 +594,8 @@ const miniChristmas =
     })
 }
 
-menuView.unshift(promotion)
-// menuView.unshift(combo)
+// menuView.unshift(promotion)
+menuView.unshift(combo)
 // menuView.unshift(christmasTrudel)
 
 const entregas = {
