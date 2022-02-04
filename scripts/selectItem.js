@@ -328,10 +328,11 @@ function addToCart() {
     const totalQuantity = document.querySelector('.total .quantity span').innerHTML
     const cart = JSON.parse(localStorage.getItem('cart'))
     const note = document.querySelector('.addToOrder textarea').value
+    const newCart = Cart.init(cart)
     if (note) itemChosed.note = note
 
     for (let i = 0; i < totalQuantity; i++) {
-        localStorage.setItem('cart', JSON.stringify(Cart.init(cart).addOne(itemChosed)))
+        localStorage.setItem('cart', JSON.stringify(newCart.addOne(itemChosed)))
 
     }
 
