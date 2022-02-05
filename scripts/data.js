@@ -383,7 +383,7 @@ const stuffingPots = {
 
 const drinks = [
     {
-        flavour: "ÁGUA",
+        flavour: "ÁGUA SEM GÁS",
         span: "500ml",
         description: "Água natural.",
         image: "./assets/Menu/Bebidas/Agua.jpg",

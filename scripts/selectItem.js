@@ -265,6 +265,7 @@ function plusOneAdd(target) {
             total += additional.price * additional.quantity
         })
         total *= totalQuantity
+        console.log(target.parentNode.parentNode.querySelector('.flavour p'))
         return total
     }
 
