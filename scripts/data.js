@@ -532,14 +532,14 @@ const promotion = {
             flavour: "TAMANHO NORMAL",
             description: "Delicioso Trudel de Brigadeiro com adicional de granulado e  sorvete de Bem Casado por um preço especial!",
             image: "./assets/Menu/Promotion/thursdayCombination.webp",
-            price: 14.00,
+            price: 17.00,
         },
         {
             value: "MINI-COMBINAÇÃO DA QUINTA",
             flavour: "TAMANHO MINI",
             description: "Delicioso Trudel de Brigadeiro com adicional de granulado e  sorvete de Bem Casado por um preço especial!",
             image: "./assets/Menu/Promotion/thursdayCombination.webp",
-            price: 10.50,
+            price: 12.00,
         },
 
     ]
@@ -554,7 +554,7 @@ const combo = {
             flavour: "Combo",
             description: "Trudel de Frango com Cheddar e adicional de Batata Palha + Mini Trudel KitKat + Refrigerante!",
             image: "./assets/Menu/Promotion/weekCombination.webp",
-            price: 24.00,
+            price: 28.00,
         },
     ]
 }
