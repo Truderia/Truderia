@@ -118,6 +118,7 @@ const lightbox = {
     }
 }
 
+
 // Destaque de novidade/combinação com Lightbox e SetTimeout
 
 lightbox.open(false)
