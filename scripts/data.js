@@ -530,16 +530,16 @@ const promotion = {
         {
             value: "COMBINAÇÃO DA QUINTA",
             flavour: "TAMANHO NORMAL",
-            description: "Delicioso Trudel de Ovomaltine e sorvete Sensção por um preço especial!",
+            description: "Delicioso Trudel de Leite Ninho e adicional de morango por um preço especial!",
             image: "./assets/Menu/Promotion/thursdayCombination.webp",
-            price: 16.00,
+            price: 14.00,
         },
         {
             value: "MINI-COMBINAÇÃO DA QUINTA",
             flavour: "TAMANHO MINI",
-            description: "Delicioso Trudel de Ovomaltine e sorvete Sensção por um preço especial!",
+            description: "Delicioso Trudel de Leite Ninho e adicional de morango por um preço especial!",
             image: "./assets/Menu/Promotion/thursdayCombination.webp",
-            price: 12.50,
+            price: 10.00,
         },
 
     ]
