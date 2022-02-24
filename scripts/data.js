@@ -552,9 +552,9 @@ const combo = {
         {
             value: "COMBO DA SEMANA",
             flavour: "Combo",
-            description: "Trudel de Frango com adicional de Alho Frito + Mini Trudel de Chocolate Meio Amargo + Refrigerante!",
+            description: "Trudel de Frango com Cheddar + Mini Trudel de Nutella + Refrigerante!",
             image: "./assets/Menu/Promotion/weekCombination.webp",
-            price: 20.50,
+            price: 24.00,
         },
     ]
 }
