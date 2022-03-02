@@ -595,9 +595,13 @@ const miniChristmas =
 }
 
 
+const today = new Date()
+if (today.getDay() === 4) {
+    menuView.unshift(promotion)
+} else {
+    menuView.unshift(combo)
+}
 
-menuView.unshift(promotion)
-// menuView.unshift(combo)
 
 
 // menuView.unshift(christmasTrudel)

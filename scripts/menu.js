@@ -97,18 +97,24 @@ function hideFixedCart() {
 }
 
 
+const currentDate = new Date()
+const currentWeekday = currentDate.getDay()
+
 
 // Lightbox 
 const lightbox = {
+
     target: document.querySelector('.lightbox-target'),
     image: document.querySelector('.lightbox-target img'),
     closeButton: document.querySelector('.lightbox-close'),
     open(e) {
+        const lightboxImage = currentWeekday === 4 ?
+            './assets/Menu/lightboxThursdayCombination.webp' :
+            './assets/Menu/lightboxWeekCombination.webp'
         lightbox.target.style.opacity = 1
         lightbox.target.style.top = 0
         lightbox.closeButton.style.top = 0
-        let source = e ? e.target.src : './assets/Menu/lightboxThursdayCombination.webp'
-        // let source = e ? e.target.src : './assets/Menu/lightboxWeekCombination.webp'
+        let source = e ? e.target.src : lightboxImage
         lightbox.image.src = source
     },
     close() {
