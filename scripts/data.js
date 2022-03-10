@@ -530,14 +530,14 @@ const promotion = {
         {
             value: "COMBINAÇÃO DA QUINTA",
             flavour: "TAMANHO NORMAL",
-            description: "Delicioso Trudel de KitKat com adicional de Sonho de Valsa e sorvete de Creme por um preço especial!",
+            description: "Delicioso Trudel de Nutella com adicional de Amendoim e sorvete de Ninho Trufado por um preço especial!",
             image: "./assets/Menu/Promotion/thursdayCombination.webp",
             price: 18.00,
         },
         {
             value: "MINI-COMBINAÇÃO DA QUINTA",
             flavour: "TAMANHO MINI",
-            description: "Delicioso Trudel de KitKat com adicional de Sonho de Valsa e sorvete de Creme por um preço especial!",
+            description: "Delicioso Trudel de Nutella com adicional de Amendoim e sorvete de Ninho Trufado por um preço especial!",
             image: "./assets/Menu/Promotion/thursdayCombination.webp",
             price: 14.00,
         },
@@ -552,9 +552,9 @@ const combo = {
         {
             value: "COMBO DA SEMANA",
             flavour: "Combo",
-            description: "Trudel de Frango com Cheddar mais adicional de Milho + Rings Five com pote de Chocolate Branco + Refrigerante!",
+            description: "Trudel de Frango com Catupiry mais adicional de Bata Palha + Mini Trudel de Ovomaltine + Refrigerante!",
             image: "./assets/Menu/Promotion/weekCombination.webp",
-            price: 24.00,
+            price: 24.50,
         },
     ]
 }
