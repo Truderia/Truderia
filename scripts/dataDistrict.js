@@ -469,7 +469,7 @@ const districts = [
     },
     {
         name: 'Chacara Daltro',
-        price: 7
+        price: 5
     },
     {
         name: 'Chacara Morada do Sol',
