@@ -530,14 +530,14 @@ const promotion = {
         {
             value: "COMBINAÇÃO DA QUINTA",
             flavour: "TAMANHO NORMAL",
-            description: "Delicioso Trudel de Nutella com adicional de amendoim e sorvete Ninho Trufado por um preço especial!",
+            description: "Delicioso Trudel de Nutella com adicional de Amendoim e sorvete Ninho Trufado por um preço especial!",
             image: "./assets/Menu/Promotion/thursdayCombination.webp",
             price: 18.00,
         },
         {
             value: "MINI-COMBINAÇÃO DA QUINTA",
             flavour: "TAMANHO MINI",
-            description: "Delicioso Trudel de Nutella com adicional de amendoim e sorvete Ninho Trufado por um preço especial!",
+            description: "Delicioso Trudel de Nutella com adicional de Amendoim e sorvete Ninho Trufado por um preço especial!",
             image: "./assets/Menu/Promotion/thursdayCombination.webp",
             price: 14.50,
         },
