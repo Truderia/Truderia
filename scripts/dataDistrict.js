@@ -651,5 +651,9 @@ const districts = [
         name: 'Jardim Vida Nova',
         price: 7
     },
+    {
+        name: 'Desmembramento Campinho B',
+        price: 6
+    },
 
 ]
