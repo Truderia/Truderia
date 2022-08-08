@@ -157,8 +157,8 @@ function inServiceTimetable() {
 }
 
 function choose(item) {
-    if (!inServiceTimetable())
-        return alertOpen(alerts.outsideServiceTimetable, 'alerts')
+    // if (!inServiceTimetable())
+    //     return alertOpen(alerts.outsideServiceTimetable, 'alerts')
 
     // Extract selected category value from HTML
     let category = item.parentNode.parentNode.parentNode.parentNode.parentNode.querySelector('.categoryName h3').innerHTML
